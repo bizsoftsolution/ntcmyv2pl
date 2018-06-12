@@ -10,16 +10,10 @@ import { PropertyDataSource } from './property-datasource';
 })
 export class PropertyComponent implements OnInit {
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  dataSource : PropertyDataSource;
 
-  displayedColumns = ['id', 'name'];
-
-  constructor(private propertyService : PropertyService) { }
+  constructor(public propertyService: PropertyService) { }
 
   ngOnInit() {
-    this.dataSource = new PropertyDataSource(this.paginator, this.sort);
   }
 
 
