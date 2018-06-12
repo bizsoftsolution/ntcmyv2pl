@@ -1,0 +1,97 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">
+      <a routerLink="/dashboard">
+        <img src="assets/logo1.png" alt="logo" style="height:50px!important;    margin: 0px 60px;">
+      </a>
+    </mat-toolbar>
+    <mat-nav-list>
+      <p style="color: #3f51b5;text-align: center;font-weight: 700;font-family: Roboto;letter-spacing: 1px;font-size: 19px;margin: 0">NTC</p>
+        <p style="text-align: center;">Hotel Booking</p>
+        <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/dashboard">
+        <i class="material-icons">
+          home
+        </i> Dashboard </a>
+        <mat-divider></mat-divider>
+      <mat-expansion-panel style="box-shadow:none;">
+        <mat-expansion-panel-header style="padding: 0 17px;">
+          <mat-panel-title>
+            <i class="material-icons">
+              list_alt
+            </i> Masters
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLink="/property">Property</a>
+        <a mat-list-item routerLink="/room-details">Room Details</a>
+        <a mat-list-item routerLink="/hall-details">Hall Details</a>
+        <a mat-list-item routerLink="/holiday">Holiday</a>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/property">
+        <i class="material-icons">
+          attach_money
+        </i> Transaction</a>
+        <mat-divider></mat-divider>
+        <mat-expansion-panel style="box-shadow:none;">
+            <mat-expansion-panel-header style="padding: 0 17px;">
+              <mat-panel-title>
+                  <i class="material-icons">
+                      pie_chart
+                    </i> Reports
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <a mat-list-item routerLink="/member-list">Member List</a>
+          </mat-expansion-panel>
+          
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+
+          </div>
+          <div class="col-md-6 text-right">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <!--span>Application Title</span-->
+            <button [matMenuTriggerFor]="menu" aria-haspopup="true" mat-icon-button="" matTooltip="Select User Profile" tabindex="-1"
+              class="mat-icon-button" aria-describedby="cdk-describedby-message-0" cdk-describedby-host="" style="touch-action: none; user-select: none; -webkit-user-drag: none; ">
+              <span class="mat-button-wrapper">
+                <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true" style="color:aliceblue">account_circle</mat-icon>
+              </span>
+              <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+              <div class="mat-button-focus-overlay"></div>
+            </button>
+            <!--button mat-mini-fab  [matMenuTriggerFor]="menu">
+                <i class="material-icons">
+                  account_circle
+                </i>
+              </button-->
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item style="padding: 0 30px;">
+                <mat-icon>account_circle</mat-icon>
+                <span>Profile</span>
+              </button>
+              <button mat-menu-item style="padding: 0 30px;">
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Logout</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
