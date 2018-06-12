@@ -22,6 +22,20 @@ import { FormsModule } from '@angular/forms';
 
 import {BsDatepickerModule} from 'ngx-bootstrap';
 
+import {SignalRModule,SignalRConnection, SignalRConfiguration} from 'ng2-signalr';
+
+export function createconfig() : SignalRConfiguration{
+  const c=new SignalRConfiguration();
+  c.hubName="NTCServerHub";
+  c.url="http://localhost/NTC.SLSR";
+  c.logging=true;
+  
+  c.executeErrorsInZone=false;
+  c.executeEventsInZone=true;
+  c.executeStatusChangeInZone=true; 
+  return c;
+  }
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +72,8 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     MatExpansionModule,
     MatProgressBarModule,
     MatDatepickerModule,
-    MatToolbarModule,
+    MatToolbarModule, 
+     SignalRModule.forRoot(createconfig),
     BsDatepickerModule.forRoot()
   ],
   providers: [ApplibService, PropertyService, HolidayService],

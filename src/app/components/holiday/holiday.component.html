@@ -42,11 +42,16 @@
                 <th>Date</th>
                 <th>Action</th>
               </tr>
-              <tr *ngFor="let holiday of holidayService.holidayList">
-                <td>
+              <tr *ngFor="let holiday of holidayService.AppLib.HolidayList">
+                <td hidden>
                   <mat-form-field class="example-full-width">
-                    <input matInput [(ngModel)]="holiday.HolidayName" (input)="holidayService.saveHoliday(holiday)" placeholder="Property Name">
-
+                    <input matInput [(ngModel)]="holiday.Id" >
+               
+                  </mat-form-field>
+                </td><td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput [(ngModel)]="holiday.HolidayName" (input)="holidayService.saveHoliday(holiday)" placeholder="Holiday Name">
+               
                   </mat-form-field>
                 </td>
                 <td>

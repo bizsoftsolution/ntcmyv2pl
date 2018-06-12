@@ -1,4 +1,4 @@
-export class Holiday {
+export class HolidayDetail {
     Id : number;
     HolidayName : string;
     HolidayDate? : Date;
