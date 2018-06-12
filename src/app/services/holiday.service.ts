@@ -10,9 +10,9 @@ import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class HolidayService {
 
-  holidayList : Holiday[];
-  autoInsert: boolean = true;
-  constructor(private AppLib: ApplibService, private http: Http) {
+  holidayList: Holiday[];
+  autoInsert: Boolean = true;
+  constructor(public AppLib: ApplibService, public http: Http) {
     this.getHolidayList();
    }
    getHolidayList() {
@@ -20,20 +20,25 @@ export class HolidayService {
       .pipe(map(x => <Holiday[]>x.json()))
       .subscribe(x => {
         this.holidayList = x;
-        this.holidayList.forEach(x=> x.HolidayDate=new Date(x.HolidayDate));
+        this.holidayList.forEach( x => x.HolidayDate = new Date(x.HolidayDate));
         console.log(this.holidayList);
         let h: Holiday = new Holiday();
         this.holidayList.push(h);
       });
   }
-  isValid(holiday: Holiday):boolean{
-      if(!holiday.HolidayName || holiday.HolidayName==""){
-          return false
-      }else if(!holiday.HolidayDate){
+  isValid(holiday: Holiday): Boolean {
+      if (!holiday.HolidayName || holiday.HolidayName === '' )
+      {
+          return false;
+      }
+      else if (!holiday.HolidayDate)
+      {
 
-      }else{
+      }
+      else
+      {
         return true;
-      } 
+      }
   }
   saveHoliday(holiday: Holiday) {
     if(!this.isValid(holiday)) return;

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { PropertyService } from '../../services/property.service';
-import { PropertyDataSource } from './property-datasource';
 
 @Component({
   selector: 'app-property',

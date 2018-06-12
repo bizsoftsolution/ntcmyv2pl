@@ -9,8 +9,8 @@ import { Property } from '../models/property';
 })
 export class PropertyService {
   propertyList: Property[];
-  autoInsert: boolean = true;
-  constructor(private AppLib: ApplibService, private http: Http) {
+  autoInsert: Boolean = true;
+  constructor(public AppLib: ApplibService, public http: Http) {
     this.getPropertyList();
   }
 
