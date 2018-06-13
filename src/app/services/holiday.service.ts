@@ -12,7 +12,6 @@ import { SignalR, SignalRConnection } from 'ng2-signalr';
   providedIn: 'root'
 })
 export class HolidayService {
-
   autoInsert: Boolean = true;
   constructor(public AppLib: ApplibService) {
     // Save
@@ -21,11 +20,10 @@ export class HolidayService {
       this.SaveHoliday(x, true);
     });
     // Delete
-this.AppLib.con.listenFor<HolidayDetail>('Delete_Holiday').subscribe( x => {
-  console.log(x);
-  this.DeleteHoliday(x, true);
-});
-
+    this.AppLib.con.listenFor<HolidayDetail>('Delete_Holiday').subscribe(x => {
+      console.log(x);
+      this.DeleteHoliday(x, true);
+    });
   }
   isValid(holiday: HolidayDetail): boolean {
     if (!holiday.HolidayName || holiday.HolidayName === '') {
@@ -42,7 +40,9 @@ this.AppLib.con.listenFor<HolidayDetail>('Delete_Holiday').subscribe( x => {
       let d = this.AppLib.holidayList.find(x => x.Id === holidayData.Id);
       if (!d) {
         d = new HolidayDetail();
-        this.AppLib.holidayList = this.AppLib.holidayList.filter(x => x.Id !== 0);
+        this.AppLib.holidayList = this.AppLib.holidayList.filter(
+          x => x.Id !== 0
+        );
         this.AppLib.holidayList.push(d);
         this.AppLib.holidayList.push(new HolidayDetail());
       }
@@ -63,26 +63,24 @@ this.AppLib.con.listenFor<HolidayDetail>('Delete_Holiday').subscribe( x => {
         holidayData.Id = x;
       });
     }
-
-
   }
 
   DeleteHoliday(holidayData: HolidayDetail, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
-      this.AppLib.holidayList = this.AppLib.holidayList.filter(x => x.Id !== holidayData.Id);
+      this.AppLib.holidayList = this.AppLib.holidayList.filter(
+        x => x.Id !== holidayData.Id
+      );
     } else {
       if (confirm(`Are you delete this ${holidayData.HolidayName}?`)) {
         this.AppLib.con.invoke('Delete_Holiday', holidayData.Id).then(x => {
           if (x === true) {
-            this.AppLib.holidayList = this.AppLib.holidayList.filter(y => y.Id !== holidayData.Id);
+            this.AppLib.holidayList = this.AppLib.holidayList.filter(
+              y => y.Id !== holidayData.Id
+            );
             alert('deleted');
           }
-        }
-        );
+        });
       }
     }
-
   }
-
-
 }
