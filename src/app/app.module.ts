@@ -43,7 +43,7 @@ import {
   SignalRConnection,
   SignalRConfiguration
 } from 'ng2-signalr';
-import { PropertyComponent } from './property/property.component';
+import { PropertyComponent } from './components/property/property.component';
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
