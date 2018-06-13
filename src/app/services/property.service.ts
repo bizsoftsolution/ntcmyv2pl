@@ -19,26 +19,23 @@ export class PropertyService {
       .pipe(map(x => x.json()))
       .subscribe(x => {
         this.propertyList = x;
-        let p: Property = new Property(0, '');
-        this.propertyList.push(p);
+        this.propertyList.push(new Property(0, ''));
       });
   }
 
   saveProperty(property: Property) {
-    if (property.Id == 0) {
-      if (this.autoInsert == false) return;
+    if (property.Id === 0) {
+      if (this.autoInsert === false) { return; }
       this.autoInsert = false;
       this.http.post(this.AppLib.UrlPropertyDetails, property)
         .pipe(map(x => x.json()))
         .subscribe(x => {
           property.Id = x.Id;
-          let p: Property = new Property(0, '');
-          this.propertyList.push(p);
+          this.propertyList.push(new Property(0, ''));
           this.autoInsert = true;
-          if (property.PropertyName != x.PropertyName) this.saveProperty(property);
+          if (property.PropertyName !== x.PropertyName) { this.saveProperty(property); }
         });
-    }
-    else {
+    } else {
       this.http.put(`${this.AppLib.UrlPropertyDetails}/${property.Id}`, property).subscribe();
     }
 
@@ -46,7 +43,7 @@ export class PropertyService {
 
   deleteProperty(property: Property) {
     if (confirm(`Are you delete this ${property.PropertyName}?`)) {
-      this.propertyList = this.propertyList.filter(x => x.Id != property.Id)
+      this.propertyList = this.propertyList.filter(x => x.Id !== property.Id);
       this.http.delete(`${this.AppLib.UrlPropertyDetails}/${property.Id}`).subscribe();
     }
   }

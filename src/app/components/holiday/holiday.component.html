@@ -42,21 +42,13 @@
                 <th>Date</th>
                 <th>Action</th>
               </tr>
-              <tr *ngFor="let holiday of holidayService.AppLib.HolidayList">
-                <td hidden>
-                  <mat-form-field class="example-full-width">
-                    <input matInput [(ngModel)]="holiday.Id" >
-               
-                  </mat-form-field>
-                </td><td>
-                  <mat-form-field class="example-full-width">
-                    <input matInput [(ngModel)]="holiday.HolidayName" (input)="holidayService.saveHoliday(holiday)" placeholder="Holiday Name">
-               
-                  </mat-form-field>
+              <tr *ngFor="let holiday of holidayService.AppLib.holidayList">
+                <td>
+                    <input matInput [(ngModel)]="holiday.HolidayName" (focusout)="holidayService.SaveHoliday(holiday)">
                 </td>
                 <td>
                   <mat-form-field>
-                    <input matInput [matDatepicker]="picker" [(ngModel)]="holiday.HolidayDate" (bsValueChange)="holidayService.saveHoliday(holiday)">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="holiday.HolidayDate" (bsValueChange)="holidayService.SaveHoliday(holiday)">
                     <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Click Here Change Date"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
@@ -66,7 +58,7 @@
                 </td>
                 <td>
                   <div class="button-row">
-                    <button matTooltip="Delete" mat-fab color="warn" (click)="holidayService.deleteHoliday(holiday)" [disabled]="holiday.Id==0">
+                    <button matTooltip="Delete" mat-fab color="warn" (click)="holidayService.DeleteHoliday(holiday)" [disabled]="holiday.Id==0">
                       <i class="material-icons">
                         delete
                       </i>

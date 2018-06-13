@@ -7,8 +7,7 @@ import { HolidayService } from '../../services/holiday.service';
 })
 export class HolidayComponent implements OnInit {
 
-  constructor(public holidayService:HolidayService) { 
-  }
+  constructor(public holidayService: HolidayService) {  }
 
 
   ngOnInit() {
