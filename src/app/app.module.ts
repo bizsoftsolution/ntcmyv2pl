@@ -43,11 +43,9 @@ import {
   SignalRConnection,
   SignalRConfiguration
 } from 'ng2-signalr';
-<<<<<<< HEAD
+
 import { PropertyTableComponent } from './property-table/property-table.component';
-=======
 import { PropertyComponent } from './components/property/property.component';
->>>>>>> b1e58e204bc64e1684706b962c7083c138a7c2fc
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
@@ -70,11 +68,8 @@ export function createconfig(): SignalRConfiguration {
     HallDetailsComponent,
     HolidayComponent,
     MemberListComponent,
-<<<<<<< HEAD
-    PropertyTableComponent
-=======
+    PropertyTableComponent,
     PropertyComponent
->>>>>>> b1e58e204bc64e1684706b962c7083c138a7c2fc
   ],
   imports: [
     BrowserModule,
