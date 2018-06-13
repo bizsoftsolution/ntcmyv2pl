@@ -2,50 +2,74 @@ import { Injectable } from '@angular/core';
 import { ApplibService } from '../services/applib.service';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { Property } from '../models/property';
+import { PropertyDetail } from '../models/property';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertyService {
-  propertyList: Property[];
+
   autoInsert: Boolean = true;
-  constructor(public AppLib: ApplibService, public http: Http) {
-    this.getPropertyList();
-  }
+  constructor(public AppLib: ApplibService) {
+this.AppLib.con.listenFor<PropertyDetail>('Save_Property').subscribe(x => {
+  console.log(x);
+  this.saveProperty(x, true);
+});
 
-  getPropertyList() {
-    this.http.get(this.AppLib.UrlPropertyDetails)
-      .pipe(map(x => x.json()))
-      .subscribe(x => {
-        this.propertyList = x;
-        this.propertyList.push(new Property(0, ''));
-      });
-  }
+this.AppLib.con.listenFor<PropertyDetail>('Delete_Property').subscribe(x => {
+  console.log(x);
+  this.deleteProperty(x, true);
+});
 
-  saveProperty(property: Property) {
-    if (property.Id === 0) {
-      if (this.autoInsert === false) { return; }
-      this.autoInsert = false;
-      this.http.post(this.AppLib.UrlPropertyDetails, property)
-        .pipe(map(x => x.json()))
-        .subscribe(x => {
-          property.Id = x.Id;
-          this.propertyList.push(new Property(0, ''));
-          this.autoInsert = true;
-          if (property.PropertyName !== x.PropertyName) { this.saveProperty(property); }
-        });
-    } else {
-      this.http.put(`${this.AppLib.UrlPropertyDetails}/${property.Id}`, property).subscribe();
+  }
+isValid(propertyDetail: PropertyDetail): boolean {
+if (!propertyDetail.PropertyName || propertyDetail.PropertyName === '') {
+return false;
+} else {
+  return true;
+}
+}
+
+saveProperty(propertyDetail: PropertyDetail , isServerCalled: Boolean = false) {
+if (isServerCalled) {
+  let p = this.AppLib.propertyList.find(x => x.Id === propertyDetail.Id);
+if (!p) {
+  p = new PropertyDetail();
+  this.AppLib.propertyList = this.AppLib.propertyList.filter(x => x.Id !== 0);
+  this.AppLib.propertyList.push(p);
+  this.AppLib.propertyList.push(new PropertyDetail());
+}
+p.Id = propertyDetail.Id;
+p.PropertyName = propertyDetail.PropertyName;
+} else {
+  console.log(propertyDetail);
+  if (!this.isValid(propertyDetail)) {
+    return;
+  }
+  this.AppLib.con.invoke('Save_Holiday', propertyDetail).then(x => {
+    if (propertyDetail.Id !== x) {
+      if (x !== 0) {
+        this.AppLib.propertyList.push(new PropertyDetail());
+      }
     }
+    propertyDetail.Id = x;
+  });
+}
+}
 
-  }
-
-  deleteProperty(property: Property) {
-    if (confirm(`Are you delete this ${property.PropertyName}?`)) {
-      this.propertyList = this.propertyList.filter(x => x.Id !== property.Id);
-      this.http.delete(`${this.AppLib.UrlPropertyDetails}/${property.Id}`).subscribe();
+deleteProperty(propertyDetail: PropertyDetail, isServerCalled: Boolean = false) {
+if (isServerCalled) {
+this.AppLib.propertyList = this.AppLib.propertyList.filter(x => x.Id !== propertyDetail.Id);
+} else {
+if ( confirm (`Are you delete this ${propertyDetail.PropertyName}?`)) {
+  this.AppLib.con.invoke('Delete_Property', propertyDetail.Id).then(x => {
+    if (x === true) {
+      this.AppLib.propertyList = this.AppLib.propertyList.filter(y => y.Id !== propertyDetail.Id);
+      alert('deleted');
     }
   }
-
+  );
+}
+}
+}
 }
