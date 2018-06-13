@@ -46,9 +46,11 @@ getHolidayList()
           return false
       }else if(!holiday.HolidayDate){
 
-      }else{
+      }
+      else
+      {
         return true;
-      } 
+      }
   }
 
   saveHoliday(holidayData:HolidayDetail)
