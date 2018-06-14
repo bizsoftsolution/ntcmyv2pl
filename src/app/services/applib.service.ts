@@ -4,6 +4,10 @@ import { SignalR, SignalRConnection } from 'ng2-signalr';
 import { HolidayDetail } from 'src/app/models/holiday';
 import { CompanyDetail } from '../models/CompanyDetail';
 import { PropertyDetail } from '../models/PropertyDetail';
+import { UserType } from '../models/UserType';
+import { UserAccount } from '../models/UserAccount';
+import { LoginUser } from '../models/LoginUserDetail';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,20 +26,25 @@ export class ApplibService {
   }
 
   con: SignalRConnection;
-  loginUser: any;
+  loginUser: UserAccount;
+
+
 
   holidayList: HolidayDetail[];
 propertyList: PropertyDetail[];
 companyList: CompanyDetail[];
+userTypeList: UserType[] = [];
+userAccList: UserAccount[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
     this.con.status.subscribe(x => console.log(x));
     this.con.start().then(x => {
       console.log('Done', x);
+
       this.con.invoke('UserAccount_Login', 'c', 'c', 'c').then(y => {
         console.log('user Login', y);
-        this.loginUser = y;
+        this.loginUser = y ;
       });
       this.con.invoke('Holiday_List').then(y => {
         console.log(y);
@@ -44,16 +53,25 @@ companyList: CompanyDetail[];
       }
       );
       this.con.invoke('List_Property').then(p => {
-console.log(p);
-this.propertyList = p;
-this.propertyList.push(new PropertyDetail());
+      console.log(p);
+      this.propertyList = p;
+      this.propertyList.push(new PropertyDetail());
       } );
-      this.con.invoke('CompanyDetail_List').then( c => {
-      console.log(c);
-      this.companyList = c;
-
-    });
-
+      this.con.invoke('CompanyDetail_List').then(c => {
+        console.log(c);
+        this.companyList = c;
+      });
+       this.con.invoke('UserAccount_List').then(ua => {
+        console.log(ua);
+        this.userAccList = ua;
+      });
+      this.con.invoke('UserType_List').then(ut => {
+        console.log(ut);
+        this.userTypeList = ut;
+        // const i: UserType = new UserType();
+        // i.CompanyId = this.loginUser.UserType.CompanyId;
+        this.userTypeList.push(new UserType);
+      });
     });
   }
 }

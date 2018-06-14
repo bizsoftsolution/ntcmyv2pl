@@ -12,10 +12,10 @@
 </div>
 
 <div>
-<div *ngFor='let d of compService.AppLib.companyList' (click)='Find(d.Id)'>
+<div *ngFor='let d of compService.AppLib.companyList' >
 {{d.CompanyName}}
 
 </div>
-
+<app-user-type></app-user-type>
 </div>
 </div>

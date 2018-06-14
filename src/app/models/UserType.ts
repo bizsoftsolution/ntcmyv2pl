@@ -1,6 +1,9 @@
+import { CompanyDetail } from 'src/app/models/CompanyDetail';
+
 export class UserType {
-  Id: number;
-  TypeOfUser: string;
-  Description: string;
-  CompanyId: string;
+  public Id: number;
+  public TypeOfUser: string;
+  public Description: string;
+  public CompanyId: number;
+
 }

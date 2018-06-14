@@ -62,12 +62,7 @@ this.AppLib.con.listenFor<CompanyDetail>('CompanyDetail_Delete').subscribe(x => 
           return;
         }
         this.AppLib.con.invoke('CompanyDetail_Save', companyData).then(x => {
-          if (companyData.Id !== x) {
-            if (x !== 0) {
-              this.AppLib.companyList.push(new CompanyDetail());
-            }
-          }
-          companyData.Id = x;
+         companyData.Id = x;
         });
       }
     }

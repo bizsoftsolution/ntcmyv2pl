@@ -1,0 +1,19 @@
+<div>
+
+  <div>
+    <input type="text" [(ngModel)]= 'userData.TypeOfUser'>
+    <input type="text" [(ngModel)]= 'userData.Description'>
+
+  </div>
+  <div>
+    <button (click)='Save()' >Save</button>
+    <button (click)='Delete()'>Delete</button>
+  </div>
+
+  <div>
+  <div *ngFor='let d of userType.AppLib.userTypeList' (click) = 'Find(d.Id)'>
+  {{d.TypeOfUser}}
+
+  </div>
+  </div>
+  </div>
