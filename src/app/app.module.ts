@@ -46,6 +46,7 @@ import {
 
 import { PropertyTableComponent } from './property-table/property-table.component';
 import { PropertyComponent } from './components/property/property.component';
+import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
@@ -69,7 +70,8 @@ export function createconfig(): SignalRConfiguration {
     HolidayComponent,
     MemberListComponent,
     PropertyTableComponent,
-    PropertyComponent
+    PropertyComponent,
+    CompanyDetailComponent
   ],
   imports: [
     BrowserModule,

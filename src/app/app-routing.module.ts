@@ -6,6 +6,7 @@ import { HallDetailsComponent } from './components/hall-details/hall-details.com
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { MemberListComponent } from './components/member-list/member-list.component';
 import { PropertyTableComponent } from './property-table/property-table.component';
+import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'hall-details', component: HallDetailsComponent },
   { path: 'room-details', component: RoomDetailsComponent },
   { path: 'member-list', component: MemberListComponent },
-  { path: 'property-table', component: PropertyTableComponent }
+  { path: 'property-table', component: PropertyTableComponent },
+  { path: 'company', component: CompanyDetailComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

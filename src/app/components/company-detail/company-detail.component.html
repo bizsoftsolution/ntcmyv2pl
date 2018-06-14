@@ -1,0 +1,21 @@
+<div>
+
+<div>
+  <input type="text" [(ngModel)]='cData.CompanyName'>
+  <input type="text" [(ngModel)]='cData.UserId'>
+  <input type="text" [(ngModel)]='cData.Password'>
+
+</div>
+<div>
+  <button (click)='Save()' >Save</button>
+  <button (click)='Delete()'>Delete</button>
+</div>
+
+<div>
+<div *ngFor='let d of compService.AppLib.companyList' (click)='Edit(d.Id)'>
+{{d.CompanyName}}
+
+</div>
+
+</div>
+</div>

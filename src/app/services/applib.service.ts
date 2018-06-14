@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { SignalR, SignalRConnection } from 'ng2-signalr';
 import { HolidayDetail } from 'src/app/models/holiday';
 import { PropertyDetail } from '../models/property';
+import { CompanyDetail } from '../models/CompanyDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,7 @@ export class ApplibService {
 
   holidayList: HolidayDetail[];
 propertyList: PropertyDetail[];
+companyList: CompanyDetail[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -42,10 +44,16 @@ propertyList: PropertyDetail[];
       }
       );
       this.con.invoke('Property_List').then(p => {
-console.log(p);
-this.propertyList = p;
-this.propertyList.push(new PropertyDetail());
+      console.log(p);
+      this.propertyList = p;
+      this.propertyList.push(new PropertyDetail());
       } );
+      this.con.invoke('CompanyDetail_List').then( c => {
+      console.log(c);
+      this.companyList = c;
+
+    });
+
     });
   }
 }
