@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApplibService } from '../services/applib.service';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
-import { PropertyDetail } from '../models/property';
+import { PropertyDetail } from '../models/PropertyDetail';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { SignalR, SignalRConnection } from 'ng2-signalr';
 import { HolidayDetail } from 'src/app/models/holiday';
-import { PropertyDetail } from '../models/property';
+import { PropertyDetail } from '../models/PropertyDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,7 @@ propertyList: PropertyDetail[];
         this.holidayList.push(new HolidayDetail());
       }
       );
-      this.con.invoke('Property_List').then(p => {
+      this.con.invoke('List_Property').then(p => {
 console.log(p);
 this.propertyList = p;
 this.propertyList.push(new PropertyDetail());
