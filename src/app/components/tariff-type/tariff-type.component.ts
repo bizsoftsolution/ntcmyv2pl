@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TarifTypeService } from '../tarif-type.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-tariff-type',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TariffTypeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public tarifType: TarifTypeService) { }
 
   ngOnInit() {
   }

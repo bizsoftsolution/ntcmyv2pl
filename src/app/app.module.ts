@@ -55,6 +55,7 @@ import { ComponentsComponent } from './components/components.component';
 import { RoomTypeComponent } from './components/room-type/room-type.component';
 import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
 
+
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';

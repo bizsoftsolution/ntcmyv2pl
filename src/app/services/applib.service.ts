@@ -7,6 +7,8 @@ import { PropertyDetail } from '../models/PropertyDetail';
 import { UserType } from '../models/UserType';
 import { UserAccount } from '../models/UserAccount';
 import { LoginUser } from '../models/LoginUserDetail';
+import { TarifTypeService } from '../components/tarif-type.service';
+import { TariffType } from '../models/TariffType';
 
 
 @Injectable({
@@ -35,6 +37,7 @@ export class ApplibService {
   companyList: CompanyDetail[];
   userTypeList: UserType[] = [];
   userAccList: UserAccount[];
+  tarifTypeList: TariffType[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -54,6 +57,11 @@ export class ApplibService {
         console.log(p);
         this.propertyList = p;
         this.propertyList.push(new PropertyDetail());
+      });
+       this.con.invoke('TariffType_List').then(p => {
+        console.log(p);
+        this.tarifTypeList = p;
+        this.tarifTypeList.push(new TariffType());
       });
   });
 }
