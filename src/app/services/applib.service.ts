@@ -7,6 +7,7 @@ import { PropertyDetail } from '../models/PropertyDetail';
 import { UserType } from '../models/UserType';
 import { UserAccount } from '../models/UserAccount';
 import { LoginUser } from '../models/LoginUserDetail';
+import { RoomType } from '../models/RoomType';
 
 
 @Injectable({
@@ -35,6 +36,7 @@ export class ApplibService {
   companyList: CompanyDetail[];
   userTypeList: UserType[] = [];
   userAccList: UserAccount[];
+  roomTypeList: RoomType[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -54,6 +56,11 @@ export class ApplibService {
         console.log(p);
         this.propertyList = p;
         this.propertyList.push(new PropertyDetail());
+      });
+      this.con.invoke('RoomType_List').then(rt => {
+        console.log(rt);
+        this.roomTypeList = rt;
+        this.roomTypeList.push(new RoomType());
       });
   });
 }
