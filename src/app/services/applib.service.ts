@@ -45,14 +45,6 @@ export class ApplibService {
         console.log(c);
         this.companyList = c;
       });
-  });
-}
-
-  Login(username: string, password: string, compName: string): Boolean {
-    this.con.invoke('UserAccount_Login', compName, username, password).then(y => {
-      console.log('user Login', y);
-      this.loginUser = y ;
-    });
       this.con.invoke('Holiday_List').then(y => {
         console.log(y);
         this.holidayList = y;
@@ -63,23 +55,27 @@ export class ApplibService {
         this.propertyList = p;
         this.propertyList.push(new PropertyDetail());
       });
-      this.con.invoke('List_Property').then(p => {
-      console.log(p);
-      this.propertyList = p;
-      this.propertyList.push(new PropertyDetail());
-      } );
+  });
+}
 
-       this.con.invoke('UserAccount_List').then(ua => {
-        console.log(ua);
-        this.userAccList = ua;
-      });
-      this.con.invoke('UserType_List').then(ut => {
-        console.log(ut);
-        this.userTypeList = ut;
-        // const i: UserType = new UserType();
-        // i.CompanyId = this.loginUser.UserType.CompanyId;
-        this.userTypeList.push(new UserType);
-      }); if (this.loginUser !== undefined) {
+  Login(username: string, password: string, compName: string): Boolean {
+    this.con.invoke('UserAccount_Login', 'c', username, password).then(y => {
+      console.log('user Login', y);
+      this.loginUser = y ;
+    });
+
+      //  this.con.invoke('UserAccount_List').then(ua => {
+      //   console.log(ua);
+      //   this.userAccList = ua;
+      // });
+      // this.con.invoke('UserType_List').then(ut => {
+      //   console.log(ut);
+      //   this.userTypeList = ut;
+      //   // const i: UserType = new UserType();
+      //   // i.CompanyId = this.loginUser.UserType.CompanyId;
+      //   this.userTypeList.push(new UserType);
+      // });
+      if (this.loginUser !== undefined) {
         return false;
       } else {
         return true;
