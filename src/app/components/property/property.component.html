@@ -44,14 +44,13 @@
                           </td>
                           <td>
                             <mat-form-field class="example-full-width" appearance="outline">
-                              <input matInput #propertyValid="ngModel" [(ngModel)]="property.PropertyName" (input)="propertyService.saveProperty(property)" placeholder="Property Name" required>
-                              <div *ngIf="propertyValid.invalid" style="color: red"></div>
+                              <input matInput #propertyValid1="ngModel" [(ngModel)]="property.PropertyName" (input)="propertyService.saveProperty(property)" placeholder="Property Name" required>
+                              <div *ngIf="propertyValid1.invalid" style="color: red"></div>
                             </mat-form-field>
                           </td>
                           <td>
                             <mat-slide-toggle
-                              class="example-margin"
-                              >
+                              class="example-margin">
                             </mat-slide-toggle>
                           </td>
                           <td>
