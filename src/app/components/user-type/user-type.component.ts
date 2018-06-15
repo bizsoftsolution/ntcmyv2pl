@@ -27,5 +27,7 @@ this.userType.DeleteUserType(this.userData);
   Find(Id: number) {
     this.userData = this.userType.AppLib.userTypeList.find(x => x.Id === Id);
   }
-
+Clear() {
+ this.userData = new UserType();
+}
 }

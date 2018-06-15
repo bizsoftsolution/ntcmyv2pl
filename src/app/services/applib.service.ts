@@ -41,11 +41,18 @@ userAccList: UserAccount[];
     this.con.status.subscribe(x => console.log(x));
     this.con.start().then(x => {
       console.log('Done', x);
-
-      this.con.invoke('UserAccount_Login', 'c', 'c', 'c').then(y => {
-        console.log('user Login', y);
-        this.loginUser = y ;
+      this.con.invoke('CompanyDetail_List').then(c => {
+        console.log(c);
+        this.companyList = c;
       });
+  });
+}
+
+  Login(username: string, password: string, compName: string): Boolean {
+    this.con.invoke('UserAccount_Login', compName, username, password).then(y => {
+      console.log('user Login', y);
+      this.loginUser = y ;
+    });
       this.con.invoke('Holiday_List').then(y => {
         console.log(y);
         this.holidayList = y;
@@ -57,10 +64,7 @@ userAccList: UserAccount[];
       this.propertyList = p;
       this.propertyList.push(new PropertyDetail());
       } );
-      this.con.invoke('CompanyDetail_List').then(c => {
-        console.log(c);
-        this.companyList = c;
-      });
+
        this.con.invoke('UserAccount_List').then(ua => {
         console.log(ua);
         this.userAccList = ua;
@@ -71,7 +75,11 @@ userAccList: UserAccount[];
         // const i: UserType = new UserType();
         // i.CompanyId = this.loginUser.UserType.CompanyId;
         this.userTypeList.push(new UserType);
-      });
-    });
-  }
+      }); if (this.loginUser !== undefined) {
+        return false;
+      } else {
+        return true;
+      }
+      }
+
 }

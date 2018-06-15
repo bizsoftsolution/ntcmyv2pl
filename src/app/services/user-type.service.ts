@@ -32,15 +32,14 @@ export class UserTypeService {
       let d = this.AppLib.userTypeList.find(x => x.Id === user.Id);
       if (!d) {
         d = new UserType();
-        this.AppLib.userTypeList = this.AppLib.userTypeList.filter(
-          x => (x.Id !== 0 || x.Id !== undefined)
-        );
-        d.Id = user.Id;
-        d.TypeOfUser = user.TypeOfUser;
-        d.CompanyId = user.CompanyId;
-        d.Description = user.TypeOfUser;
-        this.AppLib.userTypeList.push(d);
-        this.AppLib.userTypeList.push(new UserType());
+        // this.AppLib.userTypeList = this.AppLib.userTypeList.filter(
+        //   x => (x.Id !== 0)
+        // );
+        // d.Id = user.Id;
+        // d.TypeOfUser = user.TypeOfUser;
+        // d.CompanyId = user.CompanyId;
+        // d.Description = user.TypeOfUser;
+        this.AppLib.userTypeList.push(user);
       }
     } else {
       console.log('save', user);
@@ -53,9 +52,9 @@ export class UserTypeService {
       userData.TypeOfUser = user.TypeOfUser;
 
         this.AppLib.con.invoke('userType_Save', userData).then(x => {
-        if (userData.Id !== x) {
+        if (user.Id !== x) {
           if (x !== 0) {
-             this.AppLib.userTypeList.push(new UserType());
+             this.AppLib.userTypeList.push(user);
           }
         }
         user.Id = x;
