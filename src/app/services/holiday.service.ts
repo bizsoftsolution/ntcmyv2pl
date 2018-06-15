@@ -6,13 +6,10 @@ import { HolidayDetail } from '../models/holiday';
 import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Observable } from 'rxjs';
 
-import { SignalR, SignalRConnection } from 'ng2-signalr';
-
 @Injectable({
   providedIn: 'root'
 })
 export class HolidayService {
-  autoInsert: Boolean = true;
   constructor(public AppLib: ApplibService) {
     // Save
     this.AppLib.con.listenFor<HolidayDetail>('Save_Holiday').subscribe(x => {
