@@ -22,7 +22,8 @@ import {
   MatExpansionModule,
   MatProgressBarModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSlideToggleModule
 } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -97,6 +98,7 @@ export function createconfig(): SignalRConfiguration {
     MatProgressBarModule,
     MatDatepickerModule,
     MatToolbarModule,
+    MatSlideToggleModule,
     SignalRModule.forRoot(createconfig),
     BsDatepickerModule.forRoot()
   ],

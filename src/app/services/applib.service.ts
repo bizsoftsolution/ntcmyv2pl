@@ -24,7 +24,11 @@ export class ApplibService {
   loginUser: any;
 
   holidayList: HolidayDetail[];
-propertyList: PropertyDetail[];
+  propertyList: PropertyDetail[] = [
+    {Id:123, PropertyName:'test', isActive:true},
+    {Id:124, PropertyName:'test1', isActive:true},
+    {Id:125, PropertyName:'test2', isActive:true}
+  ];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -39,13 +43,12 @@ propertyList: PropertyDetail[];
         console.log(y);
         this.holidayList = y;
         this.holidayList.push(new HolidayDetail());
-      }
-      );
-      this.con.invoke('List_Property').then(p => {
-console.log(p);
-this.propertyList = p;
-this.propertyList.push(new PropertyDetail());
-      } );
+      });
+      // this.con.invoke('List_Property').then(p => {
+      //   console.log(p);
+      //   this.propertyList = p;
+      //   this.propertyList.push(new PropertyDetail());
+      // });
     });
   }
 }

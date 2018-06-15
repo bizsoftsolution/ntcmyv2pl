@@ -9,7 +9,7 @@ import { PropertyTableComponent } from './property-table/property-table.componen
 import { PropertyComponent } from './components/property/property.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'holiday', component: HolidayComponent },
   { path: 'hall-details', component: HallDetailsComponent },

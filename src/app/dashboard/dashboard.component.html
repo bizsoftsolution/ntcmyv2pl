@@ -1,47 +1,85 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
-    <li class="breadcrumb-item"><a href="#">Main</a></li>
+    <li class="breadcrumb-item">
+      <a href="#">Main</a>
+    </li>
     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
   </ol>
 </nav>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-12">
-        <h1 class="mat-h1">Dashboard</h1>
+      <h1 class="mat-h1">Dashboard</h1>
     </div>
   </div>
   <div class="row-fluid">
-    <div class="col-md-12">
-      <mat-card >
-        <mat-card-header>
-          <mat-card-title>Shiba Inu
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                  <button mat-menu-item>Expand</button>
-                  <button mat-menu-item>Remove</button>
-                </mat-menu>
-          </mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-            very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-
-
-
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-warning card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">weekend</i>
+          </div>
+          <p class="card-category">Bookings</p>
+          <h3 class="card-title">184</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons text-danger">warning</i>
+            <a>Get More Space</a>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-rose card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">equalizer</i>
+          </div>
+          <p class="card-category">Website Visits</p>
+          <h3 class="card-title">75.521</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">local_offer</i> Tracked from Google Analytics </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-success card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">store</i>
+          </div>
+          <p class="card-category">Revenue</p>
+          <h3 class="card-title">$34,245</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">date_range</i> Last 24 Hours </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-header card-header-info card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons"> list_alt </i>
+          </div>
+          <p class="card-category">Followers</p>
+          <h3 class="card-title">+245</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
+
+
 </div>
 <br>
 <br>
