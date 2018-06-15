@@ -31,21 +31,10 @@ export class ApplibService {
 
 
   holidayList: HolidayDetail[];
-  propertyList: PropertyDetail[] = [
-<<<<<<< HEAD
-    {Id: 123, PropertyName: 'test', isActive: true},
-    {Id: 124, PropertyName: 'test1', isActive: true},
-    {Id: 125, PropertyName: 'test2', isActive: true}
-=======
-    {Id: 123, PropertyName: 'test', OrderNo: 1, IsActive: true},
-    {Id: 124, PropertyName: 'test1', OrderNo: 2, IsActive: true},
-    {Id: 125, PropertyName: 'test2', OrderNo: 3, IsActive: true}
->>>>>>> 363df8ef7272f99c0d4781e91d12f656e23703fa
-  ];
-// propertyList: PropertyDetail[];
-companyList: CompanyDetail[];
-userTypeList: UserType[] = [];
-userAccList: UserAccount[];
+  propertyList: PropertyDetail[];
+  companyList: CompanyDetail[];
+  userTypeList: UserType[] = [];
+  userAccList: UserAccount[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -69,13 +58,11 @@ userAccList: UserAccount[];
         this.holidayList = y;
         this.holidayList.push(new HolidayDetail());
       });
-      // this.con.invoke('List_Property').then(p => {
-      //   console.log(p);
-      //   this.propertyList = p;
-      //   this.propertyList.push(new PropertyDetail());
-      // });
-      // }
-      // );
+      this.con.invoke('List_Property').then(p => {
+        console.log(p);
+        this.propertyList = p;
+        this.propertyList.push(new PropertyDetail());
+      });
       this.con.invoke('List_Property').then(p => {
       console.log(p);
       this.propertyList = p;
