@@ -32,9 +32,9 @@ export class ApplibService {
 
   holidayList: HolidayDetail[];
   propertyList: PropertyDetail[] = [
-    {Id:123, PropertyName:'test', isActive:true},
-    {Id:124, PropertyName:'test1', isActive:true},
-    {Id:125, PropertyName:'test2', isActive:true}
+    {Id: 123, PropertyName: 'test', OrderNo: 1, IsActive: true},
+    {Id: 124, PropertyName: 'test1', OrderNo: 2, IsActive: true},
+    {Id: 125, PropertyName: 'test2', OrderNo: 3, IsActive: true}
   ];
 // propertyList: PropertyDetail[];
 companyList: CompanyDetail[];
