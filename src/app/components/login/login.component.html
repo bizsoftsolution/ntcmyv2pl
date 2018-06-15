@@ -1,0 +1,12 @@
+<div>
+<div>
+  <select [(ngModel)] = 'compName' *ngFor='let d of AppLib.companyList'>
+    <option>{{d.CompanyName}}</option>
+  </select>
+  User Name<input type="text" [(ngModel)]= 'username'>
+  Password <input type="text" [(ngModel)]= 'password'>
+</div>
+<div>
+  <button (click)= 'Login()'>Login</button>
+</div>
+</div>

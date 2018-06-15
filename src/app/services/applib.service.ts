@@ -32,9 +32,15 @@ export class ApplibService {
 
   holidayList: HolidayDetail[];
   propertyList: PropertyDetail[] = [
+<<<<<<< HEAD
     {Id: 123, PropertyName: 'test', isActive: true},
     {Id: 124, PropertyName: 'test1', isActive: true},
     {Id: 125, PropertyName: 'test2', isActive: true}
+=======
+    {Id: 123, PropertyName: 'test', OrderNo: 1, IsActive: true},
+    {Id: 124, PropertyName: 'test1', OrderNo: 2, IsActive: true},
+    {Id: 125, PropertyName: 'test2', OrderNo: 3, IsActive: true}
+>>>>>>> 363df8ef7272f99c0d4781e91d12f656e23703fa
   ];
 // propertyList: PropertyDetail[];
 companyList: CompanyDetail[];
@@ -46,11 +52,18 @@ userAccList: UserAccount[];
     this.con.status.subscribe(x => console.log(x));
     this.con.start().then(x => {
       console.log('Done', x);
-
-      this.con.invoke('UserAccount_Login', 'c', 'c', 'c').then(y => {
-        console.log('user Login', y);
-        this.loginUser = y ;
+      this.con.invoke('CompanyDetail_List').then(c => {
+        console.log(c);
+        this.companyList = c;
       });
+  });
+}
+
+  Login(username: string, password: string, compName: string): Boolean {
+    this.con.invoke('UserAccount_Login', compName, username, password).then(y => {
+      console.log('user Login', y);
+      this.loginUser = y ;
+    });
       this.con.invoke('Holiday_List').then(y => {
         console.log(y);
         this.holidayList = y;
@@ -68,10 +81,7 @@ userAccList: UserAccount[];
       this.propertyList = p;
       this.propertyList.push(new PropertyDetail());
       } );
-      this.con.invoke('CompanyDetail_List').then(c => {
-        console.log(c);
-        this.companyList = c;
-      });
+
        this.con.invoke('UserAccount_List').then(ua => {
         console.log(ua);
         this.userAccList = ua;
@@ -82,7 +92,11 @@ userAccList: UserAccount[];
         // const i: UserType = new UserType();
         // i.CompanyId = this.loginUser.UserType.CompanyId;
         this.userTypeList.push(new UserType);
-      });
-    });
-  }
+      }); if (this.loginUser !== undefined) {
+        return false;
+      } else {
+        return true;
+      }
+      }
+
 }

@@ -50,6 +50,7 @@ import { PropertyComponent } from './components/property/property.component';
 import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
 import { UserTypeComponent } from './components/user-type/user-type.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
+import { LoginComponent } from './components/login/login.component';
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
@@ -76,7 +77,8 @@ export function createconfig(): SignalRConfiguration {
     PropertyComponent,
     CompanyDetailComponent,
     UserTypeComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,13 @@ import { MemberListComponent } from './components/member-list/member-list.compon
 import { PropertyTableComponent } from './property-table/property-table.component';
 import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
 import { PropertyComponent } from './components/property/property.component';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
+  { path: ' ', redirectTo: '', pathMatch: 'full' },
+  {path: 'appComp' , component: AppComponent},
+  {path: 'menu' , component: NavbarComponent},
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'holiday', component: HolidayComponent },
