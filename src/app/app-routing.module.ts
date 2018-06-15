@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: ' ', redirectTo: '', pathMatch: 'full' },
   {path: 'appComp' , component: AppComponent},
   {path: 'menu' , component: NavbarComponent},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'holiday', component: HolidayComponent },
   { path: 'hall-details', component: HallDetailsComponent },
