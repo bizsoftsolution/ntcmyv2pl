@@ -37,7 +37,10 @@
                         </tr>
                         <tr *ngFor="let property of propertyService.AppLib.propertyList" >
                           <td>
-                            <p>{{property.Id}}</p>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                              <input matInput #propertyValid="ngModel" [(ngModel)]="property.OrderNo" (input)="propertyService.saveProperty(property)" placeholder="Order No" required>
+                              <div *ngIf="propertyValid.invalid" style="color: red"></div>
+                            </mat-form-field>
                           </td>
                           <td>
                             <mat-form-field class="example-full-width" appearance="outline">
