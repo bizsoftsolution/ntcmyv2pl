@@ -2,6 +2,7 @@
 
 @import url("node_modules/ngx-bootstrap/datepicker/bs-datepicker.css");
 
+@import url("src/assets/custom.css");
 
 body { margin: 0; }
 
