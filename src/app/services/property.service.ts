@@ -45,7 +45,7 @@ if (isServerCalled) {
     if (!this.isValid(propertyDetail)) {
       return;
     }
-    this.AppLib.con.invoke('Save_Holiday', propertyDetail).then(x => {
+    this.AppLib.con.invoke('Save_Property', propertyDetail).then(x => {
       if (propertyDetail.Id !== x) {
         if (x !== 0) {
           this.AppLib.propertyList.push(new PropertyDetail());
