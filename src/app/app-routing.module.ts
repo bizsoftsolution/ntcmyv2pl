@@ -10,6 +10,8 @@ import { CompanyDetailComponent } from './Components/company-detail/company-deta
 import { PropertyComponent } from './components/property/property.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RoomTypeComponent } from './components/room-type/room-type.component';
+import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
 
 const routes: Routes = [
   { path: ' ', redirectTo: '', pathMatch: 'full' },
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'member-list', component: MemberListComponent },
   { path: 'property-table', component: PropertyTableComponent },
   { path: 'company', component: CompanyDetailComponent },
-  { path: 'property', component: PropertyComponent }
+  { path: 'property', component: PropertyComponent },
+  { path: 'room-type', component: RoomTypeComponent },
+  { path: 'tariff-type', component: TariffTypeComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

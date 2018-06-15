@@ -51,6 +51,9 @@ import { CompanyDetailComponent } from './Components/company-detail/company-deta
 import { UserTypeComponent } from './components/user-type/user-type.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { LoginComponent } from './components/login/login.component';
+import { ComponentsComponent } from './components/components.component';
+import { RoomTypeComponent } from './components/room-type/room-type.component';
+import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
@@ -78,7 +81,10 @@ export function createconfig(): SignalRConfiguration {
     CompanyDetailComponent,
     UserTypeComponent,
     UserAccountComponent,
-    LoginComponent
+    LoginComponent,
+    ComponentsComponent,
+    RoomTypeComponent,
+    TariffTypeComponent
   ],
   imports: [
     BrowserModule,
