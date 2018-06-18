@@ -1,4 +1,8 @@
 .mat-form-field{
 display: inline!important;
-line-height: 2.4!important;
+line-height: 0!important;
+}
+.form-control
+{
+  height:16px;
 }

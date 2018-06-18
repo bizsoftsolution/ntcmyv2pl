@@ -44,7 +44,7 @@
               </tr>
               <tr *ngFor="let holiday of holidayService.AppLib.holidayList">
                 <td>
-                  <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline" >
                     <input  #model="ngModel" matInput [(ngModel)]="holiday.HolidayName" (focusout)="holidayService.SaveHoliday(holiday)" required>
                     <div *ngIf="model.invalid" style="color: red"></div>
                   </mat-form-field>
@@ -62,7 +62,7 @@
                 </td>
                 <td>
                   <div class="button-row">
-                    <button matTooltip="Delete" mat-fab color="warn" (click)="holidayService.DeleteHoliday(holiday)" [disabled]="holiday.Id==0">
+                    <button matTooltip="Delete" mat-mini-fab color="warn" (click)="holidayService.DeleteHoliday(holiday)" [disabled]="holiday.Id==0">
                       <i class="material-icons">
                         delete
                       </i>
