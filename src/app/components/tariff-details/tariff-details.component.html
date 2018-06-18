@@ -43,7 +43,7 @@
                       <tr *ngFor="let tariffDetail of tariffDetailService.AppLib.tariffDetailList" >
                         <td>
                           <mat-form-field>
-                              <mat-select placeholder="Property Name" (change)="tariffDetailService.saveTariffDetail(tariffDetail)">
+                              <mat-select placeholder="Property Name" [(ngModel)]='tariffDetail.PropertyId'>
                                 <mat-option *ngFor="let property of propertyService.AppLib.propertyList" [value]="property.Id">
                                   {{ property.PropertyName}}
                                 </mat-option>
@@ -52,7 +52,7 @@
                         </td>
                         <td>
                             <mat-form-field>
-                                <mat-select placeholder="Tariff Type" (change)="tariffDetailService.saveTariffDetail(tariffDetail)">
+                                <mat-select placeholder="Tariff Type" [(ngModel)]='tariffDetail.TariffId'>
                                   <mat-option *ngFor="let tarifftype of tariffTypeService.AppLib.tarifTypeList" [value]="tarifftype.Id">
                                     {{ tarifftype.Type}}
                                   </mat-option>
@@ -61,9 +61,9 @@
                         </td>
                         <td>
                             <mat-form-field>
-                                <mat-select placeholder="Room Type" (change)="tariffDetailService.saveTariffDetail(tariffDetail)">
+                                <mat-select placeholder="Room Type" [(ngModel)]='tariffDetail.RoomTypeId'>
                                   <mat-option *ngFor="let roomtype of roomTypeService.applib.roomTypeList" [value]="roomtype.Id">
-                                    {{ roomtype.Type}}
+                                    {{roomtype.Type}}
                                   </mat-option>
                                 </mat-select>
                             </mat-form-field>

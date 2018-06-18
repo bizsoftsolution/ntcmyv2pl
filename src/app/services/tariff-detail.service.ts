@@ -19,18 +19,20 @@ export class TariffDetailService {
     });
   }
   isValid(tariffDetail: TariffDetail): boolean {
-    if (!tariffDetail.PropertyId || tariffDetail.PropertyId === null) {
+    if (!tariffDetail.RateOfWeekDayMember || tariffDetail.RateOfWeekDayMember == null) {
       return false;
-    } else if (!tariffDetail.TariffId || tariffDetail.TariffId == null) {
+    } else if (!tariffDetail.RateOfWeekDayNonMember || tariffDetail.RateOfWeekDayNonMember == null) {
       return false;
-    } else if (!tariffDetail.RoomTypeId || tariffDetail.RoomTypeId == null) {
+    } else if (!tariffDetail.RateOfWeekEndMember || tariffDetail.RateOfWeekEndMember == null) {
+      return false;
+    } else if (!tariffDetail.RateOfWeekEndNonMember || tariffDetail.RateOfWeekEndNonMember == null) {
       return false;
     } else {
       return true;
     }
   }
 
-  public saveTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false): void {
+  public saveTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
       let d = this.AppLib.tariffDetailList.find(x => x.Id === tariffDetail.Id);
       if (!d) {
