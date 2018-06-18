@@ -30,6 +30,7 @@ export class TarifTypeService {
 
   SaveTariff(TData: TariffType, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
+      console.log('function called');
       let d = this.AppLib.tarifTypeList.find(x => x.Id === TData.Id);
       if (!d) {
         d = new TariffType();
@@ -56,7 +57,7 @@ export class TarifTypeService {
 
   DeleteTariff(TData: TariffType, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
-      this.AppLib.holidayList = this.AppLib.holidayList.filter(
+      this.AppLib.tarifTypeList = this.AppLib.tarifTypeList.filter(
         x => x.Id !== TData.Id
       );
     } else {
