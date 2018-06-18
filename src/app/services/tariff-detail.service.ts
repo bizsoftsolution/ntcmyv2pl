@@ -10,7 +10,7 @@ export class TariffDetailService {
     // Save
     this.AppLib.con.listenFor<TariffDetail>('Save_Tarrif_Detail').subscribe(x => {
       console.log(x);
-      this.SaveTariffDetail(x, true);
+      this.saveTariffDetail(x, true);
     });
     // Delete
     this.AppLib.con.listenFor<TariffDetail>('Delete_Tariff_Detail').subscribe(x => {
@@ -30,7 +30,7 @@ export class TariffDetailService {
     }
   }
 
-  SaveTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false) {
+  public saveTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false): void {
     if (IsServerCalled) {
       let d = this.AppLib.tariffDetailList.find(x => x.Id === tariffDetail.Id);
       if (!d) {

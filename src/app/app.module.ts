@@ -23,7 +23,8 @@ import {
   MatProgressBarModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatSelectModule
 } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -53,7 +54,7 @@ import { UserAccountComponent } from './components/user-account/user-account.com
 import { LoginComponent } from './components/login/login.component';
 import { RoomTypeComponent } from './components/room-type/room-type.component';
 import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
-import { Navbar2Component } from './navbar2/navbar2.component';
+import { TariffDetailsComponent } from './components/tariff-details/tariff-details.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -85,7 +86,7 @@ export function createconfig(): SignalRConfiguration {
     LoginComponent,
     RoomTypeComponent,
     TariffTypeComponent,
-    Navbar2Component
+    TariffDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -114,6 +115,7 @@ export function createconfig(): SignalRConfiguration {
     MatDatepickerModule,
     MatToolbarModule,
     MatSlideToggleModule,
+    MatSelectModule,
     SignalRModule.forRoot(createconfig),
     BsDatepickerModule.forRoot()
   ],

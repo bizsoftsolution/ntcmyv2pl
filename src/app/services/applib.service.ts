@@ -61,9 +61,9 @@ export class ApplibService {
         this.propertyList = p;
         this.propertyList.push(new PropertyDetail());
       });
-       this.con.invoke('TariffType_List').then(p => {
-        console.log(p);
-        this.tarifTypeList = p;
+       this.con.invoke('TariffType_List').then(tl => {
+        console.log(tl);
+        this.tarifTypeList = tl;
         this.tarifTypeList.push(new TariffType());
        });
       this.con.invoke('RoomType_List').then(rt => {
