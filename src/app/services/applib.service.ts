@@ -10,6 +10,7 @@ import { LoginUser } from '../models/LoginUserDetail';
 import { TarifTypeService } from '../components/tarif-type.service';
 import { TariffType } from '../models/TariffType';
 import { RoomType } from '../models/RoomType';
+import { TariffDetail } from '../models/TariffDetail';
 
 
 @Injectable({
@@ -40,6 +41,7 @@ export class ApplibService {
   userAccList: UserAccount[];
   tarifTypeList: TariffType[];
   roomTypeList: RoomType[];
+  tariffDetailList: TariffDetail[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -70,6 +72,12 @@ export class ApplibService {
         this.roomTypeList = rt;
         this.roomTypeList.push(new RoomType());
       });
+        this.con.invoke('TarrifList').then(t => {
+        console.log(t);
+        this.tariffDetailList = t;
+        this.tariffDetailList.push(new TariffDetail());
+        });
+
   });
 }
 
