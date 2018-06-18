@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomTypeService } from '../../services/room-type.service';
 
 @Component({
   selector: 'app-room-type',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomTypeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public roomTypeService: RoomTypeService) { }
 
   ngOnInit() {
   }

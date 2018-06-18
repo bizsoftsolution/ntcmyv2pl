@@ -33,15 +33,15 @@
                         <th>Room Type</th>
                         <th>Action</th>
                       </tr>
-                      <tr *ngFor="let roomtype of roomTypeService.AppLib.roomTypeList" >
+                      <tr *ngFor="let roomtype of roomTypeService.applib.roomTypeList" >
                         <td>
                           <mat-form-field class="example-full-width" appearance="outline">
-                            <input matInput #roomtypeValid="ngModel" [(ngModel)]="roomtype.Type" (input)="roomtypeService.saveRoomType(roomtype)" placeholder="Room Type" required>
+                            <input matInput #roomtypeValid="ngModel" [(ngModel)]="roomtype.Type" (input)="roomTypeService.saveRoomType(roomtype)" placeholder="Room Type" required>
                             <div *ngIf="roomtypeValid.invalid" style="color: red"></div>
                           </mat-form-field>
                         </td>
                         <td>
-                            <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="roomtypeService.deleteRoomType(roomtype)" [disabled]="roomtype.Id==0">
+                            <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="roomTypeService.deleteRoomType(roomtype)" [disabled]="roomtype.Id==0">
                                 <mat-icon>delete</mat-icon>
                             </button>
                         </td>
