@@ -7,7 +7,6 @@ import { PropertyDetail } from '../models/PropertyDetail';
 import { UserType } from '../models/UserType';
 import { UserAccount } from '../models/UserAccount';
 import { LoginUser } from '../models/LoginUserDetail';
-import { TarifTypeService } from '../components/tarif-type.service';
 import { TariffType } from '../models/TariffType';
 import { RoomType } from '../models/RoomType';
 import { TariffDetail } from '../models/TariffDetail';

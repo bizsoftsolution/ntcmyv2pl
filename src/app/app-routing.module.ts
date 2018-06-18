@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RoomTypeComponent } from './components/room-type/room-type.component';
 import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 const routes: Routes = [
   {path: 'appComp' , component: AppComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'property', component: PropertyComponent },
   { path: 'room-type', component: RoomTypeComponent },
   { path: 'tariff-type', component: TariffTypeComponent },
+  { path: 'navbar2', component: Navbar2Component }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

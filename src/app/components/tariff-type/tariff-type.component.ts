@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TarifTypeService } from '../tarif-type.service';
 import { Pipe, PipeTransform } from '@angular/core';
+import { TarifTypeService } from '../../services/tarif-type.service';
 
 @Component({
   selector: 'app-tariff-type',

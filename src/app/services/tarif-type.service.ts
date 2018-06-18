@@ -12,12 +12,12 @@ export class TarifTypeService {
     // Save
     this.AppLib.con.listenFor<TariffType>('TariffType_Save').subscribe(x => {
       console.log(x);
-      this.SaveTarif(x, true);
+      this.SaveTariff(x, true);
     });
     // Delete
     this.AppLib.con.listenFor<TariffType>('TariffType_Delete').subscribe(x => {
       console.log(x);
-      this.DeleteTarrif(x, true);
+      this.DeleteTariff(x, true);
     });
   }
   isValid(ttype: TariffType): boolean {
@@ -28,7 +28,7 @@ export class TarifTypeService {
     }
   }
 
-  SaveTarif(TData: TariffType, IsServerCalled: Boolean = false) {
+  SaveTariff(TData: TariffType, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
       let d = this.AppLib.tarifTypeList.find(x => x.Id === TData.Id);
       if (!d) {
@@ -54,7 +54,7 @@ export class TarifTypeService {
     }
   }
 
-  DeleteTarrif(TData: TariffType, IsServerCalled: Boolean = false) {
+  DeleteTariff(TData: TariffType, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
       this.AppLib.holidayList = this.AppLib.holidayList.filter(
         x => x.Id !== TData.Id

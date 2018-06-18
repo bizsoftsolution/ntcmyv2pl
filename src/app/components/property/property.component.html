@@ -50,7 +50,7 @@
                           </td>
                           <td>
                             <mat-slide-toggle
-                              class="example-margin">
+                              class="example-margin" [(ngModel)]="property.IsActive" [disabled]="property.IsActive == false" (input)="propertyService.activeProperty(property)">
                             </mat-slide-toggle>
                           </td>
                           <td>
