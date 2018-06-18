@@ -10,6 +10,7 @@ import { PropertyDetail } from '../models/PropertyDetail';
 export class PropertyService {
 
   autoInsert: Boolean = true;
+
   constructor(public AppLib: ApplibService) {
     this.AppLib.con.listenFor<PropertyDetail>('Save_Property').subscribe(x => {
       console.log(x);
@@ -23,6 +24,9 @@ export class PropertyService {
   }
   isValid(propertyDetail: PropertyDetail): boolean {
     if (!propertyDetail.PropertyName || propertyDetail.PropertyName === '') {
+      return false;
+    } else if (!propertyDetail.OrderNo || propertyDetail.OrderNo === null ||
+                 propertyDetail.OrderNo === 0) {
       return false;
     } else {
       return true;
@@ -40,11 +44,15 @@ if (isServerCalled) {
   }
   p.Id = propertyDetail.Id;
   p.PropertyName = propertyDetail.PropertyName;
+  p.IsActive = propertyDetail.IsActive;
+  p.OrderNo = propertyDetail.OrderNo;
+
   } else {
     console.log(propertyDetail);
     if (!this.isValid(propertyDetail)) {
       return;
     }
+
     this.AppLib.con.invoke('Save_Property', propertyDetail).then(x => {
       if (propertyDetail.Id !== x) {
         if (x !== 0) {
@@ -55,6 +63,8 @@ if (isServerCalled) {
     });
   }
 }
+
+
 
 deleteProperty(propertyDetail: PropertyDetail, isServerCalled: Boolean = false) {
     if (isServerCalled) {
