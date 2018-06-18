@@ -44,7 +44,7 @@
               </tr>
               <tr *ngFor="let holiday of holidayService.AppLib.holidayList">
                 <td>
-                  <mat-form-field>
+                  <mat-form-field appearance="outline">
                     <input  #model="ngModel" matInput [(ngModel)]="holiday.HolidayName" (focusout)="holidayService.SaveHoliday(holiday)" required>
                     <div *ngIf="model.invalid" style="color: red"></div>
                   </mat-form-field>
@@ -55,7 +55,7 @@
                     <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Click Here Change Date"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field-->
-                  <mat-form-field>
+                  <mat-form-field appearance="outline">
                     <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="holiday.HolidayDate" (bsValueChange)="holidayService.SaveHoliday(holiday)"
                     class="form-control">
                   </mat-form-field>

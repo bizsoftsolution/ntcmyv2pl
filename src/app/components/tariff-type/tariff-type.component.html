@@ -43,7 +43,7 @@
             </tr>
             <tr *ngFor = "let d of tarifType.AppLib.tarifTypeList">
               <td>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                   <input  #model="ngModel" matInput [(ngModel)]="d.Type" (focusout)="tarifType.SaveTariff(d)" required>
                   <div *ngIf="model.invalid" style="color: red"></div>
                 </mat-form-field>
