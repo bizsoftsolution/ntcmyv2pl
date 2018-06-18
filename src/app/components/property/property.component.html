@@ -30,17 +30,17 @@
                   <div class="table-responsive">
                       <table class="table table-striped table-bordered">
                         <tr>
-                          <th>No</th>
-                          <th>Property</th>
-                          <th>isActive</th>
-                          <th>Action</th>
+                          <th style="width: 100px!important;">Order No</th>
+                          <th >Property</th>
+                          <th style="width: 100px!important;">isActive</th>
+                          <th style="width: 100px!important;">Action</th>
                         </tr>
                         <tr *ngFor="let property of propertyService.AppLib.propertyList" >
                           <td>
-                            <mat-form-field class="example-full-width" appearance="outline">
+                              <mat-form-field class="example-full-width" appearance="outline">
                               <input matInput #propertyValid="ngModel" [(ngModel)]="property.OrderNo" (input)="propertyService.saveProperty(property)" placeholder="Order No" required>
                               <div *ngIf="propertyValid.invalid" style="color: red"></div>
-                            </mat-form-field>
+                              </mat-form-field>
                           </td>
                           <td>
                             <mat-form-field class="example-full-width" appearance="outline">

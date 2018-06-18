@@ -11,17 +11,7 @@ import { RoomTypeService } from '../../services/room-type.service';
 })
 export class TariffDetailsComponent implements OnInit {
 
-  checked: Number = 1;
-  disabled = false;
-    onChange(value) {
-    if (value.checked === true) {
-      this.checked = 1;
-      console.log(1);
-    } else {
-      this.checked = 0;
-      console.log(0);
-    }
-  }
+
 
   constructor(
     public tariffDetailService: TariffDetailService,
