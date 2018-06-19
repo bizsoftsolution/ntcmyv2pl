@@ -50,15 +50,7 @@
                               </mat-select>
                             </mat-form-field>
                         </td>
-                        <td>
-                            <mat-form-field>
-                                <mat-select placeholder="Tariff Type" [(ngModel)]='tariffDetail.TariffId'>
-                                  <mat-option *ngFor="let tarifftype of tariffTypeService.AppLib.tarifTypeList" [value]="tarifftype.Id">
-                                    {{ tarifftype.Type}}
-                                  </mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </td>
+
                         <td>
                             <mat-form-field>
                                 <mat-select placeholder="Room Type" [(ngModel)]='tariffDetail.RoomTypeId'>
