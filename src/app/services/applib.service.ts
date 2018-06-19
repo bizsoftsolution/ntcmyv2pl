@@ -10,6 +10,10 @@ import { LoginUser } from '../models/LoginUserDetail';
 import { TariffType } from '../models/TariffType';
 import { RoomType } from '../models/RoomType';
 import { TariffDetail } from '../models/TariffDetail';
+import { HallType } from '../models/HallType';
+import { Auditorium } from '../models/Auditorium';
+import { HallSlot } from '../models/HallSlot';
+import { PromoCodeDetail } from '../models/PromoCodeDetail';
 
 
 @Injectable({
@@ -41,6 +45,10 @@ export class ApplibService {
   tarifTypeList: TariffType[];
   roomTypeList: RoomType[];
   tariffDetailList: TariffDetail[];
+  hallTypeList: HallType[];
+  auditoriumList: Auditorium[];
+  hallSlotList: HallSlot[];
+  promoCodeDetailList: PromoCodeDetail[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -75,6 +83,26 @@ export class ApplibService {
         console.log(t);
         this.tariffDetailList = t;
         this.tariffDetailList.push(new TariffDetail());
+        });
+        this.con.invoke('Auditorium_List').then(a => {
+          console.log(a);
+          this.auditoriumList = a;
+          this.auditoriumList.push(new Auditorium());
+        });
+        this.con.invoke('HallSlot_List').then(hs => {
+          console.log(hs);
+          this.hallSlotList = hs;
+          this.hallSlotList.push(new HallSlot());
+        });
+        this.con.invoke('PromoCodeDetail_List').then(pc => {
+          console.log(pc);
+          this.promoCodeDetailList = pc;
+          this.promoCodeDetailList.push(new PromoCodeDetail());
+        });
+        this.con.invoke('HallType_List').then(ht => {
+          console.log(ht);
+          this.hallTypeList = ht;
+          this.hallTypeList.push(new HallType());
         });
 
   });

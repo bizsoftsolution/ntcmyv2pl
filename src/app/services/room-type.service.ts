@@ -21,6 +21,8 @@ export class RoomTypeService {
    isValid(roomtype: RoomType): boolean {
     if (!roomtype.Type || roomtype.Type === '') {
       return false;
+    } else if (!roomtype.OrderNo || roomtype.OrderNo === null || roomtype.OrderNo === 0) {
+      return false;
     } else {
       return true;
     }
@@ -36,6 +38,8 @@ export class RoomTypeService {
       }
       p.Id = roomtype.Id;
       p.Type = roomtype.Type;
+      p.OrderNo = roomtype.OrderNo;
+      p.IsActive = roomtype.IsActive;
       } else {
         console.log(roomtype);
         if (!this.isValid(roomtype)) {
