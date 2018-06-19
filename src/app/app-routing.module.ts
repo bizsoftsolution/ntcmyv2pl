@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HolidayComponent } from './components/holiday/holiday.component';
-import { HallDetailsComponent } from './components/hall-details/hall-details.component';
-import { RoomDetailsComponent } from './components/room-details/room-details.component';
-import { MemberListComponent } from './components/member-list/member-list.component';
-import { PropertyTableComponent } from './property-table/property-table.component';
-import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
-import { PropertyComponent } from './components/property/property.component';
+import { DashboardComponent } from './backend/dashboard/dashboard.component';
+import { HolidayComponent } from './backend/holiday/holiday.component';
+import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
+import { RoomDetailsComponent } from './backend/room-details/room-details.component';
+import { MemberListComponent } from './backend/member-list/member-list.component';
+import { PropertyTableComponent } from './backend/property-table/property-table.component';
+import { CompanyDetailComponent } from './backend/company-detail/company-detail.component';
+import { PropertyComponent } from './backend/property/property.component';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { RoomTypeComponent } from './components/room-type/room-type.component';
-import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
-import { TariffDetailsComponent } from './components/tariff-details/tariff-details.component';
+import { NavbarComponent } from './backend/navbar/navbar.component';
+import { RoomTypeComponent } from './backend/room-type/room-type.component';
+import { TariffTypeComponent } from './backend/tariff-type/tariff-type.component';
+import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 
 const routes: Routes = [
   {path: 'appComp' , component: AppComponent},

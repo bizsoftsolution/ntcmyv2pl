@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './backend/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatInputModule,
@@ -26,15 +26,15 @@ import {
   MatSlideToggleModule,
   MatSelectModule
 } from '@angular/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './backend/dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 import { ApplibService } from './services/applib.service';
 import { PropertyService } from './services/property.service';
-import { RoomDetailsComponent } from './components/room-details/room-details.component';
-import { HallDetailsComponent } from './components/hall-details/hall-details.component';
-import { HolidayComponent } from './components/holiday/holiday.component';
-import { MemberListComponent } from './components/member-list/member-list.component';
+import { RoomDetailsComponent } from './backend/room-details/room-details.component';
+import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
+import { HolidayComponent } from './backend/holiday/holiday.component';
+import { MemberListComponent } from './backend/member-list/member-list.component';
 import { HolidayService } from './services/holiday.service';
 import { FormsModule } from '@angular/forms';
 
@@ -46,15 +46,17 @@ import {
   SignalRConfiguration
 } from 'ng2-signalr';
 
-import { PropertyTableComponent } from './property-table/property-table.component';
-import { PropertyComponent } from './components/property/property.component';
-import { CompanyDetailComponent } from './Components/company-detail/company-detail.component';
-import { UserTypeComponent } from './components/user-type/user-type.component';
-import { UserAccountComponent } from './components/user-account/user-account.component';
-import { LoginComponent } from './components/login/login.component';
-import { RoomTypeComponent } from './components/room-type/room-type.component';
-import { TariffTypeComponent } from './components/tariff-type/tariff-type.component';
-import { TariffDetailsComponent } from './components/tariff-details/tariff-details.component';
+import { PropertyTableComponent } from './backend/property-table/property-table.component';
+import { PropertyComponent } from './backend/property/property.component';
+import { CompanyDetailComponent } from './backend/company-detail/company-detail.component';
+import { UserTypeComponent } from './backend/user-type/user-type.component';
+import { UserAccountComponent } from './backend/user-account/user-account.component';
+import { LoginComponent } from './backend/login/login.component';
+import { RoomTypeComponent } from './backend/room-type/room-type.component';
+import { TariffTypeComponent } from './backend/tariff-type/tariff-type.component';
+import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
+import { HomeComponent } from './frontend/home/home.component';
+import { HeaderComponent } from './frontend/header/header.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -87,7 +89,9 @@ export function createconfig(): SignalRConfiguration {
     LoginComponent,
     RoomTypeComponent,
     TariffTypeComponent,
-    TariffDetailsComponent
+    TariffDetailsComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
