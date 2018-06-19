@@ -9,8 +9,8 @@ export class HallSlot {
   constructor() {
     this.Id = 0;
   this.SlotName = '';
-  this.TimeFrom = null;
-  this.TimeTo = null;
+  this.TimeFrom = new Date();
+  this.TimeTo = new Date();
   this.OrderNo = 0;
   this.IsActive = false;
   }

@@ -38,7 +38,7 @@ import { MemberListComponent } from './backend/member-list/member-list.component
 import { HolidayService } from './services/holiday.service';
 import { FormsModule } from '@angular/forms';
 
-import { BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, TimepickerModule } from 'ngx-bootstrap';
 
 import {
   SignalRModule,
@@ -57,6 +57,10 @@ import { TariffTypeComponent } from './backend/tariff-type/tariff-type.component
 import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 import { HomeComponent } from './frontend/home/home.component';
 import { HeaderComponent } from './frontend/header/header.component';
+import { HallTypeComponent } from './backend/hall-type/hall-type.component';
+import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
+import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
+import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -91,7 +95,11 @@ export function createconfig(): SignalRConfiguration {
     TariffTypeComponent,
     TariffDetailsComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HallTypeComponent,
+    HallSlotComponent,
+    AuditoriumComponent,
+    PromoCodeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +130,8 @@ export function createconfig(): SignalRConfiguration {
     MatSlideToggleModule,
     MatSelectModule,
     SignalRModule.forRoot(createconfig),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot()
   ],
   providers: [ApplibService, PropertyService, HolidayService],
   bootstrap: [AppComponent]
