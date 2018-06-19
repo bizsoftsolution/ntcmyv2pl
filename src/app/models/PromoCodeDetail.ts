@@ -3,7 +3,7 @@ export class PromoCodeDetail {
   PromoCode: string;
   DateFrom: Date;
   DateTo: Date;
-  MinimumAMount: number;
+  MinimumAmount: number;
   DiscountRate: number;
   OrderNo: number;
   IsActive: boolean;
@@ -13,7 +13,7 @@ export class PromoCodeDetail {
   this.PromoCode = '';
   this.DateFrom = null;
   this.DateTo = null;
-  this.MinimumAMount = 0;
+  this.MinimumAmount = 0;
   this.DiscountRate = 0;
   this.OrderNo = 0;
   this.IsActive = false;

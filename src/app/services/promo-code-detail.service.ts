@@ -22,9 +22,17 @@ export class PromoCodeDetailService {
   isValid(promoCodeDetail: PromoCodeDetail): boolean {
     if (!promoCodeDetail.PromoCode || promoCodeDetail.PromoCode === '') {
       return false;
-    } else if (!promoCodeDetail.OrderNo || promoCodeDetail.OrderNo == null) {
+    }  else if (!promoCodeDetail.PromoCode || promoCodeDetail.PromoCode === '') {
       return false;
-    } else {
+    }  else if (!promoCodeDetail.MinimumAmount || promoCodeDetail.MinimumAmount === null || promoCodeDetail.MinimumAmount === 0) {
+      return false;
+    }  else if (!promoCodeDetail.DateFrom || promoCodeDetail.DateFrom === null) {
+      return false;
+    }  else if (!promoCodeDetail.DateTo || promoCodeDetail.DateTo === null) {
+      return false;
+    }   else if (!promoCodeDetail.DiscountRate || promoCodeDetail.DiscountRate === null || promoCodeDetail.DiscountRate === 0) {
+      return false;
+    }    else {
       return true;
     }
   }
@@ -44,7 +52,8 @@ export class PromoCodeDetailService {
       d.PromoCode = promoCodeDetail.PromoCode;
       d.DateFrom = promoCodeDetail.DateFrom;
       d.DateTo = promoCodeDetail.DateTo;
-      d.OrderNo = promoCodeDetail.OrderNo;
+      d.MinimumAmount = promoCodeDetail.MinimumAmount;
+      d.DiscountRate = promoCodeDetail.DiscountRate;
       d.IsActive = promoCodeDetail.IsActive;
     } else {
       console.log(promoCodeDetail);

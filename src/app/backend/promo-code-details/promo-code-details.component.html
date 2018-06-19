@@ -73,7 +73,7 @@
                   </td>
                 <td>
                     <mat-form-field appearance="outline" >
-                      <input  #model1="ngModel" matInput [(ngModel)]="promocode.MinimumAMount" (input)="promoCodeService.SavePromoCodeDetail(promocode)" required>
+                      <input  #model1="ngModel" matInput [(ngModel)]="promocode.MinimumAmount" (input)="promoCodeService.SavePromoCodeDetail(promocode)" required>
                       <div *ngIf="model1.invalid" style="color: red"></div>
                     </mat-form-field>
                   </td>
