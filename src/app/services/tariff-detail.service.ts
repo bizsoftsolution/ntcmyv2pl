@@ -45,7 +45,7 @@ export class TariffDetailService {
       }
       d.Id = tariffDetail.Id;
       d.PropertyId = tariffDetail.PropertyId;
-      d.TariffId = tariffDetail.TariffId;
+
       d.RoomTypeId = tariffDetail.RoomTypeId;
       d.RateOfWeekDayMember = tariffDetail.RateOfWeekDayMember;
       d.RateOfWeekDayNonMember = tariffDetail.RateOfWeekDayNonMember;

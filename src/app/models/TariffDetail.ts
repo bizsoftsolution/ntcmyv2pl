@@ -1,7 +1,6 @@
 export class TariffDetail {
   Id: number;
   PropertyId: number;
-  TariffId: number;
   RoomTypeId: number;
   RateOfWeekDayMember: number;
   RateOfWeekDayNonMember: number;
@@ -11,7 +10,6 @@ export class TariffDetail {
 
   constructor() {
     this.PropertyId = 0;
-    this.TariffId = 0;
     this.RoomTypeId = 0;
     this.RateOfWeekDayMember = 0;
     this.RateOfWeekDayNonMember = 0;
