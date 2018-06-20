@@ -25,8 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/unicorn-app-theme.scss",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+              "src/unicorn-app-theme.scss"
             ],
             "scripts": []
           },

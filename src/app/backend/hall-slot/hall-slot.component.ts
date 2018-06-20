@@ -9,7 +9,7 @@ import { HallSlotService } from '../../services/hall-slot.service';
 export class HallSlotComponent implements OnInit {
 
   mytime: Date = new Date();
-
+  isMeridian = false;
   constructor(public hallSlotService: HallSlotService) { }
 
   ngOnInit() {

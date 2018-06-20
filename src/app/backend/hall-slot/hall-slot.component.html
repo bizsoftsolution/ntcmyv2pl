@@ -1,13 +1,13 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
       <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Hall Type</li>
+      <li class="breadcrumb-item active" aria-current="page">Hall Slot</li>
     </ol>
   </nav>
   <div class="container-fluid">
       <div class="row-fluid">
         <div class="col-md-12">
-            <h3> Hall Type </h3>
+            <h3> Hall Slot </h3>
         </div>
       </div>
       <div class="row-fluid">
@@ -51,10 +51,10 @@
                             </mat-form-field>
                           </td>
                           <td >
-                              <timepicker [(ngModel)]="hallslot.TimeFrom" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
+                              <timepicker [showMeridian]="isMeridian" [(ngModel)]="hallslot.TimeFrom" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
                           </td>
                           <td >
-                              <timepicker [(ngModel)]="hallslot.TimeTo" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
+                              <timepicker [showMeridian]="isMeridian" [(ngModel)]="hallslot.TimeTo" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
                           </td>
                           <td>
                             <mat-slide-toggle

@@ -1,75 +1,32 @@
 <div class="container">
-  <div class="row">
-      <div class="col-lg-2">
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 ml-auto mr-auto" style="margin: 100px 0">
-
-          <div class="card card-login">
-            <div class="card-header card-header-rose text-center">
-              <!--h4 class="card-title">Log in</h4-->
-              <img src="assets/logo.png" class="img-responsive" style="margin: 0 auto; display: block">
-              <!--div class="social-line">
-                <a class="btn btn-just-icon btn-link btn-white" href="#pablo">
-                  <i class="fa fa-facebook-square"></i>
-                </a>
-                <a class="btn btn-just-icon btn-link btn-white" href="#pablo">
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a class="btn btn-just-icon btn-link btn-white" href="#pablo">
-                  <i class="fa fa-google-plus"></i>
-                </a>
-              </div-->
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3">
+            <h1 class="text-center login-title">&nbsp;</h1>
+            <h1 class="text-center login-title">&nbsp;</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="assets/logo1.png"
+                    alt="">
+                    <h5 class="card-description text-center">User Credentials</h5>
+                <form class="form-signin">
+                <input type="text" class="form-control" [(ngModel)]='username' placeholder="User Name" required autofocus>
+                <br>
+                <input [(ngModel)]='password' placeholder="Password" type="password" class="form-control" required>
+                <br>
+                <button  mat-raised-button color="accent" (click)="Login()" class="btn btn-lg btn-primary btn-block" type="submit">
+                    Login</button>
+                <!--label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span-->
+                </form>
             </div>
-            <div class="card-body ">
-              <h3 class="card-description text-center">User Credentials</h3>
-              <br>
-              <select [(ngModel)]='compName' *ngFor='let d of AppLib.companyList'>
-                  <option>{{d.CompanyName}}</option>
-              </select>
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">face</i>
-                    </span>
-                  </div>
-                  <input class="form-control" [(ngModel)]='username' placeholder="User Name" type="text">
-                </div>
-              </span>
-              <br>
-              <br>
-              <!--span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">email</i>
-                    </span>
-                  </div>
-                  <input class="form-control" placeholder="Email..." type="email">
-                </div>
-              </span-->
-              <span class="bmd-form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">lock_outline</i>
-                    </span>
-                  </div>
-                  <input class="form-control" [(ngModel)]='password' placeholder="Password" type="password">
-                </div>
-              </span>
-            </div>
-            <br>
-              <br>
-            <div class="card-footer justify-content-center">
-                <button mat-raised-button color="accent" (click)="Login()">Login</button>
-            </div>
-          </div>
-      </div>
-      <div class="col-lg-2">
-      </div>
-  </div>
+            <!--a href="#" class="text-center new-account">Create an account </a-->
+        </div>
+    </div>
 </div>
+
+
 
 <!--div>
   <div>
