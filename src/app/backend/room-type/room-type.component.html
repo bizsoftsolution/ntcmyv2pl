@@ -30,16 +30,29 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered">
                       <tr>
+                        <th style="width: 100px!important;">Order No</th>
                         <th>Room Type</th>
-                        <th>Action</th>
+                        <th style="width: 100px!important;">isActive</th>
+                        <th style="width: 100px!important;">Action</th>
                       </tr>
                       <tr *ngFor="let roomtype of roomTypeService.applib.roomTypeList" >
                         <td>
-                          <mat-form-field class="example-full-width" appearance="outline">
-                            <input matInput #roomtypeValid="ngModel" [(ngModel)]="roomtype.Type" (input)="roomTypeService.saveRoomType(roomtype)" placeholder="Room Type" required>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                            <input matInput #roomtypeValid="ngModel" [(ngModel)]="roomtype.OrderNo" (input)="roomTypeService.saveRoomType(roomtype)" placeholder="Order No" required>
                             <div *ngIf="roomtypeValid.invalid" style="color: red"></div>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                          <mat-form-field class="example-full-width" appearance="outline">
+                            <input matInput #roomtypeValid1="ngModel" [(ngModel)]="roomtype.Type" (input)="roomTypeService.saveRoomType(roomtype)" placeholder="Room Type" required>
+                            <div *ngIf="roomtypeValid1.invalid" style="color: red"></div>
                           </mat-form-field>
                         </td>
+                        <td>
+                            <mat-slide-toggle
+                              class="example-margin" [(ngModel)]="roomtype.IsActive" (change)="roomTypeService.saveRoomType(roomtype)">
+                            </mat-slide-toggle>
+                          </td>
                         <td>
                             <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="roomTypeService.deleteRoomType(roomtype)" [disabled]="roomtype.Id==0">
                                 <mat-icon>delete</mat-icon>

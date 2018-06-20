@@ -61,13 +61,13 @@
                   </mat-form-field-->
                 <td>
                   <mat-form-field appearance="outline">
-                    <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateFrom" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
+                    <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [(ngModel)]="promocode.DateFrom" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
                     class="form-control">
                   </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field appearance="outline">
-                      <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateTo" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
+                      <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [(ngModel)]="promocode.DateTo" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
                       class="form-control">
                     </mat-form-field>
                   </td>
