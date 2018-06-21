@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApplibService } from './applib.service';
-import { TariffDetail } from '../models/TariffDetail';
+import { RoomTariffDetail } from '../models/RoomTariffDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +8,17 @@ import { TariffDetail } from '../models/TariffDetail';
 export class TariffDetailService {
   constructor(public AppLib: ApplibService) {
     // Save
-    this.AppLib.con.listenFor<TariffDetail>('Save_Tarrif_Detail').subscribe(x => {
+    this.AppLib.con.listenFor<RoomTariffDetail>('Save_Tarrif_Detail').subscribe(x => {
       console.log(x);
       this.saveTariffDetail(x, true);
     });
     // Delete
-    this.AppLib.con.listenFor<TariffDetail>('Delete_Tariff_Detail').subscribe(x => {
+    this.AppLib.con.listenFor<RoomTariffDetail>('Delete_Tariff_Detail').subscribe(x => {
       console.log(x);
       this.DeleteTariffDetail(x, true);
     });
   }
-  isValid(tariffDetail: TariffDetail): boolean {
+  isValid(tariffDetail: RoomTariffDetail): boolean {
     if (!tariffDetail.RateOfWeekDayMember || tariffDetail.RateOfWeekDayMember == null) {
       return false;
     } else if (!tariffDetail.RateOfWeekDayNonMember || tariffDetail.RateOfWeekDayNonMember == null) {
@@ -32,16 +32,16 @@ export class TariffDetailService {
     }
   }
 
-  public saveTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false) {
+  public saveTariffDetail(tariffDetail: RoomTariffDetail, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
       let d = this.AppLib.tariffDetailList.find(x => x.Id === tariffDetail.Id);
       if (!d) {
-        d = new TariffDetail();
+        d = new RoomTariffDetail();
         this.AppLib.tariffDetailList = this.AppLib.tariffDetailList.filter(
           x => x.Id !== 0
         );
         this.AppLib.tariffDetailList.push(d);
-        this.AppLib.tariffDetailList.push(new TariffDetail());
+        this.AppLib.tariffDetailList.push(new RoomTariffDetail());
       }
       d.Id = tariffDetail.Id;
       d.PropertyId = tariffDetail.PropertyId;
@@ -61,7 +61,7 @@ export class TariffDetailService {
       this.AppLib.con.invoke('Save_Tarrif_Detail', tariffDetail).then(x => {
         if (tariffDetail.Id !== x) {
           if (x !== 0) {
-            this.AppLib.tariffDetailList.push(new TariffDetail());
+            this.AppLib.tariffDetailList.push(new RoomTariffDetail());
           }
         }
         tariffDetail.Id = x;
@@ -69,7 +69,7 @@ export class TariffDetailService {
     }
   }
 
-  DeleteTariffDetail(tariffDetail: TariffDetail, IsServerCalled: Boolean = false) {
+  DeleteTariffDetail(tariffDetail: RoomTariffDetail, IsServerCalled: Boolean = false) {
     if (IsServerCalled) {
       this.AppLib.tariffDetailList = this.AppLib.tariffDetailList.filter(
         x => x.Id !== tariffDetail.Id

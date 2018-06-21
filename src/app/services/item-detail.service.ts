@@ -43,7 +43,7 @@ export class ItemDetailService {
       d.IsActive = itemData.IsActive;
       d.Rate = itemData.Rate;
       d.Stock = itemData.Stock;
-      d.TariffDetailId = itemData.TariffDetailId;
+
 
     } else {
       console.log(itemData);

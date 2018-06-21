@@ -1,7 +1,7 @@
 export class HallSlot {
   Id: number;
   SlotName: string;
-  TimeFrom: Date;
+  TimeFrom: Date ;
   TimeTo: Date;
   OrderNo: number;
   IsActive: boolean;

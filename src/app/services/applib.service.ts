@@ -9,13 +9,17 @@ import { UserAccount } from '../models/UserAccount';
 import { LoginUser } from '../models/LoginUserDetail';
 import { TariffType } from '../models/TariffType';
 import { RoomType } from '../models/RoomType';
-import { TariffDetail } from '../models/TariffDetail';
+import { RoomTariffDetail } from '../models/RoomTariffDetail';
 import { HallType } from '../models/HallType';
 import { Auditorium } from '../models/Auditorium';
 import { HallSlot } from '../models/HallSlot';
 import { PromoCodeDetail } from '../models/PromoCodeDetail';
 import {ItemDetail} from '../models/ItemDetail';
 import {RoomDetail} from '../models/RoomDetail';
+import { HallTariffDetail } from '../models/HallTariffDetail';
+import { RoomTypeDetail } from '../models/RoomTypeDetail';
+import { Country } from '../models/Country';
+import { State } from '../models/State';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +40,6 @@ export class ApplibService {
   con: SignalRConnection;
   loginUser: UserAccount;
 
-
-
   holidayList: HolidayDetail[];
   propertyList: PropertyDetail[];
   companyList: CompanyDetail[];
@@ -45,13 +47,17 @@ export class ApplibService {
   userAccList: UserAccount[];
   tarifTypeList: TariffType[];
   roomTypeList: RoomType[];
-  tariffDetailList: TariffDetail[];
+  tariffDetailList: RoomTariffDetail[];
   hallTypeList: HallType[];
   auditoriumList: Auditorium[];
   hallSlotList: HallSlot[];
   promoCodeDetailList: PromoCodeDetail[];
   itemDetailList: ItemDetail[];
-roomDetailList: RoomDetail[];
+  roomDetailList: RoomDetail[];
+  hallTariffDetailList: HallTariffDetail[];
+  roomTypeDetailList: RoomTypeDetail[];
+  countryList: Country[];
+  stateList: State[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -85,7 +91,7 @@ roomDetailList: RoomDetail[];
         this.con.invoke('TarrifList').then(t => {
         console.log(t);
         this.tariffDetailList = t;
-        this.tariffDetailList.push(new TariffDetail());
+        this.tariffDetailList.push(new RoomTariffDetail());
         });
         this.con.invoke('Auditorium_List').then(a => {
           console.log(a);
@@ -117,7 +123,26 @@ roomDetailList: RoomDetail[];
           this.roomDetailList = rd;
           this.roomDetailList.push(new RoomDetail());
         });
-
+        this.con.invoke('HallTariffList').then(ht => {
+          console.log(ht);
+          this.hallTariffDetailList = ht;
+          this.hallTariffDetailList.push(new HallTariffDetail());
+        });
+        this.con.invoke('RoomTypeDetail_List').then(rt => {
+          console.log(rt);
+          this.roomTypeDetailList = rt;
+          this.roomTypeDetailList.push(new RoomTypeDetail());
+        });
+        this.con.invoke('Country_List').then(c => {
+          console.log(c);
+          this.countryList = c;
+          this.countryList.push(new Country());
+        });
+        this.con.invoke('State_List').then(s => {
+          console.log(s);
+          this.stateList = s;
+          this.stateList.push(new State());
+        });
   });
 }
 

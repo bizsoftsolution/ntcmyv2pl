@@ -1,4 +1,4 @@
-export class TariffDetail {
+export class RoomTariffDetail {
   Id: number;
   PropertyId: number;
   RoomTypeId: number;
