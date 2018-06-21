@@ -14,7 +14,8 @@ import { HallType } from '../models/HallType';
 import { Auditorium } from '../models/Auditorium';
 import { HallSlot } from '../models/HallSlot';
 import { PromoCodeDetail } from '../models/PromoCodeDetail';
-
+import {ItemDetail} from '../models/ItemDetail';
+import {RoomDetail} from '../models/RoomDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +50,8 @@ export class ApplibService {
   auditoriumList: Auditorium[];
   hallSlotList: HallSlot[];
   promoCodeDetailList: PromoCodeDetail[];
+  itemDetailList: ItemDetail[];
+roomDetailList: RoomDetail[];
 
   constructor(private s1: SignalR) {
     this.con = this.s1.createConnection();
@@ -103,6 +106,16 @@ export class ApplibService {
           console.log(ht);
           this.hallTypeList = ht;
           this.hallTypeList.push(new HallType());
+        });
+        this.con.invoke('Itemdetail_List').then(it => {
+          console.log(it);
+          this.itemDetailList = it;
+          this.itemDetailList.push(new ItemDetail());
+        });
+        this.con.invoke('RoomDetail_List').then(rd => {
+          console.log(rd);
+          this.roomDetailList = rd;
+          this.roomDetailList.push(new RoomDetail());
         });
 
   });
