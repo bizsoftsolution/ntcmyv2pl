@@ -3,7 +3,7 @@ import { TariffDetailService } from '../../services/tariff-detail.service';
 import { PropertyService } from '../../services/property.service';
 import { TarifTypeService } from '../../services/tarif-type.service';
 import { RoomTypeService } from '../../services/room-type.service';
-import { TariffDetail } from '../../models/TariffDetail';
+import { RoomTariffDetail } from '../../models/RoomTariffDetail';
 
 @Component({
   selector: 'app-tariff-details',
@@ -14,7 +14,7 @@ export class TariffDetailsComponent implements OnInit {
 
 
 save() {
-  console.log(TariffDetail);
+  console.log(RoomTariffDetail);
 }
   constructor(
     public tariffDetailService: TariffDetailService,
