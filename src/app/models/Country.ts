@@ -1,4 +1,9 @@
 export class Country {
   Id: number;
-  COuntryName: string;
+  CountryName: string;
+
+  constructor() {
+    this.Id = 0;
+    this.CountryName = '';
+  }
 }
