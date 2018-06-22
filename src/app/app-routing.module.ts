@@ -18,6 +18,8 @@ import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
 import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
 import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
 import { HomeComponent } from './frontend/home/home.component';
+import { AboutusComponent } from './frontend/aboutus/aboutus.component';
+import { LoginComponent } from './backend/login/login.component';
 
 const routes: Routes = [
   {path: 'appComp' , component: AppComponent},
@@ -38,7 +40,9 @@ const routes: Routes = [
   { path: 'tariff-type', component: TariffTypeComponent },
   { path: 'tariff-details', component: TariffDetailsComponent },
   { path: 'promo-code-details', component: PromoCodeDetailsComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent }
 
 ];
 @NgModule({
