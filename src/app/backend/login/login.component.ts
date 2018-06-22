@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplibService } from '../../services/applib.service';
 import { UserAccount } from '../../models/UserAccount';
-
 import { Router} from '@angular/router';
 import { AppComponent } from '../../app.component';
 
@@ -27,6 +26,7 @@ Login() {
   result = this.AppLib.Login(this.username, this.password, this.compName);
   if (result) {
     this.appComp.homepage = true;
+
   } else {
     this.appComp.homepage = false;
 alert('invalid credential');

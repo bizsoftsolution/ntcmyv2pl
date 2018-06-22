@@ -147,7 +147,7 @@ export class ApplibService {
 }
 
   Login(username: string, password: string, compName: string): Boolean {
-    this.con.invoke('UserAccount_Login', 'c', username, password).then(y => {
+    this.con.invoke('UserAccount_Login', 'Ntc', username, password).then(y => {
       console.log('user Login', y);
       this.loginUser = y ;
     });
@@ -164,9 +164,9 @@ export class ApplibService {
       //   this.userTypeList.push(new UserType);
       // });
       if (this.loginUser !== undefined) {
-        return false;
-      } else {
         return true;
+      } else {
+        return false;
       }
       }
 
