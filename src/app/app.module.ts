@@ -63,6 +63,7 @@ import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
 import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
 import { FooterComponent } from './frontend/footer/footer.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
+import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -103,7 +104,8 @@ export function createconfig(): SignalRConfiguration {
     HallSlotComponent,
     AuditoriumComponent,
     PromoCodeDetailsComponent,
-    AboutusComponent
+    AboutusComponent,
+    HallTariffDetailsComponent
   ],
   imports: [
     BrowserModule,

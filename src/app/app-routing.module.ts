@@ -20,6 +20,7 @@ import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-co
 import { HomeComponent } from './frontend/home/home.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
 import { LoginComponent } from './backend/login/login.component';
+import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
 
 const routes: Routes = [
   {path: 'appComp' , component: AppComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'holiday', component: HolidayComponent },
   { path: 'auditorium', component: AuditoriumComponent },
   { path: 'hall-type', component: HallTypeComponent },
+  { path: 'hall-tariff-details', component: HallTariffDetailsComponent },
   { path: 'hall-slot', component: HallSlotComponent },
   { path: 'hall-details', component: HallDetailsComponent },
   { path: 'room-details', component: RoomDetailsComponent },
