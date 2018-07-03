@@ -20,6 +20,7 @@ import { HallTariffDetail } from '../models/HallTariffDetail';
 import { RoomTypeDetail } from '../models/RoomTypeDetail';
 import { Country } from '../models/Country';
 import { State } from '../models/State';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -145,29 +146,5 @@ export class ApplibService {
         });
   });
 }
-
-  Login(username: string, password: string, compName: string): Boolean {
-    this.con.invoke('UserAccount_Login', 'Ntc', username, password).then(y => {
-      console.log('user Login', y);
-      this.loginUser = y ;
-    });
-
-      //  this.con.invoke('UserAccount_List').then(ua => {
-      //   console.log(ua);
-      //   this.userAccList = ua;
-      // });
-      // this.con.invoke('UserType_List').then(ut => {
-      //   console.log(ut);
-      //   this.userTypeList = ut;
-      //   // const i: UserType = new UserType();
-      //   // i.CompanyId = this.loginUser.UserType.CompanyId;
-      //   this.userTypeList.push(new UserType);
-      // });
-      if (this.loginUser !== undefined) {
-        return true;
-      } else {
-        return false;
-      }
-      }
 
 }
