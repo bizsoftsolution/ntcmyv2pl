@@ -9,6 +9,7 @@ export class RoomTariffDetail {
   IsActive: boolean;
 
   constructor() {
+    this.Id = 0;
     this.PropertyId = 0;
     this.RoomTypeId = 0;
     this.RateOfWeekDayMember = 0;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplibService } from '../../services/applib.service';
 import { UserAccount } from '../../models/UserAccount';
-
 import { Router} from '@angular/router';
 import { AppComponent } from '../../app.component';
 
@@ -23,14 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
 Login() {
-  let result: Boolean = false;
-  result = this.AppLib.Login(this.username, this.password, this.compName);
-  if (result) {
-    this.appComp.homepage = true;
-  } else {
-    this.appComp.homepage = false;
-alert('invalid credential');
-  }
+  // this.AppLib.con.invoke('UserAccount_Login', 'Ntc', this.username, this.password).then(x => {
+  //   console.log(x);
+  // });
+  console.log(this.AppLib.con.status);
 }
 
 }
