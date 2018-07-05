@@ -64,6 +64,16 @@ import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-co
 import { FooterComponent } from './frontend/footer/footer.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
 import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
+import { MainComponent } from './frontend/main/main.component';
+import { FacilitiesComponent } from './frontend/facilities/facilities.component';
+import { ContactusComponent } from './frontend/contactus/contactus.component';
+import { TariffComponent } from './frontend/tariff/tariff.component';
+import { RoomBookingComponent } from './frontend/room-booking/room-booking.component';
+import { ChooseRoomComponent } from './frontend/choose-room/choose-room.component';
+import { MyCartComponent } from './frontend/my-cart/my-cart.component';
+import { HallBookingComponent } from './frontend/hall-booking/hall-booking.component';
+import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
+import { GalleryComponent } from './frontend/gallery/gallery.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -105,7 +115,17 @@ export function createconfig(): SignalRConfiguration {
     AuditoriumComponent,
     PromoCodeDetailsComponent,
     AboutusComponent,
-    HallTariffDetailsComponent
+    HallTariffDetailsComponent,
+    MainComponent,
+    FacilitiesComponent,
+    ContactusComponent,
+    TariffComponent,
+    RoomBookingComponent,
+    ChooseRoomComponent,
+    MyCartComponent,
+    HallBookingComponent,
+    ChooseHallComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

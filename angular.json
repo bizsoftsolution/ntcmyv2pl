@@ -21,7 +21,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/frontend"
+              "src/assets/frontend/images",
+              "src/assets/frontend/css",
+              "src/assets/frontend/js",
+              "src/assets/frontend/fonts"
             ],
             "styles": [
               "src/styles.css",

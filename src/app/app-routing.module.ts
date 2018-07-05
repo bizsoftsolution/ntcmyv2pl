@@ -17,15 +17,24 @@ import { HallTypeComponent } from './backend/hall-type/hall-type.component';
 import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
 import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
 import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
-import { HomeComponent } from './frontend/home/home.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
 import { LoginComponent } from './backend/login/login.component';
 import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
+import { HomeComponent } from './frontend/home/home.component';
+import { MainComponent } from './frontend/main/main.component';
+import { FacilitiesComponent } from './frontend/facilities/facilities.component';
+import { ContactusComponent } from './frontend/contactus/contactus.component';
+import { TariffComponent } from './frontend/tariff/tariff.component';
+import { RoomBookingComponent } from './frontend/room-booking/room-booking.component';
+import { ChooseRoomComponent } from './frontend/choose-room/choose-room.component';
+import { MyCartComponent } from './frontend/my-cart/my-cart.component';
+import { HallBookingComponent } from './frontend/hall-booking/hall-booking.component';
+import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
+import { GalleryComponent } from './frontend/gallery/gallery.component';
 
 const routes: Routes = [
-  {path: 'appComp' , component: AppComponent},
-  {path: 'menu' , component: NavbarComponent},
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: 'appComp', component: AppComponent },
+  { path: 'menu', component: NavbarComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'holiday', component: HolidayComponent },
   { path: 'auditorium', component: AuditoriumComponent },
@@ -43,9 +52,19 @@ const routes: Routes = [
   { path: 'tariff-details', component: TariffDetailsComponent },
   { path: 'promo-code-details', component: PromoCodeDetailsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'aboutus', component: AboutusComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'aboutus', component: AboutusComponent }
-
+  { path: 'main', component: MainComponent },
+  { path: 'facilities', component: FacilitiesComponent },
+  { path: 'contactus', component: ContactusComponent },
+  { path: 'tariff', component: TariffComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'room-booking', component: RoomBookingComponent },
+  { path: 'choose-room', component: ChooseRoomComponent },
+  { path: 'my-cart', component: MyCartComponent },
+  { path: 'hall-booking', component: HallBookingComponent },
+  { path: 'choose-hall', component: ChooseHallComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
