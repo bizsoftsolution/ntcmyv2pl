@@ -31,40 +31,48 @@ import { MyCartComponent } from './frontend/my-cart/my-cart.component';
 import { HallBookingComponent } from './frontend/hall-booking/hall-booking.component';
 import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
 import { GalleryComponent } from './frontend/gallery/gallery.component';
+import { MainAdminComponent } from './main-admin/main-admin.component';
+import { AuthAdminGuard } from './auth-admin.guard';
+
+const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
+{ path: 'dashboard', component: DashboardComponent },
+{ path: 'holiday', component: HolidayComponent },
+{ path: 'auditorium', component: AuditoriumComponent },
+{ path: 'hall-type', component: HallTypeComponent },
+{ path: 'hall-tariff-details', component: HallTariffDetailsComponent },
+{ path: 'hall-slot', component: HallSlotComponent },
+{ path: 'hall-details', component: HallDetailsComponent },
+{ path: 'room-details', component: RoomDetailsComponent },
+{ path: 'member-list', component: MemberListComponent },
+{ path: 'property-table', component: PropertyTableComponent },
+{ path: 'company', component: CompanyDetailComponent },
+{ path: 'property', component: PropertyComponent },
+{ path: 'room-type', component: RoomTypeComponent },
+{ path: 'tariff-type', component: TariffTypeComponent },
+{ path: 'tariff-details', component: TariffDetailsComponent },
+{ path: 'promo-code-details', component: PromoCodeDetailsComponent },
+
+{ path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
+
+const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
+{ path: 'home', component: HomeComponent },
+{ path: 'main', component: MainComponent },
+{ path: 'facilities', component: FacilitiesComponent },
+{ path: 'contactus', component: ContactusComponent },
+{ path: 'tariff', component: TariffComponent },
+{ path: 'gallery', component: GalleryComponent },
+{ path: 'room-booking', component: RoomBookingComponent },
+{ path: 'choose-room', component: ChooseRoomComponent },
+{ path: 'my-cart', component: MyCartComponent },
+{ path: 'hall-booking', component: HallBookingComponent },
+{ path: 'choose-hall', component: ChooseHallComponent },
+{ path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 const routes: Routes = [
-  { path: 'appComp', component: AppComponent },
-  { path: 'menu', component: NavbarComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'holiday', component: HolidayComponent },
-  { path: 'auditorium', component: AuditoriumComponent },
-  { path: 'hall-type', component: HallTypeComponent },
-  { path: 'hall-tariff-details', component: HallTariffDetailsComponent },
-  { path: 'hall-slot', component: HallSlotComponent },
-  { path: 'hall-details', component: HallDetailsComponent },
-  { path: 'room-details', component: RoomDetailsComponent },
-  { path: 'member-list', component: MemberListComponent },
-  { path: 'property-table', component: PropertyTableComponent },
-  { path: 'company', component: CompanyDetailComponent },
-  { path: 'property', component: PropertyComponent },
-  { path: 'room-type', component: RoomTypeComponent },
-  { path: 'tariff-type', component: TariffTypeComponent },
-  { path: 'tariff-details', component: TariffDetailsComponent },
-  { path: 'promo-code-details', component: PromoCodeDetailsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'aboutus', component: AboutusComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'main', component: MainComponent },
-  { path: 'facilities', component: FacilitiesComponent },
-  { path: 'contactus', component: ContactusComponent },
-  { path: 'tariff', component: TariffComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'room-booking', component: RoomBookingComponent },
-  { path: 'choose-room', component: ChooseRoomComponent },
-  { path: 'my-cart', component: MyCartComponent },
-  { path: 'hall-booking', component: HallBookingComponent },
-  { path: 'choose-hall', component: ChooseHallComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+{path: '', component: MainComponent, children: PublicRoutes},
+{path: 'Admin', component: MainAdminComponent, children: AdminRoutes, canActivate: [AuthAdminGuard]},
+{ path: 'login', component: LoginComponent }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

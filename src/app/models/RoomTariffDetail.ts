@@ -1,3 +1,5 @@
+
+import { RoomType } from './RoomType';
 export class RoomTariffDetail {
   Id: number;
   PropertyId: number;
@@ -7,6 +9,7 @@ export class RoomTariffDetail {
   RateOfWeekEndMember: number;
   RateOfWeekEndNonMember: number;
   IsActive: boolean;
+  RoomType: string;
 
   constructor() {
     this.Id = 0;

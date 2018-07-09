@@ -5,6 +5,7 @@ export class HallTariffDetail {
   Amount: number;
   AmountSuffix: string;
   IsActive: boolean;
+  HallType: string;
 constructor() {
    this.Id = 0;
    this.AuditoriumId = 0;

@@ -15,17 +15,26 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
  compName: string;
-
-  constructor(public AppLib: ApplibService, public router: Router, public appComp: AppComponent) { }
+ ua: UserAccount;
+  constructor(public applib: ApplibService, public router: Router, public appComp: AppComponent) { }
 
   ngOnInit() {
   }
 
-Login() {
-  // this.AppLib.con.invoke('UserAccount_Login', 'Ntc', this.username, this.password).then(x => {
-  //   console.log(x);
-  // });
-  console.log(this.AppLib.con.status);
+
+  Login() {
+    this.applib.con
+      .invoke('UserAccount_Login', 'Ntc', this.username, this.password)
+      .then(x => {
+        console.log(x);
+        this.ua = x;
+        if (this.ua !== undefined) {
+            localStorage.setItem('user', this.ua.LoginId);
+          this.router.navigate(['/Admin/dashboard']);
+         } else {
+          alert('Invalid Credential');
+        }
+      });
 }
 
 }

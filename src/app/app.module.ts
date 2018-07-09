@@ -74,13 +74,14 @@ import { MyCartComponent } from './frontend/my-cart/my-cart.component';
 import { HallBookingComponent } from './frontend/hall-booking/hall-booking.component';
 import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
 import { GalleryComponent } from './frontend/gallery/gallery.component';
+import { MainAdminComponent } from './main-admin/main-admin.component';
 
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';
-  c.url = 'https://www.ntc.my/SLSR';
-  // c.url = 'http://www.ntc.my/NTCWeb.SLSR';
+  // c.url = 'https://www.ntc.my/SLSR';
+  c.url = 'http://www.ntc.my/NTCWeb.SL';
   c.logging = true;
 
   c.executeErrorsInZone = false;
@@ -125,7 +126,8 @@ export function createconfig(): SignalRConfiguration {
     MyCartComponent,
     HallBookingComponent,
     ChooseHallComponent,
-    GalleryComponent
+    GalleryComponent,
+    MainAdminComponent
   ],
   imports: [
     BrowserModule,

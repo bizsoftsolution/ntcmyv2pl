@@ -61,7 +61,9 @@ export class ApplibService {
   stateList: State[];
 
   constructor(private s1: SignalR) {
+    console.log('connection startincg in client');
     this.con = this.s1.createConnection();
+    console.log('started connection');
     this.con.status.subscribe(x => console.log(x));
     this.con.start().then(x => {
       console.log('Done', x);
@@ -77,62 +79,50 @@ export class ApplibService {
       this.con.invoke('List_Property').then(p => {
         console.log(p);
         this.propertyList = p;
-        this.propertyList.push(new PropertyDetail());
       });
        this.con.invoke('TariffType_List').then(tl => {
         console.log(tl);
         this.tarifTypeList = tl;
-        this.tarifTypeList.push(new TariffType());
        });
       this.con.invoke('RoomType_List').then(rt => {
         console.log(rt);
         this.roomTypeList = rt;
-        this.roomTypeList.push(new RoomType());
       });
         this.con.invoke('TarrifList').then(t => {
         console.log(t);
         this.tariffDetailList = t;
-        this.tariffDetailList.push(new RoomTariffDetail());
         });
         this.con.invoke('Auditorium_List').then(a => {
           console.log(a);
           this.auditoriumList = a;
-          this.auditoriumList.push(new Auditorium());
         });
         this.con.invoke('HallSlot_List').then(hs => {
           console.log(hs);
           this.hallSlotList = hs;
-          this.hallSlotList.push(new HallSlot());
         });
         this.con.invoke('PromoCodeDetail_List').then(pc => {
           console.log(pc);
           this.promoCodeDetailList = pc;
-          this.promoCodeDetailList.push(new PromoCodeDetail());
         });
         this.con.invoke('HallType_List').then(ht => {
           console.log(ht);
           this.hallTypeList = ht;
-          this.hallTypeList.push(new HallType());
         });
         this.con.invoke('Itemdetail_List').then(it => {
           console.log(it);
           this.itemDetailList = it;
-          this.itemDetailList.push(new ItemDetail());
         });
         this.con.invoke('RoomDetail_List').then(rd => {
           console.log(rd);
           this.roomDetailList = rd;
-          this.roomDetailList.push(new RoomDetail());
         });
         this.con.invoke('HallTariffList').then(ht => {
           console.log(ht);
           this.hallTariffDetailList = ht;
-          this.hallTariffDetailList.push(new HallTariffDetail());
         });
         this.con.invoke('RoomTypeDetail_List').then(rt => {
           console.log(rt);
           this.roomTypeDetailList = rt;
-          this.roomTypeDetailList.push(new RoomTypeDetail());
         });
         this.con.invoke('Country_List').then(c => {
           console.log(c);
