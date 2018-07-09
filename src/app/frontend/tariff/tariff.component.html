@@ -98,10 +98,10 @@
                                             </thead>
                                             <tr *ngFor="let roomtd of applib.roomTypeDetailList">
                                                 <td>{{roomtd.RoomType}}</td>
-                                                <td>{{roomtd.NoOfUnit}}</td>
-                                                <td>{{roomtd.NoOfBed}}</td>
+                                                <td>{{roomtd.NoOfUnit}}/{{roomtd.NoOfUnitDescription}}</td>
+                                                <td>{{roomtd.NoOfBed}}/{{roomtd.NoOfBedDescription}}</td>
                                                 <td>{{RoomTotal(roomtd.Id)}}</td>
-                                                <td>{{roomtd.Mattress}}</td>
+                                                <td>Mattress-{{roomtd.Mattress}}</td>
 
                                             </tr>
 
@@ -143,7 +143,7 @@
                                             </thead>
                                             <tr *ngFor="let slot of applib.hallSlotList">
                                                <td>{{slot.SlotName}}</td>
-                                               <td>{{slot.TimeFrom}} - {{slot.TimeTo}}</td>
+                                               <td>{{slot.TimeFrom | date:'hh:mm a'}} - {{slot.TimeTo| date:'hh:mm a'}}</td>
                                             </tr>
 
 
