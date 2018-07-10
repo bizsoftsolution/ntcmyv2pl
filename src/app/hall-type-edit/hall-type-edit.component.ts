@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
 import { HallType } from '../models/HallType';
+import { HallTypeService } from '../services/hall-type.service';
 
 @Component({
   selector: 'app-hall-type-edit',
@@ -10,7 +11,7 @@ import { HallType } from '../models/HallType';
 })
 export class HallTypeEditComponent implements OnInit {
 halltype: HallType;
-  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService) { }
+  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService, public hallTypeService: HallTypeService) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {

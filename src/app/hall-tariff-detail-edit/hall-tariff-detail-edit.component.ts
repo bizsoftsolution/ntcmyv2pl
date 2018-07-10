@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
 import { HallTariffDetail } from '../models/HallTariffDetail';
+import { HallTariffDetailService } from '../services/hall-tariff-detail.service';
+import { AuditoriumService } from '../services/auditorium.service';
 
 @Component({
   selector: 'app-hall-tariff-detail-edit',
@@ -10,7 +12,7 @@ import { HallTariffDetail } from '../models/HallTariffDetail';
 })
 export class HallTariffDetailEditComponent implements OnInit {
 hallTariffDetail: HallTariffDetail;
-  constructor(private activateroute: ActivatedRoute, private applib: ApplibService) { }
+  constructor(private activateroute: ActivatedRoute, private applib: ApplibService, public auditoriumService: AuditoriumService) { }
 
   ngOnInit() {
     this.activateroute.paramMap.subscribe(x => {
