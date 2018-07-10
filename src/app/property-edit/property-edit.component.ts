@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { PropertyDetail } from '../models/PropertyDetail';
 import { ApplibService } from '../services/applib.service';
+import { PropertyService } from '../services/property.service';
 
 @Component({
   selector: 'app-property-edit',
@@ -10,7 +11,7 @@ import { ApplibService } from '../services/applib.service';
 })
 export class PropertyEditComponent implements OnInit {
 property: PropertyDetail;
-  constructor(private activeRoute: ActivatedRoute, private applib: ApplibService) { }
+  constructor(private activeRoute: ActivatedRoute, private applib: ApplibService, public propertyService: PropertyService) { }
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(x => {
