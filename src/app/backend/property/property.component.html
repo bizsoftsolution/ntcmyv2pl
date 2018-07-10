@@ -28,7 +28,7 @@
               </mat-card-header>
               <mat-card-content>
                   <div class="table-responsive">
-                    <a routerLink="/propertyEdit/0">New</a>
+                    <a routerLink="/Admin/propertyEdit/0">New</a>
                       <table class="table table-striped table-bordered">
                         <tr>
                           <th style="width: 100px!important;">Order No</th>
@@ -55,7 +55,7 @@
                             </mat-slide-toggle>
                           </td>
                           <td>
-                              <a routerLink="/propertyEdit/{{property.Id}}">Edit</a>
+                              <a routerLink="/Admin/propertyEdit/{{property.Id}}">Edit</a>
                               <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="propertyService.deleteProperty(property)" [disabled]="property.Id==0">
                                   <mat-icon>delete</mat-icon>
                               </button>
