@@ -14,6 +14,12 @@
           <div class="col-md-2">
               <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
           </div>
+          <div class="col-md-6 text-right">
+              <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/hallslotEdit/0"><i class="material-icons">
+                   add
+                   </i></a>
+                   </div>
+           </div>
         </div>
       <div class="row-fluid">&nbsp;</div>
 
@@ -39,29 +45,27 @@
                         </tr>
                         <tr *ngFor="let hallslot of hallSlotService.AppLib.hallSlotList" >
                           <td>
-                              <mat-form-field class="example-full-width" appearance="outline">
-                              <input matInput #propertyValid="ngModel" [(ngModel)]="hallslot.OrderNo" (input)="hallSlotService.SaveHallSlot(hallslot)"  required>
-                              <div *ngIf="propertyValid.invalid" style="color: red"></div>
-                              </mat-form-field>
+                             {{hallslot.OrderNo}}
                           </td>
                           <td>
-                            <mat-form-field class="example-full-width" appearance="outline">
-                              <input matInput #propertyValid1="ngModel" [(ngModel)]="hallslot.SlotName" (input)="hallSlotService.SaveHallSlot(hallslot)"  required>
-                              <div *ngIf="propertyValid1.invalid" style="color: red"></div>
-                            </mat-form-field>
+                              {{hallslot.SlotName}}
                           </td>
                           <td >
-                              <timepicker [showMeridian]="isMeridian" [(ngModel)]="hallslot.TimeFrom" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
+                              {{hallslot.TimeFrom|date:'hh:mm:ss a'}}
                           </td>
                           <td >
-                              <timepicker [showMeridian]="isMeridian" [(ngModel)]="hallslot.TimeTo" (bsValueChange)="hallSlotService.SaveHallSlot(hallslot)"></timepicker>
+                              {{hallslot.TimeTo|date:'hh:mm:ss a'}}
                           </td>
                           <td>
                             <mat-slide-toggle
-                              class="example-margin" [(ngModel)]="hallslot.IsActive" (change)="hallSlotService.SaveHallSlot(hallslot)">
+                              class="example-margin" [(ngModel)]="hallslot.IsActive" disabled>
                             </mat-slide-toggle>
                           </td>
                           <td>
+                              <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/hallslotEdit/{{hallslot.Id}}"><i class="material-icons">
+                                  create
+                                  </i>
+                                  </a>
                               <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="hallSlotService.DeleteHallSlot(hallslot)" [disabled]="hallslot.Id==0">
                                   <mat-icon>delete</mat-icon>
                               </button>

@@ -62,7 +62,10 @@
                   </mat-form-field>
                 </td>
                 <td>
-                  <a routerLink="/Admin/holidayEdit/{{holiday.Id}}">Edit</a>
+                    <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/hallTariffDetailEdit/{{holiday.Id}}"><i class="material-icons">
+                        create
+                        </i>
+                        </a>
                   <div class="button-row">
                     <button matTooltip="Delete" mat-mini-fab color="warn" (click)="holidayService.DeleteHoliday(holiday)" [disabled]="holiday.Id==0">
                       <i class="material-icons">
