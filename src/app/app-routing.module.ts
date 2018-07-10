@@ -41,6 +41,7 @@ import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component
 import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
 import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
 
+import { PropertyEditComponent } from './property-edit/property-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -61,11 +62,11 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'property-table', component: PropertyTableComponent },
 { path: 'company', component: CompanyDetailComponent },
 { path: 'property', component: PropertyComponent },
-{ path: 'propertyEdit/:id', component: PropertyComponent },
+{ path: 'propertyEdit/:id', component: PropertyEditComponent },
 { path: 'room-type', component: RoomTypeComponent },
 { path: 'roomTypeEdit/:id', component: RoomTypeEditComponent },
 { path: 'tariff-type', component: TariffTypeComponent },
-{ path: 'tariff-type', component: TariffTypeEditComponent },
+{ path: 'tariff-type/:id', component: TariffTypeEditComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
 
