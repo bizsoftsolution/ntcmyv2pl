@@ -10,7 +10,7 @@ export class RoomTariffDetail {
   RateOfWeekEndNonMember: number;
   IsActive: boolean;
   RoomType: string;
-
+  Property: string;
   constructor() {
     this.Id = 0;
     this.PropertyId = 0;
