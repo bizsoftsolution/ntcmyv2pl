@@ -53,7 +53,8 @@ export class TariffDetailService {
       d.RateOfWeekEndMember = tariffDetail.RateOfWeekEndMember;
       d.RateOfWeekEndNonMember = tariffDetail.RateOfWeekEndNonMember;
       d.IsActive = tariffDetail.IsActive;
-
+      d.RoomType = tariffDetail.RoomType;
+      d.Property = tariffDetail.Property;
     } else {
       console.log(tariffDetail);
       if (!this.isValid(tariffDetail)) {

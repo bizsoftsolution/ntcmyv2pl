@@ -49,7 +49,7 @@ export class RoomTypeDetailServiceService {
       d.NoOfUnit = roomTypeDetail.NoOfUnit;
       d.Mattress = roomTypeDetail.Mattress;
       d.RoomTypeId = roomTypeDetail.RoomTypeId;
-
+      d.RoomType = roomTypeDetail.RoomType;
     } else {
       console.log(roomTypeDetail);
       if (!this.isValid(roomTypeDetail)) {
@@ -61,7 +61,7 @@ export class RoomTypeDetailServiceService {
           this.AppLib.roomTypeDetailList.push(roomTypeDetail);
 
         }
-this.router.navigate(['/Admin/tariff-details']);
+this.router.navigate(['/Admin/roomTypeDetail']);
       });
     }
   }

@@ -45,6 +45,9 @@ import { PropertyEditComponent } from './property-edit/property-edit.component';
 import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
 import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 
+import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
+import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
+
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
 { path: 'holiday', component: HolidayComponent },
@@ -71,6 +74,8 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'tariff-type/:id', component: TariffTypeEditComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },
 { path: 'tarifDetailsEdit/:id', component: TariffDetailEditComponent },
+{path: 'roomTypeDetail', component: RommTypeDetailComponent},
+{path: 'roomTypeDetailEdit/:id', component: RoomTypeDetailEditComponent},
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
 { path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
