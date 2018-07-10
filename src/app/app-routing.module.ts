@@ -42,6 +42,8 @@ import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component
 import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
 
 import { PropertyEditComponent } from './property-edit/property-edit.component';
+import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
+import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -68,8 +70,9 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'tariff-type', component: TariffTypeComponent },
 { path: 'tariff-type/:id', component: TariffTypeEditComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },
+{ path: 'tarifDetailsEdit/:id', component: TariffDetailEditComponent },
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
-
+{ path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
