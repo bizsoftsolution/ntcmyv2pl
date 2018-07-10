@@ -64,7 +64,7 @@ export class PropertyService {
           propertyDetail.Id = x;
           this.AppLib.propertyList.push(propertyDetail);
         }
-this.router.navigate(['/Admin/property']);
+          this.router.navigate(['/Admin/property']);
       });
     }
   }
