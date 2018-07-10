@@ -74,7 +74,7 @@ export class ApplibService {
       this.con.invoke('Holiday_List').then(y => {
         console.log(y);
         this.holidayList = y;
-        this.holidayList.push(new HolidayDetail());
+
       });
       this.con.invoke('List_Property').then(p => {
         console.log(p);
@@ -127,12 +127,12 @@ export class ApplibService {
         this.con.invoke('Country_List').then(c => {
           console.log(c);
           this.countryList = c;
-          this.countryList.push(new Country());
+
         });
         this.con.invoke('State_List').then(s => {
           console.log(s);
           this.stateList = s;
-          this.stateList.push(new State());
+
         });
   });
 }

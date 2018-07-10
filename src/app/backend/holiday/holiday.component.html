@@ -15,6 +15,12 @@
       <div class="col-md-2">
           <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
       </div>
+      <div class="col-md-6 text-right">
+          <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/holidayEdit/0"><i class="material-icons">
+               add
+               </i></a>
+               </div>
+       </div>
     </div>
   <div class="row-fluid">&nbsp;</div>
 
@@ -45,10 +51,7 @@
               </tr>
               <tr *ngFor="let holiday of holidayService.AppLib.holidayList">
                 <td>
-                  <mat-form-field appearance="outline" >
-                    <input  #model="ngModel" matInput [(ngModel)]="holiday.HolidayName" (focusout)="holidayService.SaveHoliday(holiday)" required>
-                    <div *ngIf="model.invalid" style="color: red"></div>
-                  </mat-form-field>
+                 {{holiday.HolidayName}}
                 </td>
                 <td>
                   <!--mat-form-field>
@@ -56,13 +59,10 @@
                     <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Click Here Change Date"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field-->
-                  <mat-form-field appearance="outline">
-                    <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="holiday.HolidayDate" (bsValueChange)="holidayService.SaveHoliday(holiday)"
-                    class="form-control">
-                  </mat-form-field>
+                 {{holiday.HolidayDate| date: 'dd/MM/yyyy'}}
                 </td>
                 <td>
-                    <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/hallTariffDetailEdit/{{holiday.Id}}"><i class="material-icons">
+                    <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/holidayEdit/{{holiday.Id}}"><i class="material-icons">
                         create
                         </i>
                         </a>
