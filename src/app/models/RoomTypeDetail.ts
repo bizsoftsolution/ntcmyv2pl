@@ -7,6 +7,7 @@ export class RoomTypeDetail {
   NoOfBedDescription: string;
   Mattress: number;
   RoomType: string;
+
 constructor() {
   this.Id =  0;
   this.RoomTypeId = 0;
