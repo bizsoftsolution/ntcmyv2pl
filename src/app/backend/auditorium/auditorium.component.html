@@ -6,21 +6,18 @@
   </nav>
   <div class="container-fluid">
       <div class="row-fluid">
-        <div class="col-md-12">
-            <h3> Auditorium </h3>
-        </div>
-      </div>
-      <div class="row-fluid">
-          <div class="col-md-2">
-              <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+          <div class="col-md-6">
+              <h3> Auditorium </h3>
+              <mat-progress-bar mode="determinate" value="50" class="col-md-5" style="padding: 0px;"></mat-progress-bar>
           </div>
           <div class="col-md-6 text-right">
-              <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/auditoriumEdit/0"><i class="material-icons">
-                   add
-                   </i></a>
-                   </div>
-           </div>
+             <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/auditoriumEdit/0"><i class="material-icons">
+                  add
+                  </i></a>
+                  </div>
+          </div>
         </div>
+        <div class="row-fluid">&nbsp;</div>
       <div class="row-fluid">&nbsp;</div>
 
       <div class="row-fluid">
@@ -43,20 +40,14 @@
                         </tr>
                         <tr *ngFor="let auditorium of auditoriumService.AppLib.auditoriumList" >
                           <td>
-                              <mat-form-field class="example-full-width" appearance="outline">
-                              <input matInput #propertyValid="ngModel" [(ngModel)]="auditorium.OrderNo" (input)="auditoriumService.SaveAuditorium(auditorium)"  required>
-                              <div *ngIf="propertyValid.invalid" style="color: red"></div>
-                              </mat-form-field>
+                            {{auditorium.OrderNo}}
                           </td>
                           <td>
-                            <mat-form-field class="example-full-width" appearance="outline">
-                              <input matInput #propertyValid1="ngModel" [(ngModel)]="auditorium.Name" (input)="auditoriumService.SaveAuditorium(auditorium)"  required>
-                              <div *ngIf="propertyValid1.invalid" style="color: red"></div>
-                            </mat-form-field>
+                            {{auditorium.Name}}
                           </td>
                           <td>
                             <mat-slide-toggle
-                              class="example-margin" [(ngModel)]="auditorium.IsActive" (change)="auditoriumService.SaveAuditorium(auditorium)">
+                              class="example-margin" [(ngModel)]="auditorium.IsActive" (change)="auditoriumService.SaveAuditorium(auditorium)" disabled>
                             </mat-slide-toggle>
                           </td>
                           <td>

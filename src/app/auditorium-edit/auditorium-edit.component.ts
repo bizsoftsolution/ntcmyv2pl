@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
 import { Auditorium } from '../models/Auditorium';
+import { AuditoriumService } from '../services/auditorium.service';
 
 @Component({
   selector: 'app-auditorium-edit',
@@ -10,7 +11,7 @@ import { Auditorium } from '../models/Auditorium';
 })
 export class AuditoriumEditComponent implements OnInit {
 auditorium: Auditorium;
-  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService) { }
+  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService, public auditoriumService: AuditoriumService) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RoomType } from '../models/RoomType';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
+import { RoomTypeService } from '../services/room-type.service';
 
 @Component({
   selector: 'app-room-type-edit',
@@ -10,7 +11,7 @@ import { ApplibService } from '../services/applib.service';
 })
 export class RoomTypeEditComponent implements OnInit {
 roomtype: RoomType;
-  constructor(private activateroute: ActivatedRoute, private applib: ApplibService) { }
+  constructor(private activateroute: ActivatedRoute, private applib: ApplibService, public roomTypeService: RoomTypeService) { }
 
   ngOnInit() {
     this.activateroute.paramMap.subscribe(x => {
