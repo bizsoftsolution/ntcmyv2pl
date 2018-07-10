@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ApplibService } from './applib.service';
 import { HallType } from '../models/HallType';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HallTypeService {
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private route: Router) {
     // Save
     this.AppLib.con.listenFor<HallType>('HallType_Save').subscribe(x => {
       console.log(x);
@@ -49,12 +50,11 @@ export class HallTypeService {
         return;
       }
       this.AppLib.con.invoke('HallType_Save', halltype).then(x => {
-        if (halltype.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.hallTypeList.push(new HallType());
-          }
+        if (halltype.Id === 0) {
+          halltype.Id = x;
+          this.AppLib.hallTypeList.push(halltype);
         }
-        halltype.Id = x;
+        this.route.navigate(['/Admin/hall-type']);
       });
     }
   }

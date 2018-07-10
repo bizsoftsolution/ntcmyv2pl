@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ApplibService } from './applib.service';
 import { PromoCodeDetail } from '../models/PromoCodeDetail';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PromoCodeDetailService {
 
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private router: Router) {
     // Save
     this.AppLib.con.listenFor<PromoCodeDetail>('PromoCodeDetail_Save').subscribe(x => {
       console.log(x);
@@ -61,12 +62,11 @@ export class PromoCodeDetailService {
         return;
       }
       this.AppLib.con.invoke('PromoCodeDetail_Save', promoCodeDetail).then(x => {
-        if (promoCodeDetail.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.promoCodeDetailList.push(new PromoCodeDetail());
-          }
+        if (promoCodeDetail.Id === 0) {
+          promoCodeDetail.Id = x;
+          this.AppLib.promoCodeDetailList.push(promoCodeDetail);
         }
-        promoCodeDetail.Id = x;
+this.router.navigate(['/Admin/promo-code-details']);
       });
     }
   }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ApplibService } from './applib.service';
 import { RoomTariffDetail } from '../models/RoomTariffDetail';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TariffDetailService {
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private router: Router) {
     // Save
     this.AppLib.con.listenFor<RoomTariffDetail>('Save_Tarrif_Detail').subscribe(x => {
       console.log(x);
@@ -59,12 +60,11 @@ export class TariffDetailService {
         return;
       }
       this.AppLib.con.invoke('Save_Tarrif_Detail', tariffDetail).then(x => {
-        if (tariffDetail.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.tariffDetailList.push(new RoomTariffDetail());
-          }
+        if (tariffDetail.Id === 0) {
+          tariffDetail.Id = x;
+          this.AppLib.tariffDetailList.push(tariffDetail);
         }
-        tariffDetail.Id = x;
+this.router.navigate(['/Admin/TariffDetailsComponent']);
       });
     }
   }

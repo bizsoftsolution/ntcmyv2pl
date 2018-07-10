@@ -77,7 +77,6 @@ import { GalleryComponent } from './frontend/gallery/gallery.component';
 import { MainAdminComponent } from './main-admin/main-admin.component';
 import { PropertyEditComponent } from './property-edit/property-edit.component';
 import { HolidayEditComponent } from './holiday-edit/holiday-edit.component';
-import { HallDetailEditComponent } from './hall-detail-edit/hall-detail-edit.component';
 import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
 import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component';
 import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
@@ -91,8 +90,8 @@ import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-cod
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';
-  // c.url = 'https://www.ntc.my/SLSR';
-  c.url = 'http://www.ntc.my/NTCWeb.SL';
+  c.url = 'https://www.ntc.my/SLSR';
+  // c.url = 'http://www.ntc.my/NTCWeb.SLSR';
   c.logging = true;
 
   c.executeErrorsInZone = false;
@@ -141,7 +140,6 @@ export function createconfig(): SignalRConfiguration {
     MainAdminComponent,
     PropertyEditComponent,
     HolidayEditComponent,
-    HallDetailEditComponent,
     HallSlotEditComponent,
     HallTypeEditComponent,
     AuditoriumEditComponent,
