@@ -1,3 +1,50 @@
-<p>
-  hall-type-edit works!
-</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Hall Type</li>
+    </ol>
+  </nav>
+  <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-md-12">
+            <h3> Hall Type </h3>
+        </div>
+      </div>
+      <div class="row-fluid">
+          <div class="col-md-2">
+              <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+          </div>
+        </div>
+      <div class="row-fluid">&nbsp;</div>
+      <div class="row-fluid">&nbsp;</div>
+      <div class="row-fluid">
+          <div class="col-md-8">
+            <mat-card class="example-card mat-elevation-z10">
+              <mat-card-header>
+                <mat-card-title>
+
+                </mat-card-title>
+                <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
+              </mat-card-header>
+              <mat-card-content>
+                <div class="example-container">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="halltype.OrderNo" placeholder="Order No">
+                  </mat-form-field>
+                  <mat-form-field>
+                      <input matInput [(ngModel)]="halltype.Type" placeholder="Hall Type">
+                    </mat-form-field>
+                  <mat-slide-toggle
+                    class="example-margin" [(ngModel)]="halltype.IsActive" >
+                  </mat-slide-toggle>
+                  <br>
+                  <button mat-raised-button color="primary" (click)="hallTypeService.SaveHallType(halltype)">Submit</button>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+      </div>
+  </div>
+
+  <br>
+  <br>
