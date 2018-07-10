@@ -4,6 +4,7 @@ import { ApplibService } from '../services/applib.service';
 import { HallTariffDetail } from '../models/HallTariffDetail';
 import { HallTariffDetailService } from '../services/hall-tariff-detail.service';
 import { AuditoriumService } from '../services/auditorium.service';
+import { HallTypeService } from '../services/hall-type.service';
 
 @Component({
   selector: 'app-hall-tariff-detail-edit',
@@ -11,8 +12,12 @@ import { AuditoriumService } from '../services/auditorium.service';
   styleUrls: ['./hall-tariff-detail-edit.component.css']
 })
 export class HallTariffDetailEditComponent implements OnInit {
-hallTariffDetail: HallTariffDetail;
-  constructor(private activateroute: ActivatedRoute, private applib: ApplibService, public auditoriumService: AuditoriumService) { }
+    hallTariffDetail: HallTariffDetail;
+  constructor(private activateroute: ActivatedRoute, private applib: ApplibService,
+    public auditoriumService: AuditoriumService,
+    public hallTypeService: HallTypeService,
+    public hallTariffService: HallTariffDetailService
+  ) { }
 
   ngOnInit() {
     this.activateroute.paramMap.subscribe(x => {

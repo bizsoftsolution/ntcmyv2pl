@@ -29,25 +29,31 @@
               <mat-card-content>
                 <div class="example-container">
                     <mat-form-field>
-                        <mat-select placeholder="Auditorium" [(ngModel)]='hallTariff.Id'>
-                          <mat-option *ngFor="let autitorium of auditoriumService.AppLib.auditoriumList" [value]="hallTariff.Id">
-                            {{ hallTariff.Auditorium}}
+                        <mat-select placeholder="Auditorium" [(ngModel)]='hallTariffDetail.AuditoriumId'>
+                          <mat-option *ngFor="let auditorium of auditoriumService.AppLib.auditoriumList" [value]="auditorium.Id">
+                            {{auditorium.Name}}
                           </mat-option>
                         </mat-select>
                       </mat-form-field>
+                      <mat-form-field>
+                          <mat-select placeholder="Hall Type" [(ngModel)]='hallTariffDetail.HallTYpeId'>
+                            <mat-option *ngFor="let halltype of hallTypeService.AppLib.hallTypeList" [value]="halltype.Id">
+                              {{halltype.Type}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
 
                   <mat-form-field>
-
-                    <input matInput [(ngModel)]="hallTariff.OrderNo" placeholder="Auditorium">
-                  </mat-form-field>
-                  <mat-form-field>
-                      <input matInput [(ngModel)]="hallTariff.Type" placeholder="Hall Type">
+                      <input matInput [(ngModel)]="hallTariffDetail.Amount" placeholder="Amount">
                     </mat-form-field>
+                    <mat-form-field>
+                        <input matInput [(ngModel)]="hallTariffDetail.AmountSuffix" placeholder="Amount Suffix">
+                      </mat-form-field>
                   <mat-slide-toggle
-                    class="example-margin" [(ngModel)]="hallTariff.IsActive" >
+                    class="example-margin" [(ngModel)]="hallTariffDetail.IsActive" >
                   </mat-slide-toggle>
                   <br>
-                  <button mat-raised-button color="primary" (click)="hallTypeService.SaveHallType(halltype)">Submit</button>
+                  <button mat-raised-button color="primary" (click)="hallTariffService.saveHallTariffDetail(hallTariffDetail)">Submit</button>
                 </div>
               </mat-card-content>
             </mat-card>
