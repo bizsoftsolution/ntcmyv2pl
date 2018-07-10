@@ -33,6 +33,7 @@ import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.componen
 import { GalleryComponent } from './frontend/gallery/gallery.component';
 import { MainAdminComponent } from './main-admin/main-admin.component';
 import { AuthAdminGuard } from './auth-admin.guard';
+import { PropertyEditComponent } from './property-edit/property-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -47,7 +48,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'property-table', component: PropertyTableComponent },
 { path: 'company', component: CompanyDetailComponent },
 { path: 'property', component: PropertyComponent },
-{ path: 'propertyEdit/:id', component: PropertyComponent },
+{ path: 'propertyEdit/:id', component: PropertyEditComponent },
 { path: 'room-type', component: RoomTypeComponent },
 { path: 'tariff-type', component: TariffTypeComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },

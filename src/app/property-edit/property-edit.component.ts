@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { PropertyDetail } from '../models/PropertyDetail';
 import { ApplibService } from '../services/applib.service';
 
@@ -13,12 +13,15 @@ property: PropertyDetail;
   constructor(private activeRoute: ActivatedRoute, private applib: ApplibService) { }
 
   ngOnInit() {
-    const id = +this.activeRoute.snapshot.params.get('id');
-if (id === 0) {
-  this.property = new PropertyDetail();
-} else {
-  this.property = this.applib.propertyList.find( x => x.Id === id);
-}
+    this.activeRoute.paramMap.subscribe(x => {
+      const id = + x.get('id');
+      if (id === 0) {
+        this.property = new PropertyDetail();
+      } else {
+        this.property = this.applib.propertyList.find( y => y.Id === id);
+      }
+    });
+
   }
 
 }
