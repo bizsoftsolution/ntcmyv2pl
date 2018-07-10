@@ -14,6 +14,12 @@
           <div class="col-md-2">
               <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
           </div>
+          <div class="col-md-6 text-right">
+              <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/0"><i class="material-icons">
+                   add
+                   </i></a>
+                   </div>
+           </div>
         </div>
       <div class="row-fluid">&nbsp;</div>
 
@@ -54,6 +60,10 @@
                             </mat-slide-toggle>
                           </td>
                           <td>
+                              <a matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/auditoriumEdit/{{auditorium.Id}}"><i class="material-icons">
+                                  create
+                                  </i>
+                                  </a>
                               <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="auditoriumService.DeleteAuditorium(auditorium)" [disabled]="auditorium.Id==0">
                                   <mat-icon>delete</mat-icon>
                               </button>
