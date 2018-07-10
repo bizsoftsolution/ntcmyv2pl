@@ -98,8 +98,8 @@
                                             </thead>
                                             <tr *ngFor="let roomtd of applib.roomTypeDetailList">
                                                 <td>{{roomtd.RoomType}}</td>
-                                                <td>{{roomtd.NoOfUnit}}/{{roomtd.NoOfUnitDescription}}</td>
-                                                <td>{{roomtd.NoOfBed}}/{{roomtd.NoOfBedDescription}}</td>
+                                                <td>{{roomtd.NoOfUnit}}({{roomtd.NoOfUnitDescription}})</td>
+                                                <td>{{roomtd.NoOfBed}} {{roomtd.NoOfBedDescription}}</td>
                                                 <td>{{RoomTotal(roomtd.Id)}}</td>
                                                 <td>Mattress-{{roomtd.Mattress}}</td>
 

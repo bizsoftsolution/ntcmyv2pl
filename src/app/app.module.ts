@@ -75,6 +75,7 @@ import { HallBookingComponent } from './frontend/hall-booking/hall-booking.compo
 import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
 import { GalleryComponent } from './frontend/gallery/gallery.component';
 import { MainAdminComponent } from './main-admin/main-admin.component';
+import { PropertyEditComponent } from './property-edit/property-edit.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -127,7 +128,8 @@ export function createconfig(): SignalRConfiguration {
     HallBookingComponent,
     ChooseHallComponent,
     GalleryComponent,
-    MainAdminComponent
+    MainAdminComponent,
+    PropertyEditComponent
   ],
   imports: [
     BrowserModule,
