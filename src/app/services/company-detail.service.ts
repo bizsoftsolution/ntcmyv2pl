@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ApplibService} from '../services/applib.service';
 import { CompanyDetail } from '../models/CompanyDetail';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { CompanyDetail } from '../models/CompanyDetail';
 })
 export class CompanyDetailService {
 
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private route: Router) {
 // Save
 this.AppLib.con.listenFor<CompanyDetail>('CompanyDetail_Save').subscribe(x => {
   console.log(x);

@@ -5,12 +5,13 @@ import { map } from 'rxjs/operators';
 import { HolidayDetail } from '../models/holiday';
 import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HolidayService {
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private router: Router) {
     // Save
     this.AppLib.con.listenFor<HolidayDetail>('Save_Holiday').subscribe(x => {
       console.log(x);
@@ -52,12 +53,11 @@ export class HolidayService {
         return;
       }
       this.AppLib.con.invoke('Save_Holiday', holidayData).then(x => {
-        if (holidayData.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.holidayList.push(new HolidayDetail());
-          }
+        if (holidayData.Id === 0) {
+          holidayData.Id = x;
+          this.AppLib.holidayList.push(holidayData);
         }
-        holidayData.Id = x;
+       this.router.navigate(['/Admin/holiday']);
       });
     }
   }

@@ -75,13 +75,23 @@ import { HallBookingComponent } from './frontend/hall-booking/hall-booking.compo
 import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.component';
 import { GalleryComponent } from './frontend/gallery/gallery.component';
 import { MainAdminComponent } from './main-admin/main-admin.component';
+import { PropertyEditComponent } from './property-edit/property-edit.component';
+import { HolidayEditComponent } from './holiday-edit/holiday-edit.component';
+import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
+import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component';
+import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
+import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
+import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
+import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
+import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
+import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';
-  // c.url = 'https://www.ntc.my/SLSR';
-  c.url = 'http://www.ntc.my/NTCWeb.SL';
+  c.url = 'https://www.ntc.my/SLSR';
+  // c.url = 'http://www.ntc.my/NTCWeb.SLSR';
   c.logging = true;
 
   c.executeErrorsInZone = false;
@@ -127,7 +137,17 @@ export function createconfig(): SignalRConfiguration {
     HallBookingComponent,
     ChooseHallComponent,
     GalleryComponent,
-    MainAdminComponent
+    MainAdminComponent,
+    PropertyEditComponent,
+    HolidayEditComponent,
+    HallSlotEditComponent,
+    HallTypeEditComponent,
+    AuditoriumEditComponent,
+    HallTariffDetailEditComponent,
+    RoomTypeEditComponent,
+    TariffTypeEditComponent,
+    TariffDetailEditComponent,
+    PromoCodeDetailEditComponent
   ],
   imports: [
     BrowserModule,

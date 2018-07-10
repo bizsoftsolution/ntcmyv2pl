@@ -33,25 +33,46 @@ import { ChooseHallComponent } from './frontend/choose-hall/choose-hall.componen
 import { GalleryComponent } from './frontend/gallery/gallery.component';
 import { MainAdminComponent } from './main-admin/main-admin.component';
 import { AuthAdminGuard } from './auth-admin.guard';
+import { HolidayEditComponent } from './holiday-edit/holiday-edit.component';
+import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
+import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component';
+import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
+import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
+import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
+import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
+
+import { PropertyEditComponent } from './property-edit/property-edit.component';
+import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
+import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
 { path: 'holiday', component: HolidayComponent },
+{ path: 'holidayEdit/:id', component: HolidayEditComponent },
 { path: 'auditorium', component: AuditoriumComponent },
+{ path: 'auditoriumEdit/:id', component: AuditoriumEditComponent },
 { path: 'hall-type', component: HallTypeComponent },
+{ path: 'hallTypeEdit/:id', component: HallTypeEditComponent },
 { path: 'hall-tariff-details', component: HallTariffDetailsComponent },
+{ path: 'hallTariffDetailEdit/:id', component: HallTariffDetailEditComponent },
 { path: 'hall-slot', component: HallSlotComponent },
+{ path: 'hallslotEdit/:id', component: HallSlotEditComponent },
 { path: 'hall-details', component: HallDetailsComponent },
+
 { path: 'room-details', component: RoomDetailsComponent },
 { path: 'member-list', component: MemberListComponent },
 { path: 'property-table', component: PropertyTableComponent },
 { path: 'company', component: CompanyDetailComponent },
 { path: 'property', component: PropertyComponent },
+{ path: 'propertyEdit/:id', component: PropertyEditComponent },
 { path: 'room-type', component: RoomTypeComponent },
+{ path: 'roomTypeEdit/:id', component: RoomTypeEditComponent },
 { path: 'tariff-type', component: TariffTypeComponent },
+{ path: 'tariff-type/:id', component: TariffTypeEditComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },
+{ path: 'tarifDetailsEdit/:id', component: TariffDetailEditComponent },
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
-
+{ path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },

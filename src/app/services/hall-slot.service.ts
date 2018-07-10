@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ApplibService } from './applib.service';
 import { HallSlot } from '../models/HallSlot';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HallSlotService {
 
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private route: Router) {
     // Save
     this.AppLib.con.listenFor<HallSlot>('HallSlot_Save').subscribe(x => {
       console.log(x);
@@ -52,12 +53,11 @@ export class HallSlotService {
         return;
       }
       this.AppLib.con.invoke('HallSlot_Save', hallSlot).then(x => {
-        if (hallSlot.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.hallSlotList.push(new HallSlot());
-          }
+        if (hallSlot.Id === 0) {
+          hallSlot.Id = x;
+         this.AppLib.hallSlotList.push(hallSlot);
         }
-        hallSlot.Id = x;
+this.route.navigate(['/Admin/hall-slot']);
       });
     }
   }

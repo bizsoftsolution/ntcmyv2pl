@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {ApplibService} from './applib.service';
 import { Auditorium } from '../models/Auditorium';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuditoriumService {
 
-  constructor(public AppLib: ApplibService) {
+  constructor(public AppLib: ApplibService, private router: Router) {
     // Save
     this.AppLib.con.listenFor<Auditorium>('Auditorium_Save').subscribe(x => {
       console.log(x);
@@ -49,12 +50,11 @@ export class AuditoriumService {
         return;
       }
       this.AppLib.con.invoke('Auditorium_Save', auditoriumData).then(x => {
-        if (auditoriumData.Id !== x) {
-          if (x !== 0) {
-            this.AppLib.auditoriumList.push(new Auditorium());
-          }
-        }
+        if (auditoriumData.Id === 0) {
         auditoriumData.Id = x;
+        this.AppLib.auditoriumList.push(auditoriumData);
+        }
+        this.router.navigate(['/Admin/auditorium']);
       });
     }
   }
