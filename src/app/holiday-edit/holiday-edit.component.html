@@ -3,39 +3,33 @@
     <li class="breadcrumb-item">
       <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Hall Type</li>
+    <li class="breadcrumb-item active" aria-current="page">Holiday Details</li>
   </ol>
 </nav>
 <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="col-md-12">
-      <h3> Holiday </h3>
-    </div>
-  </div>
-  <div class="row-fluid">
-    <div class="col-md-2">
-      <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
-    </div>
-  </div>
-  <div class="row-fluid">&nbsp;</div>
-  <div class="row-fluid">&nbsp;</div>
-  <div class="row-fluid">
-    <div class="col-md-8">
-      <mat-card class="example-card mat-elevation-z10">
-        <mat-card-header>
-          <mat-card-title>
 
+  <div class="row-fluid">&nbsp;</div>
+  <div class="row-fluid">
+      <div class="col-md-2">
+        </div>
+    <div class="col-md-8">
+      <mat-card class="example-card mat-elevation-z10" style="padding: 50px;">
+        <mat-card-header style="margin: 0px 0px 25px  0px!important;">
+          <mat-card-title>
+              <h3> Holiday Details</h3>
+              <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
           </mat-card-title>
           <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
         </mat-card-header>
         <mat-card-content>
           <div class="example-container">
-            <div>
               <mat-form-field>
                 <input matInput [(ngModel)]="holiday.HolidayName" placeholder="Holiday Name">
               </mat-form-field>
-            </div>
+              <br>
+              Date
             <mat-form-field appearance="outline">
+
                 <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="holiday.HolidayDate"
                 class="form-control">
               </mat-form-field>
@@ -45,6 +39,8 @@
         </mat-card-content>
       </mat-card>
     </div>
+    <div class="col-md-2">
+      </div>
   </div>
 </div>
 

@@ -1,26 +1,23 @@
   <nav aria-label="breadcrumb">
   <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
-    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+    <li class="breadcrumb-item"><a routerLink="/Admin/dashboard">Dashboard</a></li>
     <li class="breadcrumb-item active" aria-current="page">Tariff Details</li>
   </ol>
 </nav>
 <div class="container-fluid">
     <div class="row-fluid">
-      <div class="col-md-12">
-          <h3>Tariff Details</h3>
-      </div>
-    </div>
-    <div class="row-fluid">
-        <div class="col-md-2">
-            <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+        <div class="col-md-6">
+            <h3> Tariff Details</h3>
+            <mat-progress-bar mode="determinate" value="50" class="col-md-5" style="padding: 0px;"></mat-progress-bar>
         </div>
         <div class="col-md-6 text-right">
-            <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/tarifDetailsEdit/0"><i class="material-icons">
-                 add
-                 </i></a>
-                 </div>
-         </div>
+           <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/tarifDetailsEdit/0"><i class="material-icons">
+                add
+                </i></a>
+                </div>
+        </div>
       </div>
+
     <div class="row-fluid">&nbsp;</div>
 
     <div class="row-fluid">
@@ -36,42 +33,41 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered">
                       <tr>
-                        <th>Property Id</th>
+                        <th style="width: 100px!important;text-align: center;">Property</th>
 
-                        <th>RoomType Id</th>
-                        <th>Rate of WeekDay Member</th>
-                        <th>Rate Of WeekDay Non-Member</th>
-                        <th>Rate of WeekEnd Member</th>
-                        <th>Rate of WeekEnd Non-Member</th>
-                        <th>IsActive</th>
-                        <th>Action</th>
+                        <th style="width: 100px!important;text-align: center;">RoomType</th>
+                        <th style="width: 100px!important;text-align: center;">Rate of WeekDay Member</th>
+                        <th style="width: 100px!important;text-align: center;">Rate Of WeekDay Non-Member</th>
+                        <th style="width: 100px!important;text-align: center;">Rate of WeekEnd Member</th>
+                        <th style="width: 100px!important;text-align: center;">Rate of WeekEnd Non-Member</th>
+                        <th style="width: 100px!important;text-align: center;">Status</th>
+                        <th style="width: 200px!important;text-align: center;">Action</th>
                       </tr>
                       <tr *ngFor="let tariffDetail of tariffDetailService.AppLib.tariffDetailList" >
-                        <td>{{tariffDetail.Property}}</td>
+                        <td style="text-align: center;">{{tariffDetail.Property}}</td>
 
-                        <td>{{tariffDetail.RoomType}}</td>
-                        <td>
+                        <td style="text-align: center;">{{tariffDetail.RoomType}}</td>
+                        <td style="text-align: center;">
                           {{tariffDetail.RateOfWeekDayMember}}
                         </td>
-                        <td>
+                        <td style="text-align: center;">
                         {{tariffDetail.RateOfWeekDayNonMember}}
                         </td>
-                        <td>
+                        <td style="text-align: center;">
                          {{tariffDetail.RateOfWeekEndMember}}
                         </td>
-                        <td>
+                        <td style="text-align: center;">
                          {{tariffDetail.RateOfWeekEndNonMember}}
                         </td>
-                        <td>
-                          <mat-slide-toggle
-                              class="example-margin" [(ngModel)]="tariffDetail.IsActive" disabled>
-                            </mat-slide-toggle>
+                        <td style="text-align: center;">
+                            {{ tariffDetail.IsActive ? 'Enable' : 'Disable'}}
                         </td>
-                        <td>
+                        <td style="text-align: center;">
                             <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/tarifDetailsEdit/{{tariffDetail.Id}}"><i class="material-icons">
                                 create
                                 </i>
                                 </a>
+                                &nbsp;
                             <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="tariffDetailService.DeleteTariffDetail(tariffDetail)" [disabled]="tariffDetail.Id==0">
                                 <mat-icon>delete</mat-icon>
                             </button>
