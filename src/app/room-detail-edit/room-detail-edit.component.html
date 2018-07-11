@@ -30,38 +30,28 @@
         </mat-card-header>
         <mat-card-content>
           <div class="example-container">
-              <mat-form-field>
-                  <mat-select placeholder="Property" [(ngModel)]='tariffDetail.PropertyId'>
-                    <mat-option *ngFor="let property of applib.propertyList " [value]="property.Id">
-                      {{property.PropertyName}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
+
 
           <mat-form-field>
-              <mat-select placeholder="Room Type" [(ngModel)]='tariffDetail.RoomTypeId'>
+              <mat-select placeholder="Room Type" [(ngModel)]='roomDetail.RoomTypeId'>
                 <mat-option *ngFor="let roomType of applib.roomTypeList " [value]="roomType.Id">
                   {{roomType.Type}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
 
+<br>
+            <mat-form-field>
+              <input matInput [(ngModel)]="roomDetail.Name" placeholder="No Of Unit">
+            </mat-form-field>
 
-            <mat-form-field>
-              <input matInput [(ngModel)]="tariffDetail.RateOfWeekDayMember" placeholder="RateOfWeekDayMember">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput [(ngModel)]="tariffDetail.RateOfWeekEndMember" placeholder="RateOfWeekEndMember">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput [(ngModel)]="tariffDetail.RateOfWeekDayNonMember" placeholder="RateOfWeekDayNonMember">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput [(ngModel)]="tariffDetail.RateOfWeekEndNonMember" placeholder="RateOfWeekEndNonMember">
-            </mat-form-field>
 
             <br>
-            <button mat-raised-button color="primary" (click)="roomTariffService.saveTariffDetail(tariffDetail)">Submit</button>
+            <mat-slide-toggle
+            class="example-margin" [(ngModel)]="roomDetail.IsActive">
+          </mat-slide-toggle>
+          <br>
+            <button mat-raised-button color="primary" (click)="roomDetailService.SaveRoomDetail(roomDetail)">Submit</button>
           </div>
         </mat-card-content>
       </mat-card>

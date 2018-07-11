@@ -11,7 +11,7 @@ import { PropertyComponent } from './backend/property/property.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './backend/navbar/navbar.component';
 import { RoomTypeComponent } from './backend/room-type/room-type.component';
-import { TariffTypeComponent } from './backend/tariff-type/tariff-type.component';
+
 import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 import { HallTypeComponent } from './backend/hall-type/hall-type.component';
 import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
@@ -39,7 +39,7 @@ import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component
 import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
 import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
 import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
-import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
+
 
 import { PropertyEditComponent } from './property-edit/property-edit.component';
 import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
@@ -47,6 +47,9 @@ import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-cod
 
 import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
 import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
+import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -61,7 +64,6 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'hall-slot', component: HallSlotComponent },
 { path: 'hallslotEdit/:id', component: HallSlotEditComponent },
 { path: 'hall-details', component: HallDetailsComponent },
-
 { path: 'room-details', component: RoomDetailsComponent },
 { path: 'member-list', component: MemberListComponent },
 { path: 'property-table', component: PropertyTableComponent },
@@ -70,14 +72,16 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'propertyEdit/:id', component: PropertyEditComponent },
 { path: 'room-type', component: RoomTypeComponent },
 { path: 'roomTypeEdit/:id', component: RoomTypeEditComponent },
-{ path: 'tariff-type', component: TariffTypeComponent },
-{ path: 'tariff-type/:id', component: TariffTypeEditComponent },
 { path: 'tariff-details', component: TariffDetailsComponent },
 { path: 'tarifDetailsEdit/:id', component: TariffDetailEditComponent },
 {path: 'roomTypeDetail', component: RommTypeDetailComponent},
 {path: 'roomTypeDetailEdit/:id', component: RoomTypeDetailEditComponent},
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
 { path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
+{path: 'roomDetail', component: RoomDetailsComponent},
+{ path: 'roomDetailEdit/:id', component: RoomDetailEditComponent},
+{path: 'itemDetail', component: ItemDetailComponent},
+{path: 'itemDetailEdit/:id', component: ItemDetailEditComponent},
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },

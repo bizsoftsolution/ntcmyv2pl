@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TariffTypeComponent } from './tariff-type.component';
+import { ItemDetailEditComponent } from './item-detail-edit.component';
 
-describe('TariffTypeComponent', () => {
-  let component: TariffTypeComponent;
-  let fixture: ComponentFixture<TariffTypeComponent>;
+describe('ItemDetailEditComponent', () => {
+  let component: ItemDetailEditComponent;
+  let fixture: ComponentFixture<ItemDetailEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TariffTypeComponent ]
+      declarations: [ ItemDetailEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TariffTypeComponent);
+    fixture = TestBed.createComponent(ItemDetailEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

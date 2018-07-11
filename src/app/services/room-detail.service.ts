@@ -41,7 +41,8 @@ export class RoomDetailService {
       d.Id = roomData.Id;
       d.Name = roomData.Name;
       d.IsActive = roomData.IsActive;
-      d.TariffDetailId = roomData.TariffDetailId;
+      d.RoomTypeId = roomData.RoomTypeId;
+      d.RoomType = roomData.RoomType;
 
     } else {
       console.log(roomData);

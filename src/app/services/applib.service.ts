@@ -7,7 +7,7 @@ import { PropertyDetail } from '../models/PropertyDetail';
 import { UserType } from '../models/UserType';
 import { UserAccount } from '../models/UserAccount';
 import { LoginUser } from '../models/LoginUserDetail';
-import { TariffType } from '../models/TariffType';
+
 import { RoomType } from '../models/RoomType';
 import { RoomTariffDetail } from '../models/RoomTariffDetail';
 import { HallType } from '../models/HallType';
@@ -46,7 +46,7 @@ export class ApplibService {
   companyList: CompanyDetail[];
   userTypeList: UserType[] = [];
   userAccList: UserAccount[];
-  tarifTypeList: TariffType[];
+
   roomTypeList: RoomType[];
   tariffDetailList: RoomTariffDetail[];
   hallTypeList: HallType[];
@@ -80,10 +80,7 @@ export class ApplibService {
         console.log(p);
         this.propertyList = p;
       });
-       this.con.invoke('TariffType_List').then(tl => {
-        console.log(tl);
-        this.tarifTypeList = tl;
-       });
+
       this.con.invoke('RoomType_List').then(rt => {
         console.log(rt);
         this.roomTypeList = rt;
