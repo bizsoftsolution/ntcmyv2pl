@@ -98,7 +98,7 @@
                                             </thead>
                                             <tr *ngFor="let roomtd of applib.roomTypeDetailList">
                                                 <td>{{roomtd.RoomType}}</td>
-                                                <td>{{roomtd.NoOfUnit}}({{roomtd.NoOfUnitDescription}})</td>
+                                                <td>{{roomtd.NoOfUnit}}</td>
                                                 <td>{{roomtd.NoOfBed}} {{roomtd.NoOfBedDescription}}</td>
                                                 <td>{{RoomTotal(roomtd.Id)}}</td>
                                                 <td>Mattress-{{roomtd.Mattress}}</td>
@@ -176,7 +176,7 @@
                                                     <th>Auditorium</th>
                                                     <th *ngFor= "let halltype of applib.hallTypeList">{{halltype.Type}}</th>
 
-                                                    <th>Hall of Unity</th>
+                                                    <!-- <th>Hall of Unity</th> -->
                                                 </tr>
                                             </thead>
                                             <tr *ngFor= "let Auditorium of applib.auditoriumList">
@@ -184,9 +184,9 @@
                                                     <p class="price"><span class="amout">{{Auditorium.Name}}</span></p>
                                                 </td>
                                                 <td *ngFor= "let halltype of applib.hallTypeList">{{hallTariffDetail(halltype.Id,Auditorium.Id)}}</td>
-                                                <td>
+                                                <!-- <td>
                                                     <p  class="price"><span class="amout">{{AuditoriumTotal(Auditorium.Id)}}</span></p>
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                         </table>
@@ -315,7 +315,7 @@
                                             </thead>
                                             <tr *ngFor="let item of applib.itemDetailList ">
                                               <td>{{item.ItemName}}</td>
-                                              <td>{{item.Rate}}</td>
+                                              <td>RM{{item.Rate}}/{{item.RateUnit}} hours</td>
                                             </tr>
 
                                         </table>

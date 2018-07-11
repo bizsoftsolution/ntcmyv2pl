@@ -44,7 +44,7 @@ export class ItemDetailService {
       d.IsActive = itemData.IsActive;
       d.Rate = itemData.Rate;
       d.Stock = itemData.Stock;
-
+d.RateUnit = itemData.RateUnit;
 
     } else {
       console.log(itemData);
