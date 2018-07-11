@@ -56,7 +56,7 @@ d.RateUnit = itemData.RateUnit;
           itemData.Id = x;
           this.AppLib.itemDetailList.push(itemData);
         }
-this.router.navigate(['/Admin/']);
+this.router.navigate(['/Admin/itemDetail']);
       });
     }
   }
