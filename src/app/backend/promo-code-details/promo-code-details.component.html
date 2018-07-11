@@ -51,9 +51,7 @@
               </tr>
               <tr *ngFor="let promocode of promoCodeService.AppLib.promoCodeDetailList">
                 <td style="text-align: center;">
-                  <mat-form-field appearance="outline" >
                     {{promocode.PromoCode}}
-                  </mat-form-field>
                 </td>
 
                   <!--mat-form-field>
@@ -62,24 +60,16 @@
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field-->
                 <td style="text-align: center;">
-                  <mat-form-field appearance="outline">
                         {{promocode.DateFrom | date: 'dd-MM-yyyy'}}
-                  </mat-form-field>
                 </td>
                 <td style="text-align: center;">
-                    <mat-form-field appearance="outline">
                         {{promocode.DateTo | date: 'dd-MM-yyyy'}}
-                    </mat-form-field>
                   </td>
                 <td style="text-align: center;">
-                    <mat-form-field appearance="outline" >
                      {{promocode.MinimumAmount}}
-                    </mat-form-field>
                   </td>
                   <td style="text-align: center;">
-                      <mat-form-field appearance="outline" >
                        {{promocode.DiscountRate}}
-                      </mat-form-field>
                     </td>
                     <td style="text-align: center;">
                         {{ promocode.IsActive ? 'Enable' : 'Disable'}}

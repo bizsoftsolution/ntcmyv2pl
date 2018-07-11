@@ -64,7 +64,7 @@ export class BookingMasterService {
           bookingMaster.Id = x;
           this.applib.bookingMasterList.push(bookingMaster);
         }
-        this.router.navigate(['']);
+        this.router.navigate(['Admin/booking-master']);
       });
     }
   }
