@@ -9798,7 +9798,9 @@ blockquote p:after {
 
 
 
-
-
-
+/*Additionally added css*/
+.mat-card-header-text
+{
+    margin:0px!important;
+}
 
