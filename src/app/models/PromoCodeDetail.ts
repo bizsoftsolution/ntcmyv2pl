@@ -13,8 +13,7 @@ export class PromoCodeDetail {
   this.PromoCode = '';
   this.DateFrom = null;
   this.DateTo = null;
-  this.MinimumAmount = 0;
-  this.DiscountRate = 0;
+
   this.OrderNo = 0;
   this.IsActive = false;
   }

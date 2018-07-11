@@ -15,6 +15,12 @@
       <div class="col-md-2">
           <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
       </div>
+      <div class="col-md-6 text-right">
+          <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/promoCodeDetailEdit/0"><i class="material-icons">
+               add
+               </i></a>
+               </div>
+       </div>
     </div>
   <div class="row-fluid">&nbsp;</div>
 
@@ -49,9 +55,8 @@
               <tr *ngFor="let promocode of promoCodeService.AppLib.promoCodeDetailList">
                 <td>
                   <mat-form-field appearance="outline" >
-                    <input  #model="ngModel" matInput [(ngModel)]="promocode.PromoCode" (input)="promoCodeService.SavePromoCodeDetail(promocode)" required>
-                    <div *ngIf="model.invalid" style="color: red"></div>
-                  </mat-form-field>
+                    {{promocode.PromoCode}}
+                  </mat-form-field>}}
                 </td>
 
                   <!--mat-form-field>
@@ -61,26 +66,22 @@
                   </mat-form-field-->
                 <td>
                   <mat-form-field appearance="outline">
-                    <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [(ngModel)]="promocode.DateFrom" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
-                    class="form-control">
+                        {{promocode.DateFrom| date: 'dd-MM-yyyy'}}
                   </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field appearance="outline">
-                      <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [(ngModel)]="promocode.DateTo" (bsValueChange)="promoCodeService.SavePromoCodeDetail(promocode)"
-                      class="form-control">
+                        {{promocode.DateTo| date: 'dd-MM-yyyy'}}
                     </mat-form-field>
                   </td>
                 <td>
                     <mat-form-field appearance="outline" >
-                      <input  #model1="ngModel" matInput [(ngModel)]="promocode.MinimumAmount" (input)="promoCodeService.SavePromoCodeDetail(promocode)" required>
-                      <div *ngIf="model1.invalid" style="color: red"></div>
+                     {{promocode.MinimumAmount}}
                     </mat-form-field>
                   </td>
                   <td>
                       <mat-form-field appearance="outline" >
-                        <input  #model2="ngModel" matInput [(ngModel)]="promocode.DiscountRate" (input)="promoCodeService.SavePromoCodeDetail(promocode)" required>
-                        <div *ngIf="model2.invalid" style="color: red"></div>
+                       {{promocode.DiscountRate}}
                       </mat-form-field>
                     </td>
                     <td>
@@ -90,6 +91,10 @@
                       </td>
                 <td>
                   <div class="button-row">
+                      <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/promoCodeDetailEdit/{{promocode.Id}}"><i class="material-icons">
+                          create
+                          </i>
+                          </a>
                     <button matTooltip="Delete" mat-mini-fab color="warn" (click)="promoCodeService.DeletePromoCodeDetail(promocode)" [disabled]="promocode.Id==0">
                       <i class="material-icons">
                         delete

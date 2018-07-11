@@ -1,3 +1,70 @@
-<p>
-  promo-code-detail-edit works!
-</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
+      <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Hall Type</li>
+    </ol>
+  </nav>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h3> Hall Type </h3>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="col-md-2">
+        <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+      </div>
+    </div>
+    <div class="row-fluid">&nbsp;</div>
+    <div class="row-fluid">&nbsp;</div>
+    <div class="row-fluid">
+      <div class="col-md-8">
+        <mat-card class="example-card mat-elevation-z10">
+          <mat-card-header>
+            <mat-card-title>
+
+            </mat-card-title>
+            <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
+          </mat-card-header>
+          <mat-card-content>
+            <div class="example-container">
+              <div>
+                <mat-form-field>
+                  <input matInput [(ngModel)]="promocode.PromoCode" placeholder="Promo Code">
+                </mat-form-field>
+              </div>
+              <mat-form-field appearance="outline">
+                  <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateFrom"
+                  class="form-control">
+                </mat-form-field>
+              <br>
+              <mat-form-field appearance="outline">
+                  <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateTo"
+                  class="form-control">
+                </mat-form-field>
+                <br>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="promocode.MinimumAmount" placeholder="Minimum Amount">
+                      </mat-form-field>
+                </div>
+                <br>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="promocode.DiscountRate" placeholder="Discount Rate">
+                      </mat-form-field>
+                </div>
+
+                <br>
+              <button mat-raised-button color="primary" (click)="PromocodeService.SavePromoCodeDetail(promocode)">Submit</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>

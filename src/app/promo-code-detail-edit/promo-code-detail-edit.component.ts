@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
 import { PromoCodeDetail } from '../models/PromoCodeDetail';
+import { PromoCodeDetailService } from '../services/promo-code-detail.service';
 
 @Component({
   selector: 'app-promo-code-detail-edit',
@@ -9,8 +10,12 @@ import { PromoCodeDetail } from '../models/PromoCodeDetail';
   styleUrls: ['./promo-code-detail-edit.component.css']
 })
 export class PromoCodeDetailEditComponent implements OnInit {
-promocode: PromoCodeDetail;
-  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService) { }
+  promocode: PromoCodeDetail;
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private applib: ApplibService,
+    public PromocodeService: PromoCodeDetailService
+  ) {}
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {
@@ -22,5 +27,4 @@ promocode: PromoCodeDetail;
       }
     });
   }
-
 }

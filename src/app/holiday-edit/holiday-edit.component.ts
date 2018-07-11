@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HolidayDetail } from '../models/holiday';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
+import { HolidayService } from '../services/holiday.service';
 
 @Component({
   selector: 'app-holiday-edit',
@@ -12,7 +13,8 @@ export class HolidayEditComponent implements OnInit {
   holiday: HolidayDetail;
   constructor(
     private activateroute: ActivatedRoute,
-    private applib: ApplibService
+    private applib: ApplibService,
+    public holidayservice: HolidayService
   ) {}
 
   ngOnInit() {
