@@ -87,6 +87,7 @@ import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-ed
 import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
 import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
+import { ActiveRecordPipe } from './active-record.pipe';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
@@ -156,6 +157,7 @@ export function createconfig(): SignalRConfiguration {
     PromoCodeDetailEditComponent,
     RommTypeDetailComponent,
     RoomTypeDetailEditComponent,
+    ActiveRecordPipe,
     RoomDetailComponent,
     RoomDetailEditComponent,
     ItemDetailComponent,

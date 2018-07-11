@@ -37,7 +37,7 @@
                       </mat-form-field>
                       <mat-form-field>
                           <mat-select placeholder="Hall Type" [(ngModel)]='hallTariffDetail.HallTYpeId'>
-                            <mat-option *ngFor="let halltype of hallTypeService.AppLib.hallTypeList" [value]="halltype.Id">
+                            <mat-option *ngFor="let halltype of hallTypeService.AppLib.hallTypeList | activeRecord" [value]="halltype.Id">
                               {{halltype.Type}}
                             </mat-option>
                           </mat-select>
