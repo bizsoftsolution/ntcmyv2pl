@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../services/applib.service';
 import { RoomTariffDetail } from '../models/RoomTariffDetail';
+import { RoomTypeDetailServiceService } from '../services/room-type-detail-service.service';
+import { TariffDetailService } from '../services/tariff-detail.service';
 
 @Component({
   selector: 'app-tariff-detail-edit',
@@ -9,8 +11,12 @@ import { RoomTariffDetail } from '../models/RoomTariffDetail';
   styleUrls: ['./tariff-detail-edit.component.css']
 })
 export class TariffDetailEditComponent implements OnInit {
-tariffDetail: RoomTariffDetail;
-  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService) { }
+  tariffDetail: RoomTariffDetail;
+  constructor(
+    private activateRoute: ActivatedRoute,
+    public applib: ApplibService,
+    public roomTariffService: TariffDetailService
+  ) {}
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {
@@ -20,8 +26,6 @@ tariffDetail: RoomTariffDetail;
       } else {
         this.tariffDetail = this.applib.tariffDetailList.find(y => y.Id === id);
       }
-
     });
   }
-
 }
