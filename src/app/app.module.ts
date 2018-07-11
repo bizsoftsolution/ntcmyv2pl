@@ -53,7 +53,7 @@ import { UserTypeComponent } from './backend/user-type/user-type.component';
 import { UserAccountComponent } from './backend/user-account/user-account.component';
 import { LoginComponent } from './backend/login/login.component';
 import { RoomTypeComponent } from './backend/room-type/room-type.component';
-import { TariffTypeComponent } from './backend/tariff-type/tariff-type.component';
+
 import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 import { HomeComponent } from './frontend/home/home.component';
 import { HeaderComponent } from './frontend/header/header.component';
@@ -82,11 +82,15 @@ import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component
 import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
 import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
 import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
-import { TariffTypeEditComponent } from './tariff-type-edit/tariff-type-edit.component';
+
 import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
 import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
 import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
+import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -118,7 +122,7 @@ export function createconfig(): SignalRConfiguration {
     UserAccountComponent,
     LoginComponent,
     RoomTypeComponent,
-    TariffTypeComponent,
+
     TariffDetailsComponent,
     HomeComponent,
     HeaderComponent,
@@ -147,11 +151,15 @@ export function createconfig(): SignalRConfiguration {
     AuditoriumEditComponent,
     HallTariffDetailEditComponent,
     RoomTypeEditComponent,
-    TariffTypeEditComponent,
+
     TariffDetailEditComponent,
     PromoCodeDetailEditComponent,
     RommTypeDetailComponent,
-    RoomTypeDetailEditComponent
+    RoomTypeDetailEditComponent,
+    RoomDetailComponent,
+    RoomDetailEditComponent,
+    ItemDetailComponent,
+    ItemDetailEditComponent
   ],
   imports: [
     BrowserModule,
