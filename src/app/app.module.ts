@@ -31,7 +31,7 @@ import { AppRoutingModule } from './/app-routing.module';
 
 import { ApplibService } from './services/applib.service';
 import { PropertyService } from './services/property.service';
-import { RoomDetailsComponent } from './backend/room-details/room-details.component';
+
 import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
 import { HolidayComponent } from './backend/holiday/holiday.component';
 import { MemberListComponent } from './backend/member-list/member-list.component';
@@ -111,7 +111,7 @@ export function createconfig(): SignalRConfiguration {
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    RoomDetailsComponent,
+
     HallDetailsComponent,
     HolidayComponent,
     MemberListComponent,

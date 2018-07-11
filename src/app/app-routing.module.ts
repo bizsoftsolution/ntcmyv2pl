@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './backend/dashboard/dashboard.component';
 import { HolidayComponent } from './backend/holiday/holiday.component';
 import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
-import { RoomDetailsComponent } from './backend/room-details/room-details.component';
+
 import { MemberListComponent } from './backend/member-list/member-list.component';
 import { PropertyTableComponent } from './backend/property-table/property-table.component';
 import { CompanyDetailComponent } from './backend/company-detail/company-detail.component';
@@ -50,6 +50,7 @@ import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-de
 import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -64,7 +65,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'hall-slot', component: HallSlotComponent },
 { path: 'hallslotEdit/:id', component: HallSlotEditComponent },
 { path: 'hall-details', component: HallDetailsComponent },
-{ path: 'room-details', component: RoomDetailsComponent },
+
 { path: 'member-list', component: MemberListComponent },
 { path: 'property-table', component: PropertyTableComponent },
 { path: 'company', component: CompanyDetailComponent },
@@ -78,7 +79,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 {path: 'roomTypeDetailEdit/:id', component: RoomTypeDetailEditComponent},
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
 { path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
-{path: 'roomDetail', component: RoomDetailsComponent},
+{path: 'roomDetail', component: RoomDetailComponent},
 { path: 'roomDetailEdit/:id', component: RoomDetailEditComponent},
 {path: 'itemDetail', component: ItemDetailComponent},
 {path: 'itemDetailEdit/:id', component: ItemDetailEditComponent},
