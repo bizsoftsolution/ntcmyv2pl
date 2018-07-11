@@ -55,7 +55,7 @@
                   class="example-margin" [(ngModel)]="hallslot.IsActive" >
                 </mat-slide-toggle>
                 <br>
-                <button mat-raised-button color="primary" (click)="hslot.SaveHallSlot(hallslot)">Submit</button>
+                <button mat-raised-button color="primary" (click)="hallSlotService.SaveHallSlot(hallslot)">Submit</button>
               </div>
             </mat-card-content>
           </mat-card>

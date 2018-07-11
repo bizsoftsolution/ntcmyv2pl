@@ -10,8 +10,11 @@ import { HallSlotService } from '../services/hall-slot.service';
   styleUrls: ['./hall-slot-edit.component.css']
 })
 export class HallSlotEditComponent implements OnInit {
+  mytime: Date = new Date();
+  isMeridian = false;
+
 hallslot: HallSlot;
-  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService, public hslot: HallSlotService) { }
+  constructor(private activateRoute: ActivatedRoute, private applib: ApplibService, public hallSlotService: HallSlotService) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {
