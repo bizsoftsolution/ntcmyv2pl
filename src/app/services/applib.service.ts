@@ -21,6 +21,7 @@ import { RoomTypeDetail } from '../models/RoomTypeDetail';
 import { Country } from '../models/Country';
 import { State } from '../models/State';
 import { promise } from 'protractor';
+import { BookingMaster } from '../models/BookingMaster';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,7 @@ export class ApplibService {
   roomTypeDetailList: RoomTypeDetail[];
   countryList: Country[];
   stateList: State[];
+bookingMasterList: BookingMaster[];
 
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
@@ -130,6 +132,10 @@ export class ApplibService {
           console.log(s);
           this.stateList = s;
 
+        });
+        this.con.invoke('BookingMaster_List').then(bkm => {
+          console.log(bkm);
+          this.bookingMasterList = bkm;
         });
   });
 }
