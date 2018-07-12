@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ApplibService } from '../../services/applib.service';
 import { BookingMasterService } from '../../services/booking-master.service';
 import { BookingMaster } from '../../models/BookingMaster';
+import { MatDialog } from '@angular/material';
+import { BookingRoomEditComponent } from '../booking-room-edit/booking-room-edit.component';
+import { BookingHallEditComponent } from '../booking-hall-edit/booking-hall-edit.component';
 
 @Component({
   selector: 'app-booking-master-edit',
@@ -15,7 +18,8 @@ export class BookingMasterEditComponent implements OnInit {
 
   constructor(private activateRoute: ActivatedRoute,
     private applib: ApplibService,
-    public bookingService: BookingMasterService) { }
+    public bookingService: BookingMasterService,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {
@@ -28,4 +32,25 @@ export class BookingMasterEditComponent implements OnInit {
     });
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(BookingRoomEditComponent, {
+      width: '550px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      alert('Closed');
+    });
+  }
+
+  hallPopup() {
+    const dialogRef = this.dialog.open(BookingHallEditComponent, {
+      width: '550px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      alert('Closed');
+    });
+  }
+
 }
+
