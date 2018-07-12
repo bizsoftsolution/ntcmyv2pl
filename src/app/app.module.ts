@@ -94,6 +94,10 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
 import { BookingMasterComponent } from './backend/booking-master/booking-master.component';
 import { BookingMasterEditComponent } from './backend/booking-master-edit/booking-master-edit.component';
+import { BookingRoomEditComponent } from './backend/booking-room-edit/booking-room-edit.component';
+import { BookingHallEditComponent } from './backend/booking-hall-edit/booking-hall-edit.component';
+import { RoomMasterComponent } from './backend/room-master/room-master.component';
+
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
@@ -164,8 +168,13 @@ export function createconfig(): SignalRConfiguration {
     ItemDetailComponent,
     ItemDetailEditComponent,
     BookingMasterComponent,
-    BookingMasterEditComponent
-    ],
+    BookingMasterEditComponent,
+
+    BookingMasterEditComponent,
+    BookingRoomEditComponent,
+    BookingHallEditComponent,
+    RoomMasterComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

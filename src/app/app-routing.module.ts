@@ -53,6 +53,9 @@ import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.com
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { BookingMasterComponent } from './backend/booking-master/booking-master.component';
 import { BookingMasterEditComponent } from './backend/booking-master-edit/booking-master-edit.component';
+import { BookingRoomEditComponent } from './backend/booking-room-edit/booking-room-edit.component';
+import { BookingHallEditComponent } from './backend/booking-hall-edit/booking-hall-edit.component';
+import { RoomMasterComponent } from './backend/room-master/room-master.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -87,6 +90,9 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 {path: 'itemDetailEdit/:id', component: ItemDetailEditComponent},
 {path: 'booking-master', component: BookingMasterComponent},
 {path: 'bookingMasterEdit/:id', component: BookingMasterEditComponent},
+{path: 'bookingRoomEdit', component: BookingRoomEditComponent},
+{path: 'bookingHallEdit', component: BookingHallEditComponent},
+{path: 'roomMaster', component: RoomMasterComponent},
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
