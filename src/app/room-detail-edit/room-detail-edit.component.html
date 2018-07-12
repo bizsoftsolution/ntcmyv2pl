@@ -24,9 +24,9 @@
         <mat-card-content>
           <div class="example-container">
           <mat-form-field>
-              <mat-select placeholder="Room Type" [(ngModel)]='roomDetail.RoomTypeId'>
-                <mat-option *ngFor="let roomType of applib.roomTypeList " [value]="roomType.Id">
-                  {{roomType.Type}}
+              <mat-select placeholder="Room Type" [(ngModel)]='roomDetail.RoomMasterId'>
+                <mat-option *ngFor="let roomMaster of applib.roomMasterList " [value]="roomMaster.Id">
+                  {{roomMaster.Type}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

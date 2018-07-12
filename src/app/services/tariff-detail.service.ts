@@ -65,7 +65,7 @@ export class TariffDetailService {
           tariffDetail.Id = x;
           this.AppLib.tariffDetailList.push(tariffDetail);
         }
-this.router.navigate(['/Admin/TariffDetailsComponent']);
+this.router.navigate(['/Admin/tariff-details']);
       });
     }
   }

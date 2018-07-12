@@ -24,6 +24,7 @@ import { promise } from 'protractor';
 import { BookingMaster } from '../models/BookingMaster';
 import { BookingHallDetail } from '../models/BookingHallDetail';
 import { BookingRoomDetail } from '../models/BookingRoomDetail';
+import { RoomMaster } from '../models/RoomMaster';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +66,7 @@ export class ApplibService {
 bookingMasterList: BookingMaster[];
 bookingHallDetailList: BookingHallDetail[];
 bookingRoomDetailList: BookingRoomDetail[];
+roomMasterList: RoomMaster[];
 
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
@@ -148,6 +150,10 @@ bookingRoomDetailList: BookingRoomDetail[];
         this.con.invoke('BookingRoomDetail_List').then(brd => {
           console.log(brd);
           this.bookingRoomDetailList = brd;
+        });
+        this.con.invoke('RoomMaster_List').then(rm => {
+          console.log(rm);
+          this.roomMasterList = rm;
         });
   });
 }

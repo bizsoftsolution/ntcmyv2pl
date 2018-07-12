@@ -1,13 +1,13 @@
 export class RoomDetail {
   Id: number;
-  RoomTypeId: number;
+  RoomMasterId: number;
   Name: string;
   IsActive: boolean;
-  RoomType: string;
+  RoomMaster: string;
 
   constructor() {
 this.Id = 0 ;
-this.RoomTypeId = 0 ;
+this.RoomMasterId = 0 ;
 this.Name = '';
 this.IsActive = false;
   }
