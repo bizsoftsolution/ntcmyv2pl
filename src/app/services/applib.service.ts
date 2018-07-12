@@ -22,6 +22,8 @@ import { Country } from '../models/Country';
 import { State } from '../models/State';
 import { promise } from 'protractor';
 import { BookingMaster } from '../models/BookingMaster';
+import { BookingHallDetail } from '../models/BookingHallDetail';
+import { BookingRoomDetail } from '../models/BookingRoomDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +63,8 @@ export class ApplibService {
   countryList: Country[];
   stateList: State[];
 bookingMasterList: BookingMaster[];
+bookingHallDetailList: BookingHallDetail[];
+bookingRoomDetailList: BookingRoomDetail[];
 
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
@@ -136,6 +140,14 @@ bookingMasterList: BookingMaster[];
         this.con.invoke('BookingMaster_List').then(bkm => {
           console.log(bkm);
           this.bookingMasterList = bkm;
+        });
+        this.con.invoke('BookingHallDetail_List').then(bhd => {
+          console.log(bhd);
+          this.bookingHallDetailList = bhd;
+        });
+        this.con.invoke('BookingRoomDetail_List').then(brd => {
+          console.log(brd);
+          this.bookingRoomDetailList = brd;
         });
   });
 }

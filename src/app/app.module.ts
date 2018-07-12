@@ -94,13 +94,14 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
 import { BookingMasterComponent } from './backend/booking-master/booking-master.component';
 import { BookingMasterEditComponent } from './backend/booking-master-edit/booking-master-edit.component';
+import { RoomComponent } from './services/room/room.component';
 
 
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';
-  c.url = 'https://www.ntc.my/SLSR';
-  // c.url = 'http://www.ntc.my/NTCWeb.SLSR';
+  // c.url = 'https://www.ntc.my/SLSR';
+  c.url = 'http://www.ntc.my/NTCWeb.SLSR';
   c.logging = true;
 
   c.executeErrorsInZone = false;
@@ -165,7 +166,8 @@ export function createconfig(): SignalRConfiguration {
     ItemDetailComponent,
     ItemDetailEditComponent,
     BookingMasterComponent,
-    BookingMasterEditComponent
+    BookingMasterEditComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
