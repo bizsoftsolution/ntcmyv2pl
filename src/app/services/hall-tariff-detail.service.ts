@@ -25,7 +25,7 @@ export class HallTariffDetailService {
       return false;
     } else if (!tariffDetail.Amount || tariffDetail.Amount == null) {
       return false;
-    } else if (!tariffDetail.HallTYpeId || tariffDetail.HallTYpeId == null) {
+    } else if (!tariffDetail.HallTypeId || tariffDetail.HallTypeId == null) {
       return false;
     } else {
       return true;
@@ -47,8 +47,12 @@ export class HallTariffDetailService {
       d.Amount = tariffDetail.Amount;
       d.AmountSuffix = tariffDetail.AmountSuffix;
       d.AuditoriumId = tariffDetail.AuditoriumId;
-      d.HallTYpeId = tariffDetail.HallTYpeId;
+      d.PropertyId = tariffDetail.PropertyId;
+      d.HallTypeId = tariffDetail.HallTypeId;
       d.IsActive = tariffDetail.IsActive;
+      d.HallType = tariffDetail.HallType;
+      d.Auditorium = tariffDetail.Auditorium;
+      d.Property = tariffDetail.Property;
 
     } else {
       console.log(tariffDetail);

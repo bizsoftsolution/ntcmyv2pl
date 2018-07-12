@@ -102,8 +102,8 @@ import { RoomMasterComponent } from './backend/room-master/room-master.component
 export function createconfig(): SignalRConfiguration {
   const c = new SignalRConfiguration();
   c.hubName = 'NTCServerHub';
-  c.url = 'https://www.ntc.my/SLSR';
-  // c.url = 'http://www.ntc.my/NTCWeb.SLSR';
+  // c.url = 'https://www.ntc.my/SLSR';
+  c.url = 'http://www.ntc.my/NTCWeb.SLSR';
   c.logging = true;
 
   c.executeErrorsInZone = false;

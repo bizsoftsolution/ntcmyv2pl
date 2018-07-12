@@ -5,4 +5,10 @@ export class RoomDetail {
   IsActive: boolean;
   RoomType: string;
 
+  constructor() {
+this.Id = 0 ;
+this.RoomTypeId = 0 ;
+this.Name = '';
+this.IsActive = false;
+  }
 }

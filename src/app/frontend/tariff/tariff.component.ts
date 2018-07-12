@@ -14,7 +14,7 @@ export class TariffComponent implements OnInit {
   ngOnInit() {}
   hallTariffDetail(hallTypeId: number, auditoriumid: number): number {
     const data = this.applib.hallTariffDetailList.find(
-      x => x.HallTYpeId === hallTypeId && x.AuditoriumId === auditoriumid
+      x => x.HallTypeId === hallTypeId && x.AuditoriumId === auditoriumid
     );
     if (!data) {
       return null;
