@@ -67,6 +67,7 @@ export class PropertyService {
           this.router.navigate(['/Admin/property']);
       });
     }
+    this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
   }
 
   deleteProperty(
@@ -89,5 +90,6 @@ export class PropertyService {
         });
       }
     }
+    this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
   }
 }

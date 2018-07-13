@@ -18,6 +18,7 @@ property: PropertyDetail;
       const id = + x.get('id');
       if (id === 0) {
         this.property = new PropertyDetail();
+        this.property.OrderNo = this.applib.NextOrderNo(this.applib.propertyList);
       } else {
         this.property = this.applib.propertyList.find( y => y.Id === id);
       }
