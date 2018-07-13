@@ -35,7 +35,7 @@ export class ApplibService {
   NextOrderNo(datas: any[]): number {
     let rv: number = 0;
     datas.forEach( x=> {
-      rv = rv < x.OrderNo ? x.OrderNo : rv;
+      rv = rv < +x.OrderNo ? +x.OrderNo : rv;
     });
     return rv+1;
   }
