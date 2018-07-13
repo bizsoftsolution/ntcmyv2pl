@@ -10,9 +10,6 @@ import { CompanyDetailComponent } from './backend/company-detail/company-detail.
 import { PropertyComponent } from './backend/property/property.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './backend/navbar/navbar.component';
-import { RoomTypeComponent } from './backend/room-type/room-type.component';
-
-import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 
 import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
 import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
@@ -35,18 +32,13 @@ import { MainAdminComponent } from './main-admin/main-admin.component';
 import { AuthAdminGuard } from './auth-admin.guard';
 import { HolidayEditComponent } from './holiday-edit/holiday-edit.component';
 import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
-import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component';
-import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
 import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
-import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
 
 
 import { PropertyEditComponent } from './property-edit/property-edit.component';
-import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
+
 import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
 
-import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
-import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
 import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemDetailEditComponent } from './item-detail-edit/item-detail-edit.component';
@@ -67,9 +59,6 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'auditorium', component: AuditoriumComponent },
 { path: 'auditoriumEdit/:id', component: AuditoriumEditComponent },
 
-{ path: 'hallTypeEdit/:id', component: HallTypeEditComponent },
-
-{ path: 'hallTariffDetailEdit/:id', component: HallTariffDetailEditComponent },
 { path: 'hall-slot', component: HallSlotComponent },
 { path: 'hallslotEdit/:id', component: HallSlotEditComponent },
 
@@ -79,12 +68,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'company', component: CompanyDetailComponent },
 { path: 'property', component: PropertyComponent },
 { path: 'propertyEdit/:id', component: PropertyEditComponent },
-{ path: 'room-type', component: RoomTypeComponent },
-{ path: 'roomTypeEdit/:id', component: RoomTypeEditComponent },
-{ path: 'tariff-details', component: TariffDetailsComponent },
-{ path: 'tarifDetailsEdit/:id', component: TariffDetailEditComponent },
-{path: 'roomTypeDetail', component: RommTypeDetailComponent},
-{path: 'roomTypeDetailEdit/:id', component: RoomTypeDetailEditComponent},
+
 { path: 'promo-code-details', component: PromoCodeDetailsComponent },
 { path: 'promoCodeDetailEdit/:id', component: PromoCodeDetailEditComponent },
 {path: 'roomDetail', component: RoomDetailComponent},

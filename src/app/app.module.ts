@@ -52,9 +52,7 @@ import { CompanyDetailComponent } from './backend/company-detail/company-detail.
 import { UserTypeComponent } from './backend/user-type/user-type.component';
 import { UserAccountComponent } from './backend/user-account/user-account.component';
 import { LoginComponent } from './backend/login/login.component';
-import { RoomTypeComponent } from './backend/room-type/room-type.component';
 
-import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 import { HomeComponent } from './frontend/home/home.component';
 import { HeaderComponent } from './frontend/header/header.component';
 
@@ -78,15 +76,11 @@ import { MainAdminComponent } from './main-admin/main-admin.component';
 import { PropertyEditComponent } from './property-edit/property-edit.component';
 import { HolidayEditComponent } from './holiday-edit/holiday-edit.component';
 import { HallSlotEditComponent } from './hall-slot-edit/hall-slot-edit.component';
-import { HallTypeEditComponent } from './hall-type-edit/hall-type-edit.component';
-import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
-import { HallTariffDetailEditComponent } from './hall-tariff-detail-edit/hall-tariff-detail-edit.component';
-import { RoomTypeEditComponent } from './room-type-edit/room-type-edit.component';
 
-import { TariffDetailEditComponent } from './tariff-detail-edit/tariff-detail-edit.component';
+import { AuditoriumEditComponent } from './auditorium-edit/auditorium-edit.component';
+
 import { PromoCodeDetailEditComponent } from './promo-code-detail-edit/promo-code-detail-edit.component';
-import { RommTypeDetailComponent } from './backend/romm-type-detail/romm-type-detail.component';
-import { RoomTypeDetailEditComponent } from './room-type-detail-edit/room-type-detail-edit.component';
+
 import { ActiveRecordPipe } from './active-record.pipe';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { RoomDetailEditComponent } from './room-detail-edit/room-detail-edit.component';
@@ -131,9 +125,6 @@ export function createconfig(): SignalRConfiguration {
     UserTypeComponent,
     UserAccountComponent,
     LoginComponent,
-    RoomTypeComponent,
-
-    TariffDetailsComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
@@ -157,15 +148,10 @@ export function createconfig(): SignalRConfiguration {
     PropertyEditComponent,
     HolidayEditComponent,
     HallSlotEditComponent,
-    HallTypeEditComponent,
-    AuditoriumEditComponent,
-    HallTariffDetailEditComponent,
-    RoomTypeEditComponent,
 
-    TariffDetailEditComponent,
+    AuditoriumEditComponent,
     PromoCodeDetailEditComponent,
-    RommTypeDetailComponent,
-    RoomTypeDetailEditComponent,
+
     ActiveRecordPipe,
     RoomDetailComponent,
     RoomDetailEditComponent,
