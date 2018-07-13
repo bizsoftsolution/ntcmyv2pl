@@ -43,12 +43,12 @@
                   <br>
                   <mat-form-field>
                     <mat-select placeholder="Status" [(ngModel)]='hallslot.IsActive'>
-                      <mat-option value=true >
-                        Active
-                      </mat-option>
-                      <mat-option value=false>
-                        Deactive
-                      </mat-option>
+                        <mat-option [value]="true" >
+                            Active
+                          </mat-option>
+                          <mat-option [value]="false" >
+                            Deactive
+                          </mat-option>
                     </mat-select>
                   </mat-form-field>
                 <br>

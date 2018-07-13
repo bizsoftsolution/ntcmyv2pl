@@ -21,6 +21,7 @@ hallslot: HallSlot;
       const id = +x.get('id');
       if (id === 0) {
         this.hallslot = new HallSlot();
+        this.hallslot.OrderNo = this.applib.NextOrderNo(this.applib.hallSlotList);
       } else {
         this.hallslot = this.applib.hallSlotList.find(y => y.Id === id);
       }

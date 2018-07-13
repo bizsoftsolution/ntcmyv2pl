@@ -47,6 +47,7 @@ export class HallSlotService {
       d.TimeTo = hallSlot.TimeTo;
       d.OrderNo = hallSlot.OrderNo;
       d.IsActive = hallSlot.IsActive;
+      this.AppLib.hallSlotList = this.AppLib.SortRecords(this.AppLib.hallSlotList);
     } else {
       console.log(hallSlot);
       if (!this.isValid(hallSlot)) {
@@ -57,6 +58,7 @@ export class HallSlotService {
           hallSlot.Id = x;
          this.AppLib.hallSlotList.push(hallSlot);
         }
+        this.AppLib.hallSlotList = this.AppLib.SortRecords(this.AppLib.hallSlotList);
 this.route.navigate(['/Admin/hall-slot']);
       });
     }
@@ -67,6 +69,7 @@ this.route.navigate(['/Admin/hall-slot']);
       this.AppLib.hallSlotList = this.AppLib.hallSlotList.filter(
         x => x.Id !== hallSlot.Id
       );
+      this.AppLib.hallSlotList = this.AppLib.SortRecords(this.AppLib.hallSlotList);
     } else {
       if (confirm(`Are you delete this ${hallSlot.SlotName}?`)) {
         this.AppLib.con.invoke('HallSlot_Delete', hallSlot.Id).then(x => {
@@ -78,6 +81,7 @@ this.route.navigate(['/Admin/hall-slot']);
           }
         });
       }
+      this.AppLib.hallSlotList = this.AppLib.SortRecords(this.AppLib.hallSlotList);
     }
   }
 }
