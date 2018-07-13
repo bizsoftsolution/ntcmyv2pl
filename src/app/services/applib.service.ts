@@ -41,7 +41,7 @@ export class ApplibService {
   }
 
   SortRecords(datas: any[]): any[] {
-    return datas.sort( (a, b) =>  a.OrderNo > b.OrderNo ? 1 : -1);
+    return datas.sort( (a, b) =>  +a.OrderNo > +b.OrderNo ? 1 : -1);
   }
   get APIURL(): string {
     return 'http://sl.ntc.my/api/';
