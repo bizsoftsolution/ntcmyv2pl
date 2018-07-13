@@ -49,6 +49,7 @@ export class RoomMasterService {
       p.Property = roomMaster.Property;
       p.PropertyId = roomMaster.PropertyId;
       p.IsActive = roomMaster.IsActive;
+      this.applib.roomMasterList = this.applib.SortRecords(this.applib.roomMasterList);
     } else {
       console.log(roomMaster);
       if (!this.isValid(roomMaster)) {
@@ -59,6 +60,7 @@ export class RoomMasterService {
           roomMaster.Id = x;
           this.applib.roomMasterList.push(roomMaster);
         }
+        this.applib.roomMasterList = this.applib.SortRecords(this.applib.roomMasterList);
         this.router.navigate(['/Admin/roomMaster']);
       });
     }
@@ -69,6 +71,7 @@ export class RoomMasterService {
       this.applib.roomMasterList = this.applib.roomMasterList.filter(
         x => x.Id !== roomMaster.Id
       );
+      this.applib.roomMasterList = this.applib.SortRecords(this.applib.roomMasterList);
     } else {
       if (confirm(`Are you delete this ${roomMaster.Type}?`)) {
         this.applib.con.invoke('RoomMaster_Delete', roomMaster.Id).then(x => {
@@ -80,6 +83,7 @@ export class RoomMasterService {
           }
         });
       }
+      this.applib.roomMasterList = this.applib.SortRecords(this.applib.roomMasterList);
     }
   }
 }

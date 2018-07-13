@@ -7,7 +7,7 @@ export class HallMaster {
   IsActive: boolean;
   Amount: number;
   AmountSuffix: string;
-  Auditorium: string;
+  AuditoriumName: string;
   Property: string;
 
   constructor() {
@@ -19,6 +19,6 @@ export class HallMaster {
     this.IsActive = false;
     this.Amount = 0;
     this.AmountSuffix = '';
-    this.Auditorium = '';
+    this.AuditoriumName = '';
   }
 }

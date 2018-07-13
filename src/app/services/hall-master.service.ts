@@ -40,11 +40,12 @@ export class HallMasterService {
       p.Amount = hallMaster.Amount;
       p.AmountSuffix = hallMaster.AmountSuffix;
       p.AuditoriumId = hallMaster.AuditoriumId;
-      p.Auditorium = hallMaster.Auditorium;
+      p.AuditoriumName = hallMaster.AuditoriumName;
       p.Property = hallMaster.Property;
       p.PropertyId = hallMaster.PropertyId;
       p.IsActive = hallMaster.IsActive;
       p.OrderNo = hallMaster.OrderNo;
+      this.applib.hallMasterList = this.applib.SortRecords(this.applib.hallMasterList);
     } else {
       console.log(hallMaster);
       if (!this.isValid(hallMaster)) {
@@ -55,6 +56,7 @@ export class HallMasterService {
           hallMaster.Id = x;
           this.applib.hallMasterList.push(hallMaster);
         }
+        this.applib.hallMasterList = this.applib.SortRecords(this.applib.hallMasterList);
         this.router.navigate(['/Admin/hallMaster']);
       });
     }
@@ -65,6 +67,7 @@ export class HallMasterService {
       this.applib.hallMasterList = this.applib.hallMasterList.filter(
         x => x.Id !== hallMaster.Id
       );
+      this.applib.hallMasterList = this.applib.SortRecords(this.applib.hallMasterList);
     } else {
       if (confirm(`Are you delete this ${hallMaster.Type}?`)) {
         this.applib.con.invoke('HallMaster_Delete', hallMaster.Id).then(x => {
@@ -76,6 +79,7 @@ export class HallMasterService {
           }
         });
       }
+      this.applib.hallMasterList = this.applib.SortRecords(this.applib.hallMasterList);
     }
   }
 }

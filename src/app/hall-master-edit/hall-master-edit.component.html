@@ -1,3 +1,4 @@
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
       <li class="breadcrumb-item">
@@ -35,8 +36,8 @@
                   </div>
                   <div class="col-md-4">
                       <mat-form-field style="width:100%">
-                          <mat-select placeholder="Auditorium" [(ngModel)] = "hallMaster.AuditoriumId">
-                            <mat-option *ngFor="let auditorium of applib.auditoriumList" [value]="auditorium.Id">
+                          <mat-select placeholder="Auditorium" [(ngModel)] = "Auditorium" (selectionChange)="Auditorium_Selection()">
+                            <mat-option *ngFor="let auditorium of applib.auditoriumList" [value]="auditorium">
                             {{auditorium.Name}}
                             </mat-option>
                           </mat-select>
@@ -62,12 +63,12 @@
                   <div class="col-md-6" >
                       <mat-form-field style="width:100%;">
                           <mat-select placeholder="Status" [(ngModel)]='hallMaster.IsActive'>
-                            <mat-option [value]="true" >
-                              Active
-                            </mat-option>
-                            <mat-option [value]="false">
-                              Deactive
-                            </mat-option>
+                              <mat-option [value]="true" >
+                                  Active
+                                </mat-option>
+                                <mat-option [value]="false" >
+                                  Deactive
+                                </mat-option>
                           </mat-select>
                         </mat-form-field>
                   </div>
