@@ -30,10 +30,10 @@
                   <br>
                   <mat-form-field>
                     <mat-select placeholder="Status" [(ngModel)]='property.IsActive'>
-                      <mat-option value=true >
+                      <mat-option [value]="true" >
                         Active
                       </mat-option>
-                      <mat-option value=false>
+                      <mat-option [value]="false" >
                         Deactive
                       </mat-option>
                     </mat-select>
