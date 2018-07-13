@@ -33,11 +33,11 @@ import { HallMaster } from '../models/HallMaster';
 export class ApplibService {
 
   NextOrderNo(datas: any[]): number {
-    let rv: number = 0;
-    datas.forEach( x=> {
+    let rv = 0;
+    datas.forEach( x => {
       rv = rv < +x.OrderNo ? +x.OrderNo : rv;
     });
-    return rv+1;
+    return rv + 1;
   }
 
   SortRecords(datas: any[]): any[] {

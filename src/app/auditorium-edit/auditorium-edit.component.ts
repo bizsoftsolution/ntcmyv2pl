@@ -18,6 +18,7 @@ auditorium: Auditorium;
       const id = +x.get('id');
       if (id === 0) {
         this.auditorium = new Auditorium();
+        this.auditorium.OrderNo = this.applib.NextOrderNo(this.applib.auditoriumList);
       } else {
         this.auditorium = this.applib.auditoriumList.find(y => y.Id === id);
       }
