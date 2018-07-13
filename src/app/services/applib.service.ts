@@ -25,6 +25,7 @@ import { BookingMaster } from '../models/BookingMaster';
 import { BookingHallDetail } from '../models/BookingHallDetail';
 import { BookingRoomDetail } from '../models/BookingRoomDetail';
 import { RoomMaster } from '../models/RoomMaster';
+import { HallMaster } from '../models/HallMaster';
 
 @Injectable({
   providedIn: 'root'
@@ -63,10 +64,11 @@ export class ApplibService {
   roomTypeDetailList: RoomTypeDetail[];
   countryList: Country[];
   stateList: State[];
-bookingMasterList: BookingMaster[];
-bookingHallDetailList: BookingHallDetail[];
-bookingRoomDetailList: BookingRoomDetail[];
-roomMasterList: RoomMaster[];
+  bookingMasterList: BookingMaster[];
+  bookingHallDetailList: BookingHallDetail[];
+  bookingRoomDetailList: BookingRoomDetail[];
+  roomMasterList: RoomMaster[];
+  hallMasterList: HallMaster[];
 
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
@@ -154,6 +156,10 @@ roomMasterList: RoomMaster[];
         this.con.invoke('RoomMaster_List').then(rm => {
           console.log(rm);
           this.roomMasterList = rm;
+        });
+        this.con.invoke('HallMaster_List').then(hm => {
+          console.log(hm);
+          this.hallMasterList = hm;
         });
   });
 }

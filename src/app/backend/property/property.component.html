@@ -33,21 +33,16 @@
                   <div class="table-responsive">
                       <table class="table table-striped table-bordered">
                         <tr>
-                          <th style="width: 100px!important;text-align: center;">Order No</th>
-                          <th style="text-align: center;">Property</th>
-                          <th style="width: 100px!important;text-align: center;">Status</th>
+                          <th >Property</th>
+                          
                           <th style="width: 200px!important;text-align: center;">Action</th>
                         </tr>
                         <tr *ngFor="let property of propertyService.AppLib.propertyList" >
-                          <td style="text-align: center;">
-                            {{property.OrderNo}}
+                         
+                          <td [class.ActiveRecord]="property.IsActive" [class.DeactiveRecord]="!property.IsActive">
+                              {{property.OrderNo  | number: '2.0-0' }} - {{ property.PropertyName}}
                           </td>
-                          <td style="text-align: center;">
-                           {{ property.PropertyName}}
-                          </td>
-                          <td style="text-align: center;">
-                              {{ property.IsActive ? 'Enable' : 'Disable'}}
-                          </td>
+                         
                           <td style="text-align: center;">
                               <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/{{property.Id}}"><i class="material-icons">
                                   create
