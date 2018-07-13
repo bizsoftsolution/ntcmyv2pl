@@ -11,11 +11,10 @@
           <div class="col-md-2">
             </div>
           <div class="col-md-8">
-            <mat-card class="example-card mat-elevation-z10" style="padding: 50px;">
+            <mat-card class="example-card mat-elevation-z10 text-primary" style="padding: 50px;">
               <mat-card-header style="margin: 25px 0px!important;">
                 <mat-card-title>
                     <h3> Auditorium </h3>
-                    <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
                 </mat-card-title>
                 <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
               </mat-card-header>
@@ -30,10 +29,10 @@
                     <br>
                     <mat-form-field>
                         <mat-select placeholder="Status" [(ngModel)]='auditorium.IsActive'>
-                          <mat-option ngValue=true >
+                          <mat-option value=true >
                             Active
                           </mat-option>
-                          <mat-option ngValue=false>
+                          <mat-option value=false>
                             Deactive
                           </mat-option>
                         </mat-select>
