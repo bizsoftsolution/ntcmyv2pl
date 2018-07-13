@@ -1,3 +1,7 @@
+<pre>
+  {{ property | json }}
+</pre>
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
     <li class="breadcrumb-item"><a routerLink="/Admin/dashboard">Dashboard</a></li>
@@ -30,10 +34,10 @@
                   <br>
                   <mat-form-field>
                     <mat-select placeholder="Status" [(ngModel)]='property.IsActive'>
-                      <mat-option value=true >
+                      <mat-option [value]="true" >
                         Active
                       </mat-option>
-                      <mat-option value=false>
+                      <mat-option [value]="false" >
                         Deactive
                       </mat-option>
                     </mat-select>
