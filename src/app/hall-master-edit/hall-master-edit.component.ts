@@ -22,6 +22,7 @@ export class HallMasterEditComponent implements OnInit {
     const id = +x.get('id');
     if (id === 0) {
 this.hallMaster = new HallMaster();
+this.hallMaster.OrderNo = this.applib.NextOrderNo(this.applib.hallMasterList);
     } else {
       this.hallMaster = this.applib.hallMasterList.find(y => y.Id === id);
     }
