@@ -32,13 +32,13 @@
                   <div class="table-responsive">
                       <table class="table table-striped table-bordered text-primary">
                         <tr>
-                          <th style="width: 100px!important;text-align: center;">Slot Name [ <span class="ActiveRecord" style="font-weight: normal"> Active </span> / <span class="DeactiveRecord" style="font-weight: normal"> Deactive </span> ]</th>
+                          <th style="width: 100px!important;">Slot Name [ <span class="ActiveRecord" style="font-weight: normal"> Active </span> / <span class="DeactiveRecord" style="font-weight: normal"> Deactive </span> ]</th>
                           <th style="width: 100px!important;text-align: center;">Start Time</th>
                           <th style="width: 100px!important;text-align: center;">End Time</th>
                           <th style="width: 200px!important;text-align: center;">Action</th>
                         </tr>
                         <tr *ngFor="let hallslot of hallSlotService.AppLib.hallSlotList" >
-                          <td style="text-align: center;">
+                          <td >
                             {{hallslot.OrderNo | number: '2.0-0' }} -
                             <span [class.ActiveRecord]="hallslot.IsActive" [class.DeactiveRecord]="!hallslot.IsActive">{{ hallslot.SlotName}}</span>
                           </td>
