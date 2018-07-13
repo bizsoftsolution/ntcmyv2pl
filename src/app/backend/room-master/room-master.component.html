@@ -50,7 +50,7 @@
                             </tr>
 
                             <tr *ngFor="let roomMaster of applib.roomMasterList | filterProperty : property.Id" [class.bg-success]="roomMaster.IsActive"  [class.bg-warning]="!roomMaster.IsActive">
-                              <td style="text-align: center;vertical-align: middle;">{{roomMaster.Type}} {{roomMaster.IsActive}}</td>
+                              <td style="text-align: center;vertical-align: middle;">{{roomMaster.Type}}</td>
                               <td style="text-align: center;vertical-align: middle;">
                                 <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
                                   <tr><th></th><th>Weekday</th><th>Weekend</th></tr>
@@ -69,7 +69,7 @@
                                       create
                                       </i>
                                       </a>&nbsp;
-                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  [disabled]="roomMaster.Id==0">
+                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  (click)="roomMasterService.deleteRoomMaster(roomMaster)">
                                       <mat-icon>delete</mat-icon>
                                   </button>
                               </td>

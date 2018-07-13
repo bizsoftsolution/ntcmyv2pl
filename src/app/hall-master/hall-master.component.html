@@ -51,12 +51,12 @@
                             </tr>
 
                             <tr *ngFor="let hallMaster of applib.hallMasterList | filterProperty : property.Id" [class.ActiveRecord]="hallMaster.IsActive"  [class.DeactiveRecord]="!hallMaster.IsActive">
-                             <td style="text-align: center;vertical-align: middle;">{{hallMaster.Property}}</td>
+                             <td style="text-align: center;vertical-align: middle;">{{hallMaster.Auditorium}}</td>
                               <td style="text-align: center;vertical-align: middle;">{{hallMaster.Type}} </td>
                               <td style="text-align: center;vertical-align: middle;">
-                                <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
+
                                     {{hallMaster.Amount}}
-                                </table>
+
                               </td>
 
                               <td style="text-align: center;    vertical-align: middle;">
