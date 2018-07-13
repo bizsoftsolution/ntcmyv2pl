@@ -9804,3 +9804,10 @@ blockquote p:after {
     margin:0px!important;
 }
 
+.ActiveRecord{
+  color: #00ff00;
+}
+
+.DeactiveRecord {
+  color: #ff0000;
+}
