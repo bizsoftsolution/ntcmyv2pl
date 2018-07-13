@@ -49,8 +49,13 @@
                               <th style="width: 200px!important;text-align: center;">Action</th>
                             </tr>
 
+<<<<<<< HEAD
                             <tr *ngFor="let roomMaster of applib.roomMasterList | filterProperty : property.Id" [class.ActiveRecord]="roomMaster.IsActive"  [class.DeactiveRecord]="!roomMaster.IsActive">
                               <td style="text-align: center;vertical-align: middle;">{{roomMaster.Type}} </td>
+=======
+                            <tr *ngFor="let roomMaster of applib.roomMasterList | filterProperty : property.Id" [class.bg-success]="roomMaster.IsActive"  [class.bg-warning]="!roomMaster.IsActive">
+                              <td style="text-align: center;vertical-align: middle;">{{roomMaster.Type}}</td>
+>>>>>>> 7349cb66a0bfcbb6e0c0179dcbf5334f73411aa1
                               <td style="text-align: center;vertical-align: middle;">
                                 <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
                                   <tr><th></th><th>Weekday</th><th>Weekend</th></tr>
@@ -69,7 +74,7 @@
                                       create
                                       </i>
                                       </a>&nbsp;
-                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  [disabled]="roomMaster.Id==0">
+                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  (click)="roomMasterService.deleteRoomMaster(roomMaster)">
                                       <mat-icon>delete</mat-icon>
                                   </button>
                               </td>

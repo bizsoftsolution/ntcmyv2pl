@@ -54,6 +54,7 @@ export class PropertyService {
       p.PropertyName = propertyDetail.PropertyName;
       p.OrderNo = propertyDetail.OrderNo;
       p.IsActive = propertyDetail.IsActive;
+      this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
     } else {
       console.log(propertyDetail);
       if (!this.isValid(propertyDetail)) {
@@ -64,9 +65,11 @@ export class PropertyService {
           propertyDetail.Id = x;
           this.AppLib.propertyList.push(propertyDetail);
         }
-          this.router.navigate(['/Admin/property']);
+        this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
+        this.router.navigate(['/Admin/property']);
       });
     }
+    
   }
 
   deleteProperty(
@@ -89,5 +92,6 @@ export class PropertyService {
         });
       }
     }
+    this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
   }
 }

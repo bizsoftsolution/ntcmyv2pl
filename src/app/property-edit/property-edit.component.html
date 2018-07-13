@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
     <li class="breadcrumb-item"><a routerLink="/Admin/dashboard">Dashboard</a></li>
-    <li class="breadcrumb-item active" aria-current="page">property</li>
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/Admin/property">Property</a></li>
   </ol>
 </nav>
 <div class="container-fluid">
@@ -11,11 +11,11 @@
         <div class="col-md-2">
           </div>
         <div class="col-md-8">
-          <mat-card class="example-card mat-elevation-z10" style="padding: 50px;">
+          <mat-card class="example-card mat-elevation-z10 text-primary" style="padding: 50px;">
             <mat-card-header style="margin: 25px 0px!important;">
               <mat-card-title>
                   <h3> Property Details</h3>
-                  <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+
               </mat-card-title>
               <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
             </mat-card-header>
@@ -28,11 +28,23 @@
                     <input matInput [(ngModel)]="property.PropertyName" placeholder="Property Name">
                   </mat-form-field>
                   <br>
-                  (Choose Status) <mat-slide-toggle
-                  class="example-margin" [(ngModel)]="property.IsActive" >
-                </mat-slide-toggle>
+                  <mat-form-field>
+                    <mat-select placeholder="Status" [(ngModel)]='property.IsActive'>
+                      <mat-option value="1" >
+                        Active
+                      </mat-option>
+                      <mat-option value="0">
+                        Deactive
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 <br>
-                <button mat-raised-button color="primary" (click)="propertyService.saveProperty(property)">Submit</button>
+                <div class="col-md-4">
+                  <button mat-raised-button color="primary" (click)="propertyService.saveProperty(property)" style="float:left">Submit</button>
+                   <a routerLink="/Admin/property" mat-raised-button color="primary" style="float:left ; margin: 0px 5px;">Back</a>
+                </div>
+
+
               </div>
             </mat-card-content>
           </mat-card>

@@ -11,7 +11,7 @@
               <mat-progress-bar mode="determinate" value="50" class="col-md-5" style="padding: 0px;"></mat-progress-bar>
           </div>
           <div class="col-md-6 text-right">
-             <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/roomMasterEdit/0"><i class="material-icons">
+             <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/hallMasterEdit/0"><i class="material-icons">
                   add
                   </i></a>
                   </div>
@@ -51,20 +51,20 @@
                             </tr>
 
                             <tr *ngFor="let hallMaster of applib.hallMasterList | filterProperty : property.Id" [class.ActiveRecord]="hallMaster.IsActive"  [class.DeactiveRecord]="!hallMaster.IsActive">
-                             <td style="text-align: center;vertical-align: middle;">{{hallMaster.Property}}</td>
+                             <td style="text-align: center;vertical-align: middle;">{{hallMaster.Auditorium}}</td>
                               <td style="text-align: center;vertical-align: middle;">{{hallMaster.Type}} </td>
                               <td style="text-align: center;vertical-align: middle;">
-                                <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
+
                                     {{hallMaster.Amount}}
-                                </table>
+
                               </td>
 
                               <td style="text-align: center;    vertical-align: middle;">
-                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/"><i class="material-icons">
+                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/hallMasterEdit/{{hallMaster.Id}}"><i class="material-icons">
                                       create
                                       </i>
                                       </a>&nbsp;
-                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="hallMasterService.saveHallMaster(hallMaster)"  [disabled]="hallMaster.Id==0">
+                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="hallMasterService.deleteHallMaster(hallMaster)"  [disabled]="hallMaster.Id==0">
                                       <mat-icon>delete</mat-icon>
                                   </button>
                               </td>

@@ -58,6 +58,7 @@ import { BookingHallEditComponent } from './backend/booking-hall-edit/booking-ha
 import { RoomMasterComponent } from './backend/room-master/room-master.component';
 import { RoomMasterEditComponent } from './backend/room-master-edit/room-master-edit.component';
 import { HallMasterComponent } from './hall-master/hall-master.component';
+import { HallMasterEditComponent } from './hall-master-edit/hall-master-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -97,6 +98,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 {path: 'roomMaster', component: RoomMasterComponent},
 {path: 'roomMasterEdit/:id', component: RoomMasterEditComponent},
 {path: 'hallMaster', component: HallMasterComponent},
+{path: 'hallMasterEdit/:id', component: HallMasterEditComponent},
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
