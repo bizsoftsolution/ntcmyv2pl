@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './backend/dashboard/dashboard.component';
 import { HolidayComponent } from './backend/holiday/holiday.component';
-import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
+
 
 import { MemberListComponent } from './backend/member-list/member-list.component';
 import { PropertyTableComponent } from './backend/property-table/property-table.component';
@@ -13,13 +13,13 @@ import { NavbarComponent } from './backend/navbar/navbar.component';
 import { RoomTypeComponent } from './backend/room-type/room-type.component';
 
 import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
-import { HallTypeComponent } from './backend/hall-type/hall-type.component';
+
 import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
 import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
 import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
 import { LoginComponent } from './backend/login/login.component';
-import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
+
 import { HomeComponent } from './frontend/home/home.component';
 import { MainComponent } from './frontend/main/main.component';
 import { FacilitiesComponent } from './frontend/facilities/facilities.component';
@@ -66,13 +66,13 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'holidayEdit/:id', component: HolidayEditComponent },
 { path: 'auditorium', component: AuditoriumComponent },
 { path: 'auditoriumEdit/:id', component: AuditoriumEditComponent },
-{ path: 'hall-type', component: HallTypeComponent },
+
 { path: 'hallTypeEdit/:id', component: HallTypeEditComponent },
-{ path: 'hall-tariff-details', component: HallTariffDetailsComponent },
+
 { path: 'hallTariffDetailEdit/:id', component: HallTariffDetailEditComponent },
 { path: 'hall-slot', component: HallSlotComponent },
 { path: 'hallslotEdit/:id', component: HallSlotEditComponent },
-{ path: 'hall-details', component: HallDetailsComponent },
+
 
 { path: 'member-list', component: MemberListComponent },
 { path: 'property-table', component: PropertyTableComponent },

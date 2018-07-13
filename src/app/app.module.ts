@@ -32,7 +32,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ApplibService } from './services/applib.service';
 import { PropertyService } from './services/property.service';
 
-import { HallDetailsComponent } from './backend/hall-details/hall-details.component';
+
 import { HolidayComponent } from './backend/holiday/holiday.component';
 import { MemberListComponent } from './backend/member-list/member-list.component';
 import { HolidayService } from './services/holiday.service';
@@ -57,13 +57,13 @@ import { RoomTypeComponent } from './backend/room-type/room-type.component';
 import { TariffDetailsComponent } from './backend/tariff-details/tariff-details.component';
 import { HomeComponent } from './frontend/home/home.component';
 import { HeaderComponent } from './frontend/header/header.component';
-import { HallTypeComponent } from './backend/hall-type/hall-type.component';
+
 import { HallSlotComponent } from './backend/hall-slot/hall-slot.component';
 import { AuditoriumComponent } from './backend/auditorium/auditorium.component';
 import { PromoCodeDetailsComponent } from './backend/promo-code-details/promo-code-details.component';
 import { FooterComponent } from './frontend/footer/footer.component';
 import { AboutusComponent } from './frontend/aboutus/aboutus.component';
-import { HallTariffDetailsComponent } from './backend/hall-tariff-details/hall-tariff-details.component';
+
 import { MainComponent } from './frontend/main/main.component';
 import { FacilitiesComponent } from './frontend/facilities/facilities.component';
 import { ContactusComponent } from './frontend/contactus/contactus.component';
@@ -122,7 +122,7 @@ export function createconfig(): SignalRConfiguration {
     NavbarComponent,
     DashboardComponent,
 
-    HallDetailsComponent,
+
     HolidayComponent,
     MemberListComponent,
     PropertyTableComponent,
@@ -137,12 +137,12 @@ export function createconfig(): SignalRConfiguration {
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    HallTypeComponent,
+
     HallSlotComponent,
     AuditoriumComponent,
     PromoCodeDetailsComponent,
     AboutusComponent,
-    HallTariffDetailsComponent,
+
     MainComponent,
     FacilitiesComponent,
     ContactusComponent,

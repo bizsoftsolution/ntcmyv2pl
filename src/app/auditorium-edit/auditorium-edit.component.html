@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb primaryb200" style="    padding: 25px 15px;">
       <li class="breadcrumb-item"><a routerLink="/Admin/dashboard">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Auditorium</li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/Admin/auditorium">Auditorium</a></li>
     </ol>
   </nav>
   <div class="container-fluid">
@@ -28,11 +28,21 @@
                       <input matInput [(ngModel)]="auditorium.Name" placeholder="Auditorium Name">
                     </mat-form-field>
                     <br>
-                    (Choose Status)<mat-slide-toggle
-                    class="example-margin" [(ngModel)]="auditorium.IsActive" >
-                  </mat-slide-toggle>
+                    <mat-form-field>
+                        <mat-select placeholder="Status" [(ngModel)]='auditorium.IsActive'>
+                          <mat-option ngValue=true >
+                            Active
+                          </mat-option>
+                          <mat-option ngValue=false>
+                            Deactive
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
                   <br>
-                  <button mat-raised-button color="primary" (click)="auditoriumService.SaveAuditorium(auditorium)">Submit</button>
+                  <div class="col-md-4">
+                      <button mat-raised-button color="primary" (click)="auditoriumService.SaveAuditorium(auditorium)" style="float:left">Submit</button>
+                       <a routerLink="/Admin/auditorium" mat-raised-button color="primary" style="float:left ; margin: 0px 5px;">Back</a>
+                    </div>
                 </div>
               </mat-card-content>
             </mat-card>
