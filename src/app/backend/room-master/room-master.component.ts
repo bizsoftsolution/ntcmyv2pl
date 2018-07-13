@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplibService } from '../../services/applib.service';
 
 @Component({
   selector: 'app-room-master',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomMasterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public applib: ApplibService) { }
 
   ngOnInit() {
   }

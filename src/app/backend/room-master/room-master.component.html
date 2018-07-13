@@ -11,7 +11,7 @@
               <mat-progress-bar mode="determinate" value="50" class="col-md-5" style="padding: 0px;"></mat-progress-bar>
           </div>
           <div class="col-md-6 text-right">
-             <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/roomTypeEdit/0"><i class="material-icons">
+             <div style="margin:25px 0 0 0"> <a matSuffix matTooltip="Add" mat-mini-fab color="primary" routerLink="/Admin/roomMasterEdit/0"><i class="material-icons">
                   add
                   </i></a>
                   </div>
@@ -30,49 +30,56 @@
                 <!--mat-card-subtitle>Dog Breed</mat-card-subtitle-->
               </mat-card-header>
               <mat-card-content>
-                  <div class="table-responsive">
-                      <table class="table table-striped table-bordered">
-                        <tr>
-                          <th style="width: 100px!important;text-align: center;">Order No</th>
-                          <th style="text-align: center;">Property</th>
-                          <th style="text-align: center;">Room Name</th>
-                          <th style="text-align: center;">Rate</th>
-                          <th style="text-align: center;">Details</th>
-                          <th style="width: 100px!important;text-align: center;">Status</th>
-                          <th style="width: 200px!important;text-align: center;">Action</th>
-                        </tr>
-                        <tr >
-                          <td style="text-align: center;">1</td>
-                          <td style="text-align: center;">NTC</td>
-                          <td style="text-align: center;">Golden Arowana</td>
-                          <td style="text-align: center;">
-                            <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
-                              <tr><th>#</th><th>Weekday</th><th>Weekend</th></tr>
-                              <tr><th>Member</th><td>140</td><td>180</td></tr>
-                              <tr><th>Non-Member</th><td>220</td><td>260</td></tr>
-                            </table>
-                          </td>
-                          <td style="text-align: center;">
-                              <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
-                                  <tr><th>Unit</th><td>1</td><td>3 Bed Rooms</td><td rowspan="2">Mattress = 3</td></tr>
-                                  <tr><th>Bed</th><td>6</td><td>3 Bed Rooms</td></tr>
+                  <mat-expansion-panel *ngFor="let property of applib.propertyList">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{property.PropertyName}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+
+                      <div class="table-responsive">
+                          <table class="table table-striped table-bordered">
+                            <tr>
+                              <th style="text-align: center;">Room Name</th>
+                              <th style="text-align: center;">Rate</th>
+                              <th style="text-align: center;">Details</th>
+                              <th style="width: 200px!important;text-align: center;">Action</th>
+                            </tr>
+
+                            <tr *ngFor="let roomMaster of applib.roomMasterList | filterProperty : property.Id" [class.bg-success]="roomMaster.IsActive"  [class.bg-warning]="!roomMaster.IsActive">
+                              <td style="text-align: center;vertical-align: middle;">{{roomMaster.Type}} {{roomMaster.IsActive}}</td>
+                              <td style="text-align: center;vertical-align: middle;">
+                                <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
+                                  <tr><th></th><th>Weekday</th><th>Weekend</th></tr>
+                                  <tr><th>Member</th><td>{{roomMaster.RateofWeekDayMember}}</td><td>{{roomMaster.RateofWeekEndMember}}</td></tr>
+                                  <tr><th>Non-Member</th><td>{{roomMaster.RateOfWeekDayNonMember}}</td><td>{{roomMaster.RateOfWeekEndNonMember}}</td></tr>
                                 </table>
-                          </td>
-                          <td style="text-align: center;">
-                             Enable
-                            </td>
-                          <td style="text-align: center;">
-                              <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" ><i class="material-icons">
-                                  create
-                                  </i>
-                                  </a>&nbsp;
-                              <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  [disabled]="">
-                                  <mat-icon>delete</mat-icon>
-                              </button>
-                          </td>
-                        </tr>
-                      </table>
-                  </div>
+                              </td>
+                              <td style="text-align: center;    vertical-align: middle;">
+                                  <table border="1" class="subtable" style="border: 1px solid #efe4e4;">
+                                      <tr><th>Unit</th><td>{{roomMaster.NoOfUnit}}</td><td>{{roomMaster.NoOfUnitDescription}}</td><td rowspan="2">Mattress = {{roomMaster.Mattress}}</td></tr>
+                                      <tr><th>Bed</th><td>{{roomMaster.NoOfBed}}</td><td>{{roomMaster.NoOfBedDescription}}</td></tr>
+                                    </table>
+                              </td>
+                              <td style="text-align: center;    vertical-align: middle;">
+                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/roomMasterEdit/{{roomMaster.Id}}"><i class="material-icons">
+                                      create
+                                      </i>
+                                      </a>&nbsp;
+                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn"  [disabled]="roomMaster.Id==0">
+                                      <mat-icon>delete</mat-icon>
+                                  </button>
+                              </td>
+                            </tr>
+                          </table>
+                      </div>
+
+                    </mat-expansion-panel>
+
+
               </mat-card-content>
             </mat-card>
           </div>
