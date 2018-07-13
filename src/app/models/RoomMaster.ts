@@ -11,6 +11,7 @@ export class RoomMaster {
   NoOfBed: number;
   NoOfBedDescription: string;
   Mattress: number;
+  OrderNo: number;
   IsActive: boolean;
   Property: string;
 
@@ -27,6 +28,7 @@ export class RoomMaster {
    this.NoOfBed = 0;
    this.NoOfBedDescription = '';
    this.Mattress = 0;
+   this.OrderNo = 0;
    this.IsActive = false;
 
   }

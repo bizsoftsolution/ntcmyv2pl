@@ -98,6 +98,8 @@ import { BookingRoomEditComponent } from './backend/booking-room-edit/booking-ro
 import { BookingHallEditComponent } from './backend/booking-hall-edit/booking-hall-edit.component';
 import { RoomMasterComponent } from './backend/room-master/room-master.component';
 import { HallMasterComponent } from './hall-master/hall-master.component';
+import { FilterPropertyPipe } from './filter-property.pipe';
+import { RoomMasterEditComponent } from './backend/room-master-edit/room-master-edit.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -175,7 +177,9 @@ export function createconfig(): SignalRConfiguration {
     BookingRoomEditComponent,
     BookingHallEditComponent,
     RoomMasterComponent,
-    HallMasterComponent
+    HallMasterComponent,
+    FilterPropertyPipe,
+    RoomMasterEditComponent
   ],
   imports: [
     BrowserModule,
