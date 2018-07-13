@@ -19,6 +19,14 @@ export class RoomMasterEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.activateRoute.paramMap.subscribe(x => {
+      const id = +x.get('id');
+      if (id === 0) {
+       this.roomMaster = new RoomMaster();
+      } else {
+        this.roomMaster = this.applib.roomMasterList.find(y => y.Id === id);
+      }
+    });
   }
 
 }
