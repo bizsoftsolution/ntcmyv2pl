@@ -19,7 +19,12 @@
             <mat-card-content>
               <div class="example-container">
                 <div class="row">
-                  <div class="col-md-6">
+                    <div class="col-md-4">
+                        <mat-form-field style="width:100%">
+                            <input matInput  [(ngModel)]="roomMaster.OrderNo" placeholder="Order No">
+                        </mat-form-field>
+                    </div>
+                  <div class="col-md-4">
                       <mat-form-field style="width:100%">
                           <mat-select placeholder="Property" >
                             <mat-option *ngFor="let property of applib.propertyList " [value]="property.Id">
@@ -28,30 +33,94 @@
                           </mat-select>
                       </mat-form-field>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                       <mat-form-field  style="width: 100%;">
-                          <input matInput  placeholder="Room Type">
+                          <input matInput  [(ngModel)]="roomMaster.Type" placeholder="Room Type">
                       </mat-form-field>
                   </div>
                   <div class="col-md-12">
                       <mat-expansion-panel>
                           <mat-expansion-panel-header>
                             <mat-panel-title>
-                              This is the expansion title
+                              Rate
                             </mat-panel-title>
-                            <mat-panel-description>
-                              This is a summary of the content
-                            </mat-panel-description>
                           </mat-expansion-panel-header>
-
-                          <p>This is the primary content of the panel.</p>
-
+                          <div class="row">
+                          <div class="col-md-6">
+                              <mat-form-field  style="width: 100%;">
+                                  <input matInput [(ngModel)]="roomMaster.RateofWeekDayMember" placeholder="RateOfWeekDayMember">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-6">
+                              <mat-form-field  style="width: 100%;">
+                                  <input matInput [(ngModel)]="roomMaster.RateofWeekEndMember" placeholder="RateOfWeekEndMember">
+                              </mat-form-field>
+                          </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field  style="width: 100%;">
+                                      <input matInput [(ngModel)]="roomMaster.RateOfWeekDayNonMember" placeholder="RateOfWeekDayNonMember">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field  style="width: 100%;">
+                                      <input matInput [(ngModel)]="roomMaster.RateOfWeekEndNonMember" placeholder="RateOfWeekEndNonMember">
+                                  </mat-form-field>
+                              </div>
+                          </div>
                         </mat-expansion-panel>
                   </div>
+                  <div class="col-md-12">
+                      <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                              Details
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <div class="row">
+                          <div class="col-md-6">
+                              <mat-form-field  style="width: 100%;">
+                                  <input matInput [(ngModel)]="roomMaster.NoOfUnit" placeholder="No of Unit">
+                              </mat-form-field>
+                          </div>
+                          <div class="col-md-6">
+                              <mat-form-field  style="width: 100%;">
+                                  <input matInput [(ngModel)]="roomMaster.NoOfUnitDescription" placeholder="Unit Description">
+                              </mat-form-field>
+                          </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field  style="width: 100%;">
+                                      <input matInput [(ngModel)]="roomMaster.NoOfBed" placeholder="No of Bed">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field  style="width: 100%;">
+                                      <input matInput [(ngModel)]="roomMaster.NoOfBedDescription" placeholder="Bed Description">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                        </mat-expansion-panel>
+                  </div>
+                  <div class="col-md-12">&nbsp;</div>
+                  <div class="col-md-6">
+                      <mat-form-field style="width:100%">
+                          <input matInput  [(ngModel)]="roomMaster.Mattress" placeholder="Mattress">
+                      </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6" style="   margin: 15px 0;">
+                          (Choose Status) <mat-slide-toggle
+                          class="example-margin" [(ngModel)]="roomMaster.IsActive" >
+                        </mat-slide-toggle>
+                  </div>
+                  <div class="col-md-12">&nbsp;</div>
                   <div class="col-md-4">
                     </div>
                   <div class="col-md-4 text-center">
-                          <button mat-raised-button color="primary" (click)="roomMasterService.saveRoomMaster(roomMaster)">Add to Cart</button>
+                          <button mat-raised-button color="primary" (click)="roomMasterService.saveRoomMaster(roomMaster)">Add Room</button>
                   </div>
                   <div class="col-md-4">
                   </div>
