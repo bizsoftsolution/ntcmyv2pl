@@ -69,7 +69,6 @@ export class PropertyService {
         this.router.navigate(['/Admin/property']);
       });
     }
-    
   }
 
   deleteProperty(
@@ -80,6 +79,7 @@ export class PropertyService {
       this.AppLib.propertyList = this.AppLib.propertyList.filter(
         x => x.Id !== propertyDetail.Id
       );
+      this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
     } else {
       if (confirm(`Are you delete this ${propertyDetail.PropertyName}?`)) {
         this.AppLib.con.invoke('Delete_Property', propertyDetail.Id).then(x => {
@@ -91,7 +91,8 @@ export class PropertyService {
           }
         });
       }
+      this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
     }
-    this.AppLib.propertyList = this.AppLib.SortRecords(this.AppLib.propertyList);
+
   }
 }

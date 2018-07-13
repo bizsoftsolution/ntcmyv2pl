@@ -44,6 +44,7 @@ export class AuditoriumService {
       d.Name = auditoriumData.Name;
       d.OrderNo = auditoriumData.OrderNo;
       d.IsActive = auditoriumData.IsActive;
+      this.AppLib.auditoriumList = this.AppLib.SortRecords(this.AppLib.auditoriumList);
     } else {
       console.log(auditoriumData);
       if (!this.isValid(auditoriumData)) {
@@ -54,6 +55,7 @@ export class AuditoriumService {
         auditoriumData.Id = x;
         this.AppLib.auditoriumList.push(auditoriumData);
         }
+        this.AppLib.auditoriumList = this.AppLib.SortRecords(this.AppLib.auditoriumList);
         this.router.navigate(['/Admin/auditorium']);
       });
     }
@@ -64,6 +66,7 @@ export class AuditoriumService {
       this.AppLib.auditoriumList = this.AppLib.auditoriumList.filter(
         x => x.Id !== auditoriumData.Id
       );
+      this.AppLib.auditoriumList = this.AppLib.SortRecords(this.AppLib.auditoriumList);
     } else {
       if (confirm(`Are you delete this ${auditoriumData.Name}?`)) {
         this.AppLib.con.invoke('Auditorium_Delete', auditoriumData.Id).then(x => {
@@ -75,6 +78,8 @@ export class AuditoriumService {
           }
         });
       }
+      this.AppLib.auditoriumList = this.AppLib.SortRecords(this.AppLib.auditoriumList);
     }
+
   }
 }
