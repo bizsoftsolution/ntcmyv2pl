@@ -26,6 +26,7 @@ import { BookingHallDetail } from '../models/BookingHallDetail';
 import { BookingRoomDetail } from '../models/BookingRoomDetail';
 import { RoomMaster } from '../models/RoomMaster';
 import { HallMaster } from '../models/HallMaster';
+import { SPNubeMember } from '../models/NubeMember';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +71,7 @@ export class ApplibService {
   bookingRoomDetailList: BookingRoomDetail[];
   roomMasterList: RoomMaster[];
   hallMasterList: HallMaster[];
+  nubeMemberList: SPNubeMember[];
 
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
@@ -161,6 +163,10 @@ export class ApplibService {
         this.con.invoke('HallMaster_List').then(hm => {
           console.log(hm);
           this.hallMasterList = hm;
+        });
+        this.con.invoke('NubeMemberResult').then(nm => {
+          console.log(nm);
+          this.nubeMemberList = nm;
         });
   });
 }

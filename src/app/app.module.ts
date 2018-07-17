@@ -102,6 +102,7 @@ export function createconfig(): SignalRConfiguration {
   c.hubName = 'NTCServerHub';
   // c.url = 'https://www.ntc.my/SLSR';
   c.url = 'https://www.ntc.my/SLSR01';
+
   c.logging = true;
 
   c.executeErrorsInZone = false;
