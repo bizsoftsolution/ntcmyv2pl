@@ -3,7 +3,7 @@
     <li class="breadcrumb-item">
       <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Holiday Details</li>
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/Admin/holiday">Holiday</a></li>
   </ol>
 </nav>
 <div class="container-fluid">
@@ -13,7 +13,7 @@
       <div class="col-md-2">
         </div>
     <div class="col-md-8">
-      <mat-card class="example-card mat-elevation-z10" style="padding: 50px;">
+      <mat-card class="example-card mat-elevation-z10 text-primary" style="padding: 50px;">
         <mat-card-header style="margin: 0px 0px 25px  0px!important;">
           <mat-card-title>
               <h3>Holiday Details</h3>
@@ -34,7 +34,10 @@
                 class="form-control">
               </mat-form-field>
             <br>
-            <button mat-raised-button color="primary" (click)="holidayservice.SaveHoliday(holiday)">Submit</button>
+            <div class="col-md-4">
+              <button mat-raised-button color="primary" (click)="holidayservice.SaveHoliday(holiday)" style="float:left">Submit</button>
+               <a routerLink="/Admin/holiday" mat-raised-button color="primary" style="float:left ; margin: 0px 5px;">Back</a>
+            </div>
           </div>
         </mat-card-content>
       </mat-card>
