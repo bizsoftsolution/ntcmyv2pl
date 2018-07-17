@@ -51,6 +51,17 @@ import { RoomMasterComponent } from './backend/room-master/room-master.component
 import { RoomMasterEditComponent } from './backend/room-master-edit/room-master-edit.component';
 import { HallMasterComponent } from './hall-master/hall-master.component';
 import { HallMasterEditComponent } from './hall-master-edit/hall-master-edit.component';
+import { GoldenarowanaComponent } from './frontend/goldenarowana/goldenarowana.component';
+import { ArticGalleryComponent } from './frontend/artic-gallery/artic-gallery.component';
+import { PacificGalleryComponent } from './frontend/pacific-gallery/pacific-gallery.component';
+import { ParkingGalleryComponent } from './frontend/parking-gallery/parking-gallery.component';
+import { PlaygroundGalleryComponent } from './frontend/playground-gallery/playground-gallery.component';
+import { NtcGalleryComponent } from './frontend/ntc-gallery/ntc-gallery.component';
+import { BluearowanaGalleryComponent } from './frontend/bluearowana-gallery/bluearowana-gallery.component';
+import { HarmonyComponent } from './frontend/harmony/harmony.component';
+import { SolidarityGalleryComponent } from './frontend/solidarity-gallery/solidarity-gallery.component';
+import { AtlanticGalleryComponent } from './frontend/atlantic-gallery/atlantic-gallery.component';
+import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteria-gallery.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -97,6 +108,17 @@ const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
 { path: 'my-cart', component: MyCartComponent },
 { path: 'hall-booking', component: HallBookingComponent },
 { path: 'choose-hall', component: ChooseHallComponent },
+{ path: 'goldenarowanaGallery', component: GoldenarowanaComponent },
+{ path: 'articGallery', component: ArticGalleryComponent },
+{ path: 'pacificGallery', component: PacificGalleryComponent },
+{ path: 'parkingGallery', component: ParkingGalleryComponent },
+{ path: 'playgroundGallery', component: PlaygroundGalleryComponent },
+{ path: 'ntcGallery', component: NtcGalleryComponent },
+{ path: 'bluearowanaGallery', component: BluearowanaGalleryComponent },
+{ path: 'harmonyGallery', component: HarmonyComponent },
+{ path: 'solidarityGallery', component: SolidarityGalleryComponent },
+{ path: 'atlanticGallery', component: AtlanticGalleryComponent },
+{ path: 'cafeteriaGallery', component: CafeteriaGalleryComponent },
 { path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 const routes: Routes = [
