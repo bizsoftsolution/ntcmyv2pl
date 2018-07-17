@@ -63,6 +63,7 @@ import { SolidarityGalleryComponent } from './frontend/solidarity-gallery/solida
 import { AtlanticGalleryComponent } from './frontend/atlantic-gallery/atlantic-gallery.component';
 import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteria-gallery.component';
 import { RegisterMemberComponent } from './frontend/register-member/register-member.component';
+import { HallofunityGalleryComponent } from './frontend/hallofunity-gallery/hallofunity-gallery.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -121,6 +122,7 @@ const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
 { path: 'solidarityGallery', component: SolidarityGalleryComponent },
 { path: 'atlanticGallery', component: AtlanticGalleryComponent },
 { path: 'cafeteriaGallery', component: CafeteriaGalleryComponent },
+{ path: 'hallofunityGallery', component: HallofunityGalleryComponent },
 { path: 'Register', component: RegisterMemberComponent },
 { path: '', redirectTo: 'home', pathMatch: 'full' }];
 
