@@ -1,26 +1,17 @@
+import { NtcMember } from './NtcMember';
+
 export class BookingMaster {
   Id: number;
   Date: Date;
-  Name: string;
-  ICNo: string;
-  MobileNo: number;
-  EMailId: string;
-  MemberCode: number;
+  NtcMember: NtcMember;
   Amount: number;
-  NoOfAdults: number;
-  NoOfChildren: number;
 
   constructor() {
     this.Id = 0;
-  this.Date = null;
-  this.Name = '';
-  this.ICNo = '';
-  this.MobileNo = 0;
-  this.EMailId = '';
-  this.MemberCode = 0;
+  this.Date = new Date();
+  this.NtcMember = new NtcMember();
   this.Amount = 0;
-  this.NoOfAdults = 0;
-  this.NoOfChildren = 0;
+
   }
 
 }

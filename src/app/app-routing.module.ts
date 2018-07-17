@@ -128,6 +128,7 @@ const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
 { path: 'cafeteriaGallery', component: CafeteriaGalleryComponent },
 { path: 'hallofunityGallery', component: HallofunityGalleryComponent },
 { path: 'Register', component: RegisterMemberComponent },
+{ path: 'MemberProfile', component: RegisterMemberComponent },
 { path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 const routes: Routes = [

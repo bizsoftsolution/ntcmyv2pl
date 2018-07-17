@@ -11,9 +11,16 @@ import { NtcMember } from '../../models/NtcMember';
 export class RegisterMemberComponent implements OnInit {
 
   registerMember: NtcMember = new NtcMember();
+  title: string;
 
   constructor(public applib: ApplibService, public ntcMemberService: NtcMemberService) {
-
+    if (!applib.loginUser) {
+      this.title = 'Registration Member';
+      this.registerMember = new NtcMember();
+    } else {
+      this.title = 'Member Profile';
+      this.registerMember = this.applib.ntcMemberList.find( y => y.EmailId === applib.loginUser.LoginId);
+    }
   }
 
   ngOnInit() {

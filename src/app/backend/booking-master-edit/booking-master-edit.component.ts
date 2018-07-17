@@ -14,10 +14,10 @@ import { BookingHallEditComponent } from '../booking-hall-edit/booking-hall-edit
 })
 export class BookingMasterEditComponent implements OnInit {
 
-  bookings: BookingMaster;
+  booking: BookingMaster;
 
   constructor(private activateRoute: ActivatedRoute,
-    private applib: ApplibService,
+    public applib: ApplibService,
     public bookingService: BookingMasterService,
     public dialog: MatDialog) { }
 
@@ -25,9 +25,9 @@ export class BookingMasterEditComponent implements OnInit {
     this.activateRoute.paramMap.subscribe(x => {
       const id = +x.get('id');
       if (id === 0) {
-        this.bookings = new BookingMaster();
+        this.booking = new BookingMaster();
       } else {
-        this.bookings = this.applib.bookingMasterList.find(y => y.Id === id);
+        this.booking = this.applib.bookingMasterList.find(y => y.Id === id);
       }
     });
   }

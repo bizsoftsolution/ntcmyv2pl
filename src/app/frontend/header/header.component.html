@@ -13,9 +13,20 @@
                 <span class="login-register">
                     <a routerLink="/login" *ngIf="!applib.loginUser">Login</a>
                     <a routerLink="/Register" *ngIf="!applib.loginUser">register</a>
-                    <a *ngIf="applib.loginUser"> Welcome {{ applib.loginUser.UserName}}, </a>
+                    <a *ngIf="applib.loginUser" style="background-color: #fff;
+                    color: #333;"> Welcome <span style="font-weight: bold;">{{ applib.loginUser.UserName}}</span> </a>
                     <a routerLink="/my-cart">Cart</a>
-                    <a routerLink="/home" (click)="applib.logout()" *ngIf="applib.loginUser">LogOut</a>
+
+                          <a *ngIf="applib.loginUser" class="dropdown-toggle" data-toggle="dropdown" style="border-radius: 100%;cursor: pointer;margin-bottom: -14px;
+                           border: 2px solid #fff;background: #fff;
+                           color: #000;"><span class="glyphicon glyphicon-user pull-right" style="width: 12px;height:30px;top: 7px;"></span></a>
+                          <ul *ngIf="applib.loginUser" class="dropdown-menu" style="right: 0!important; width: 100%;margin: 15px 0 0;background-color: #f91e22;text-align: right;">
+                            <li style="text-align: center"><a routerLink="/MemberProfile">Profile</a></li>
+                            <li class="divider"></li>
+                            <li style="text-align: center"><a href="#">Reports</a></li>
+                            <li class="divider"></li>
+                            <li style="text-align: center"><a routerLink="/home" (click)="applib.logout()" *ngIf="applib.loginUser">Logout</a></li>
+                          </ul>
                 </span>
 
             </div>
