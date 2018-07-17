@@ -107,6 +107,7 @@ import { SolidarityGalleryComponent } from './frontend/solidarity-gallery/solida
 import { AtlanticGalleryComponent } from './frontend/atlantic-gallery/atlantic-gallery.component';
 import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteria-gallery.component';
 import { RegisterMemberComponent } from './frontend/register-member/register-member.component';
+import { NtcMemberComponent } from './ntc-member/ntc-member.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -192,7 +193,8 @@ export function createconfig(): SignalRConfiguration {
     SolidarityGalleryComponent,
     AtlanticGalleryComponent,
     CafeteriaGalleryComponent,
-    RegisterMemberComponent
+    RegisterMemberComponent,
+    NtcMemberComponent
   ],
   imports: [
     BrowserModule,
