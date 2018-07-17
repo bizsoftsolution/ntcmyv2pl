@@ -51,6 +51,7 @@ export class NtcMemberService {
       d.State = ntcMember.State;
       d.ICNo = ntcMember.ICNo;
       d.MobileNo = ntcMember.MobileNo;
+      d.Password = ntcMember.Password;
 
     } else {
       console.log(ntcMember);

@@ -10,6 +10,7 @@ Address2: string;
 City: string;
 State: string;
 Country: string;
+Password: string;
 
 constructor() {
   this.Id = 0;
@@ -23,6 +24,7 @@ constructor() {
   this.State = '';
   this.City = '';
   this.Country = '';
+  this.Password = '';
 }
 
 }
