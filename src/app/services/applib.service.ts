@@ -75,6 +75,48 @@ export class ApplibService {
   nubeMemberList: SPNubeMember[];
   ntcMemberList: NtcMember[];
 
+  public logout() {
+    this.RemoveLoginLocalStorage();
+    this.loginUser = null;
+  }
+  public RemoveLoginLocalStorage() {
+    localStorage.removeItem('LoginId');
+    localStorage.removeItem('Password');
+    localStorage.removeItem('UserType');
+  }
+
+  public GetLoginLocalStorage(): UserAccount {
+    const ua: UserAccount = new UserAccount();
+    ua.LoginId = localStorage.getItem('LoginId');
+    ua.Password = localStorage.getItem('Password');
+    ua.Type = localStorage.getItem('UserType');
+    return ua;
+  }
+  SetLoginLocalStorage() {
+    localStorage.setItem('LoginId', this.loginUser.LoginId);
+    localStorage.setItem('Password', this.loginUser.Password);
+    localStorage.setItem('UserType', this.loginUser.Type);
+  }
+
+  AutoLogin() {
+    const ua: UserAccount = this.GetLoginLocalStorage();
+    console.log('Auto Login Start');
+    console.log('Login: ', ua);
+    if (ua.LoginId && ua.Password) {
+      this.con
+      .invoke('UserAccount_Login', 'Ntc', ua.LoginId, ua.Password)
+      .then(x => {
+        console.log(x);
+        this.loginUser = x;
+        this.loginUser.Password = ua.Password;
+        if (this.loginUser !== undefined) {
+          console.log('Auto Logined');
+        }
+      });
+
+    }
+    console.log('Auto Login End');
+  }
   constructor(private s1: SignalR) {
     console.log('connection startincg in client');
     this.con = this.s1.createConnection();
@@ -82,6 +124,7 @@ export class ApplibService {
     this.con.status.subscribe(x => console.log(x));
     this.con.start().then(x => {
       console.log('Done', x);
+      this.AutoLogin();
       this.con.invoke('CompanyDetail_List').then(c => {
         console.log(c);
         this.companyList = c;
