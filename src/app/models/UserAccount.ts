@@ -6,6 +6,6 @@ UserTypeId: number;
 UserName: string;
 LoginId: string;
 Password: string;
-UserType: UserType;
+Type: string;
 
 }

@@ -29,8 +29,15 @@ export class LoginComponent implements OnInit {
         console.log(x);
         this.ua = x;
         if (this.ua !== undefined) {
-            localStorage.setItem('user', this.ua.LoginId);
-          this.router.navigate(['/Admin/dashboard']);
+            localStorage.setItem('LoginId', this.ua.LoginId);
+            localStorage.setItem('Password', this.ua.Password);
+            localStorage.setItem('UserType', this.ua.Type);
+            if (this.ua.Type === 'Member') {
+              this.router.navigate(['/home']);
+            } else {
+              this.router.navigate(['/Admin/dashboard']);
+            }
+
          } else {
           alert('Invalid Credential');
         }

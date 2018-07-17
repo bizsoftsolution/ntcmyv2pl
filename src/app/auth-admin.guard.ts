@@ -11,8 +11,10 @@ export class AuthAdminGuard implements CanActivate {
 
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      const username = localStorage.getItem('user');
-      if (username === null) {
+
+      const userType = localStorage.getItem('UserType');
+
+      if (userType !== 'Admin') {
 this.route.navigate(['/login']);
         return false;
       } else {
