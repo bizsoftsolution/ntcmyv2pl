@@ -11,7 +11,8 @@
             </div>
             <div class="header_right float-right">
                 <span class="login-register">
-                    <a routerLink="/login">Login</a>
+                    <a routerLink="/login" *ngIf="!applib.loginUser">Login {{applib.loginUser | json}}</a>
+                    <a href="#" (click)="Logout()" *ngIf="applib.loginUser">LogOut {{applib.loginUser | json}}</a>
                     <a routerLink="/Register">register</a>
                     <a routerLink="/my-cart">Cart</a>
                 </span>
