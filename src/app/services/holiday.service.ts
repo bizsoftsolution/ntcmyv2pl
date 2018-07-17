@@ -47,6 +47,7 @@ export class HolidayService {
       d.Id = holidayData.Id;
       d.HolidayName = holidayData.HolidayName;
       d.HolidayDate = holidayData.HolidayDate;
+      this.AppLib.holidayList = this.AppLib.SortRecords(this.AppLib.holidayList);
     } else {
       console.log(holidayData);
       if (!this.isValid(holidayData)) {
@@ -57,6 +58,7 @@ export class HolidayService {
           holidayData.Id = x;
           this.AppLib.holidayList.push(holidayData);
         }
+        this.AppLib.holidayList = this.AppLib.SortRecords(this.AppLib.holidayList);
        this.router.navigate(['/Admin/holiday']);
       });
     }
@@ -67,6 +69,7 @@ export class HolidayService {
       this.AppLib.holidayList = this.AppLib.holidayList.filter(
         x => x.Id !== holidayData.Id
       );
+      this.AppLib.holidayList = this.AppLib.SortRecords(this.AppLib.holidayList);
     } else {
       if (confirm(`Are you delete this ${holidayData.HolidayName}?`)) {
         this.AppLib.con.invoke('Delete_Holiday', holidayData.Id).then(x => {
@@ -78,6 +81,7 @@ export class HolidayService {
           }
         });
       }
+      this.AppLib.holidayList = this.AppLib.SortRecords(this.AppLib.holidayList);
     }
   }
 }

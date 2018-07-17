@@ -54,6 +54,7 @@ export class BookingMasterService {
       d.Amount = bookingMaster.Amount;
       d.Date = bookingMaster.Date;
       d.EMailId = bookingMaster.EMailId;
+      this.applib.bookingMasterList = this.applib.SortRecords(this.applib.bookingMasterList);
     } else {
       console.log(bookingMaster);
       if (!this.isValid(bookingMaster)) {
@@ -64,6 +65,7 @@ export class BookingMasterService {
           bookingMaster.Id = x;
           this.applib.bookingMasterList.push(bookingMaster);
         }
+        this.applib.bookingMasterList = this.applib.SortRecords(this.applib.bookingMasterList);
         this.router.navigate(['Admin/booking-master']);
       });
     }
@@ -77,6 +79,7 @@ export class BookingMasterService {
       this.applib.bookingMasterList = this.applib.bookingMasterList.filter(
         x => x.Id !== bookingMaster.Id
       );
+      this.applib.bookingMasterList = this.applib.SortRecords(this.applib.bookingMasterList);
     } else {
       if (confirm(`Are you sure to delete this record?`)) {
         this.applib.con
@@ -90,6 +93,7 @@ export class BookingMasterService {
             }
           });
       }
+      this.applib.bookingMasterList = this.applib.SortRecords(this.applib.bookingMasterList);
     }
   }
 }

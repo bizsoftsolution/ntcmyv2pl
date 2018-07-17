@@ -45,6 +45,7 @@ export class ItemDetailService {
       d.Rate = itemData.Rate;
       d.Stock = itemData.Stock;
 d.RateUnit = itemData.RateUnit;
+this.AppLib.itemDetailList = this.AppLib.SortRecords(this.AppLib.itemDetailList);
 
     } else {
       console.log(itemData);
@@ -56,6 +57,7 @@ d.RateUnit = itemData.RateUnit;
           itemData.Id = x;
           this.AppLib.itemDetailList.push(itemData);
         }
+        this.AppLib.itemDetailList = this.AppLib.SortRecords(this.AppLib.itemDetailList);
 this.router.navigate(['/Admin/itemDetail']);
       });
     }
@@ -66,6 +68,7 @@ this.router.navigate(['/Admin/itemDetail']);
       this.AppLib.itemDetailList = this.AppLib.itemDetailList.filter(
         x => x.Id !== itemData.Id
       );
+      this.AppLib.itemDetailList = this.AppLib.SortRecords(this.AppLib.itemDetailList);
     } else {
       if (confirm(`Are you delete this ${itemData.ItemName}?`)) {
         this.AppLib.con.invoke('ItemDetail_Delete', itemData.Id).then(x => {
@@ -77,6 +80,7 @@ this.router.navigate(['/Admin/itemDetail']);
           }
         });
       }
+      this.AppLib.itemDetailList = this.AppLib.SortRecords(this.AppLib.itemDetailList);
     }
   }
 }

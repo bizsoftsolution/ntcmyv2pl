@@ -52,6 +52,7 @@ export class NtcMemberService {
       d.ICNo = ntcMember.ICNo;
       d.MobileNo = ntcMember.MobileNo;
       d.Password = ntcMember.Password;
+      this.AppLib.ntcMemberList = this.AppLib.SortRecords(this.AppLib.ntcMemberList);
 
     } else {
       console.log(ntcMember);
@@ -63,6 +64,7 @@ export class NtcMemberService {
           ntcMember.Id = x;
           this.AppLib.ntcMemberList.push(ntcMember);
         }
+        this.AppLib.ntcMemberList = this.AppLib.SortRecords(this.AppLib.ntcMemberList);
 this.router.navigate(['/Admin']);
       });
     }
@@ -73,6 +75,7 @@ this.router.navigate(['/Admin']);
       this.AppLib.ntcMemberList = this.AppLib.ntcMemberList.filter(
         x => x.Id !== ntcMember.Id
       );
+      this.AppLib.ntcMemberList = this.AppLib.SortRecords(this.AppLib.ntcMemberList);
     } else {
       if (confirm(`Are you delete this ${ntcMember.MemberName}?`)) {
         this.AppLib.con.invoke('NtcMember_Delete', ntcMember.Id).then(x => {
@@ -84,6 +87,7 @@ this.router.navigate(['/Admin']);
           }
         });
       }
+      this.AppLib.ntcMemberList = this.AppLib.SortRecords(this.AppLib.ntcMemberList);
     }
   }
 }

@@ -41,12 +41,12 @@
           <div class="table-responsive">
             <table class="table table-striped table-bordered text-primary">
               <tr>
-                <th style="width: 100px!important;text-align: center;">Holiday Name</th>
+                <th style="width: 100px!important;">Holiday Name</th>
                 <th style="width: 100px!important;text-align: center;">Date</th>
                 <th style="width: 200px!important;text-align: center;">Action</th>
               </tr>
               <tr *ngFor="let holiday of holidayService.AppLib.holidayList">
-                <td style="text-align: center;">
+                <td >
                  {{holiday.HolidayName}}
                 </td>
                 <td style="text-align: center;">

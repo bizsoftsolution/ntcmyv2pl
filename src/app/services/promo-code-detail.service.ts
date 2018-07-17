@@ -56,6 +56,7 @@ export class PromoCodeDetailService {
       d.MinimumAmount = promoCodeDetail.MinimumAmount;
       d.DiscountRate = promoCodeDetail.DiscountRate;
       d.IsActive = promoCodeDetail.IsActive;
+      this.AppLib.promoCodeDetailList = this.AppLib.SortRecords(this.AppLib.promoCodeDetailList);
     } else {
       console.log(promoCodeDetail);
       if (!this.isValid(promoCodeDetail)) {
@@ -66,6 +67,7 @@ export class PromoCodeDetailService {
           promoCodeDetail.Id = x;
           this.AppLib.promoCodeDetailList.push(promoCodeDetail);
         }
+        this.AppLib.promoCodeDetailList = this.AppLib.SortRecords(this.AppLib.promoCodeDetailList);
 this.router.navigate(['/Admin/promo-code-details']);
       });
     }
@@ -76,6 +78,7 @@ this.router.navigate(['/Admin/promo-code-details']);
       this.AppLib.promoCodeDetailList = this.AppLib.promoCodeDetailList.filter(
         x => x.Id !== promoCodeDetail.Id
       );
+      this.AppLib.promoCodeDetailList = this.AppLib.SortRecords(this.AppLib.promoCodeDetailList);
     } else {
       if (confirm(`Are you delete this ${promoCodeDetail.PromoCode}?`)) {
         this.AppLib.con.invoke('PromoCodeDetail_Delete', promoCodeDetail.Id).then(x => {
@@ -87,6 +90,7 @@ this.router.navigate(['/Admin/promo-code-details']);
           }
         });
       }
+      this.AppLib.promoCodeDetailList = this.AppLib.SortRecords(this.AppLib.promoCodeDetailList);
     }
   }
 }

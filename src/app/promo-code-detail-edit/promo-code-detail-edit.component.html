@@ -13,7 +13,7 @@
         <div class="col-md-2">
           </div>
       <div class="col-md-8">
-        <mat-card class="example-card mat-elevation-z10">
+        <mat-card class="example-card mat-elevation-z10 text-primary">
           <mat-card-header>
             <mat-card-title>
                 <h3> Promo Code Details </h3>
@@ -26,26 +26,36 @@
                 <mat-form-field>
                   <input matInput [(ngModel)]="promocode.PromoCode" placeholder="Promo Code">
                 </mat-form-field>
-              <mat-form-field appearance="outline">
-                  <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateFrom"
-                  class="form-control">
+              <mat-form-field >
+                  <input matInput  bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateFrom"
+                  placeholder="From Date">
                 </mat-form-field>
               <br>
-              <mat-form-field appearance="outline">
-                  <input matInput type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateTo"
-                  class="form-control">
+              <mat-form-field >
+                  <input matInput  bsDatepicker [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD' }" [(ngModel)]="promocode.DateTo"
+                  placeholder="To Date">
                 </mat-form-field>
                 <br>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field >
                         <input matInput [(ngModel)]="promocode.MinimumAmount" placeholder="Minimum Amount">
                       </mat-form-field>
                 <br>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field >
                         <input matInput [(ngModel)]="promocode.DiscountRate" placeholder="Discount Rate">
                       </mat-form-field>
 
                 <br>
-
+                <br>
+                <mat-form-field>
+                  <mat-select placeholder="Status" [(ngModel)]='promocode.IsActive'>
+                    <mat-option [value]="true" >
+                      Active
+                    </mat-option>
+                    <mat-option [value]="false" >
+                      Deactive
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
               <div class="col-md-4">
                 <button mat-raised-button color="primary" (click)="PromocodeService.SavePromoCodeDetail(promocode)" style="float:left">Submit</button>
                  <a routerLink="/Admin/promo-code-details" mat-raised-button color="primary" style="float:left ; margin: 0px 5px;">Back</a>

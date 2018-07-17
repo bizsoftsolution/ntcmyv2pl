@@ -44,6 +44,7 @@ export class RoomDetailService {
       d.IsActive = roomData.IsActive;
       d.RoomMasterId = roomData.RoomMasterId;
       d.RoomMaster = roomData.RoomMaster;
+      this.AppLib.roomDetailList = this.AppLib.SortRecords(this.AppLib.roomDetailList);
 
     } else {
       console.log(roomData);
@@ -55,6 +56,7 @@ export class RoomDetailService {
           roomData.Id = x;
           this.AppLib.roomDetailList.push(roomData);
         }
+        this.AppLib.roomDetailList = this.AppLib.SortRecords(this.AppLib.roomDetailList);
 this.router.navigate(['/Admin/roomDetail']);
       });
     }
@@ -65,6 +67,7 @@ this.router.navigate(['/Admin/roomDetail']);
       this.AppLib.roomDetailList = this.AppLib.roomDetailList.filter(
         x => x.Id !== roomData.Id
       );
+      this.AppLib.roomDetailList = this.AppLib.SortRecords(this.AppLib.roomDetailList);
     } else {
       if (confirm(`Are you delete this ${roomData.Name}?`)) {
         this.AppLib.con.invoke('Delete_RoomDetail', roomData.Id).then(x => {
@@ -76,6 +79,7 @@ this.router.navigate(['/Admin/roomDetail']);
           }
         });
       }
+      this.AppLib.roomDetailList = this.AppLib.SortRecords(this.AppLib.roomDetailList);
     }
   }
 }

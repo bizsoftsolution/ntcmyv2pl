@@ -45,14 +45,14 @@
         <div class="table-responsive">
           <table class="table table-striped table-bordered text-primary">
             <tr>
-              <th style="width: 100px!important;text-align: center;">Item Name</th>
+              <th style="width: 100px!important;">Item Name</th>
               <th style="width: 100px!important;text-align: center;">Rate</th>
               <th style="width: 100px!important;text-align: center;">Rate Unit</th>
               <th style="width: 100px!important;text-align: center;">Stock</th>
               <th style="width: 200px!important;text-align: center;">Action</th>
             </tr>
             <tr *ngFor="let itemDetail of applib.itemDetailList">
-              <td style="text-align: center;">{{itemDetail.ItemName}}</td>
+              <td >{{itemDetail.ItemName}}</td>
               <td style="text-align: center;">{{itemDetail.Rate}}</td>
               <td style="text-align: center;">{{itemDetail.RateUnit}}</td>
               <td style="text-align: center;">{{itemDetail.Stock}}</td>
