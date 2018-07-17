@@ -109,6 +109,7 @@ import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteri
 import { RegisterMemberComponent } from './frontend/register-member/register-member.component';
 import { NtcMemberComponent } from './ntc-member/ntc-member.component';
 import { HallofunityGalleryComponent } from './frontend/hallofunity-gallery/hallofunity-gallery.component';
+import { NtcMemberEditComponent } from './backend/ntc-member-edit/ntc-member-edit.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -196,7 +197,8 @@ export function createconfig(): SignalRConfiguration {
     CafeteriaGalleryComponent,
     RegisterMemberComponent,
     NtcMemberComponent,
-    HallofunityGalleryComponent
+    HallofunityGalleryComponent,
+    NtcMemberEditComponent
   ],
   imports: [
     BrowserModule,
