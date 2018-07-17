@@ -170,7 +170,7 @@ export class ApplibService {
           console.log(nm);
           this.nubeMemberList = nm;
         });
-        this.con.invoke('NtccMember_List').then(ntm => {
+        this.con.invoke('NtcMember_List').then(ntm => {
           console.log(ntm);
           this.ntcMemberList = ntm;
         });

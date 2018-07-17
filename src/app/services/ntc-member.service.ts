@@ -20,7 +20,7 @@ export class NtcMemberService {
     });
   }
   isValid(ntcMember: NtcMember): boolean {
-    if (!ntcMember.Name || ntcMember.Name === '') {
+    if (!ntcMember.MemberName || ntcMember.MemberName === '') {
       return false;
     }  else if (!ntcMember.ICNo || ntcMember.ICNo === '') {
       return false;
@@ -41,7 +41,7 @@ export class NtcMemberService {
         this.AppLib.ntcMemberList.push(new NtcMember());
       }
       d.Id = ntcMember.Id;
-      d.Name = ntcMember.Name;
+      d.MemberName = ntcMember.MemberName;
       d.MemberId = ntcMember.MemberId;
       d.EmailId = ntcMember.EmailId;
       d.Country = ntcMember.Country;
@@ -73,7 +73,7 @@ this.router.navigate(['/Admin']);
         x => x.Id !== ntcMember.Id
       );
     } else {
-      if (confirm(`Are you delete this ${ntcMember.Name}?`)) {
+      if (confirm(`Are you delete this ${ntcMember.MemberName}?`)) {
         this.AppLib.con.invoke('NtcMember_Delete', ntcMember.Id).then(x => {
           if (x === true) {
             this.AppLib.ntcMemberList = this.AppLib.ntcMemberList.filter(

@@ -1,6 +1,6 @@
 export class NtcMember {
   Id: number;
-Name: string;
+MemberName: string;
 ICNo: string;
 MobileNo: number;
 EmailId: string;
@@ -13,7 +13,7 @@ Country: string;
 
 constructor() {
   this.Id = 0;
-  this.Name = '';
+  this.MemberName = '';
   this.ICNo = '';
   this.MobileNo = 0;
   this.EmailId = '';

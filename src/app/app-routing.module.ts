@@ -62,6 +62,7 @@ import { HarmonyComponent } from './frontend/harmony/harmony.component';
 import { SolidarityGalleryComponent } from './frontend/solidarity-gallery/solidarity-gallery.component';
 import { AtlanticGalleryComponent } from './frontend/atlantic-gallery/atlantic-gallery.component';
 import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteria-gallery.component';
+import { RegisterMemberComponent } from './frontend/register-member/register-member.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -94,6 +95,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 {path: 'roomMasterEdit/:id', component: RoomMasterEditComponent},
 {path: 'hallMaster', component: HallMasterComponent},
 {path: 'hallMasterEdit/:id', component: HallMasterEditComponent},
+{path: 'Register', component: RegisterMemberComponent},
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
@@ -119,6 +121,7 @@ const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
 { path: 'solidarityGallery', component: SolidarityGalleryComponent },
 { path: 'atlanticGallery', component: AtlanticGalleryComponent },
 { path: 'cafeteriaGallery', component: CafeteriaGalleryComponent },
+{ path: 'Register', component: RegisterMemberComponent },
 { path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 const routes: Routes = [

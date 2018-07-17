@@ -1,0 +1,88 @@
+        <!-- SUB BANNER -->
+        <section class="section-sub-banner bg-9">
+            <div class="awe-overlay"></div>
+            <div class="sub-banner">
+                <div class="container">
+                    <div class="text text-center" style="padding-bottom: 26px;">
+                        <h2 style="text-shadow: 1px 2px 3px #000;font-weight: 600;font-size: 27.68px;">Register</h2>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END / SUB BANNER -->
+<!-- GALLERY -->
+<section class="section_page-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title><h2>Register Form - Member</h2>
+                    <span class="box-border" style="width: 100%;"></span>
+                    <br>
+                  </mat-card-title>
+                  <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class="example-container">
+                            <mat-form-field>
+                              <input matInput placeholder="Name" [(ngModel)]="registerMember.MemberName">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="IC Number" [(ngModel)]="registerMember.ICNo">
+                              </mat-form-field>
+                              <mat-form-field>
+                                  <input matInput placeholder="Mobile No" [(ngModel)]="registerMember.MobileNo">
+                                </mat-form-field>
+                                <mat-form-field>
+                                    <input matInput placeholder="Email ID" [(ngModel)]="registerMember.EmailId">
+                                  </mat-form-field>
+                                  <mat-form-field>
+                                      <input matInput placeholder="Member ID" [(ngModel)]="registerMember.MemberId">
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Address 1" [(ngModel)]="registerMember.Address1">
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                          <input matInput placeholder="Address 2" [(ngModel)]="registerMember.Address2">
+                                        </mat-form-field>
+                           <div class="row">
+                             <div class="col-md-4" style="    padding: 0px 0 0 15px;">
+                                <mat-form-field style="width:100%;">
+                                    <input matInput placeholder="City" [(ngModel)]="registerMember.City">
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-4" style="    padding: 0px 0 0 15px;">
+                                <mat-form-field style="width:100%;">
+                                    <input matInput placeholder="State" [(ngModel)]="registerMember.State">
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-4" style="    padding: 0px 0 0 15px;">
+                                <mat-form-field style="width:100%;">
+                                    <input matInput placeholder="Country" [(ngModel)]="registerMember.Country">
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-12">&nbsp;</div>
+                             <div class="col-md-12">
+                                <button mat-raised-button color="primary" (click)="ntcMemberService.SaveNtcMember(registerMember)">Submit</button>
+                             </div>
+                           </div>
+                          </div>
+                    </div>
+                  </div>
+
+                </mat-card-content>
+              </mat-card>
+        </div>
+        <div class="col-md-4">
+            <img class="img-responsive" src="assets/frontend/img/side-bannerroom.jpg">
+        </div>
+      </div>
+
+    </div>
+</section>
+<!-- END / GALLERY -->
