@@ -95,6 +95,7 @@ import { HallMasterComponent } from './hall-master/hall-master.component';
 import { FilterPropertyPipe } from './filter-property.pipe';
 import { RoomMasterEditComponent } from './backend/room-master-edit/room-master-edit.component';
 import { HallMasterEditComponent } from './hall-master-edit/hall-master-edit.component';
+import { GoldenarowanaComponent } from './frontend/goldenarowana/goldenarowana.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -167,7 +168,8 @@ export function createconfig(): SignalRConfiguration {
     HallMasterComponent,
     FilterPropertyPipe,
     RoomMasterEditComponent,
-    HallMasterEditComponent
+    HallMasterEditComponent,
+    GoldenarowanaComponent
   ],
   imports: [
     BrowserModule,
