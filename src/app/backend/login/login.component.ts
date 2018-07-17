@@ -28,10 +28,9 @@ export class LoginComponent implements OnInit {
       .then(x => {
         console.log(x);
         this.applib.loginUser = x;
+        this.applib.loginUser.Password = this.password;
         if (this.applib.loginUser !== undefined) {
-            localStorage.setItem('LoginId', this.applib.loginUser.LoginId);
-            localStorage.setItem('Password', this.applib.loginUser.Password);
-            localStorage.setItem('UserType', this.applib.loginUser.Type);
+            this.applib.SetLoginLocalStorage();
             if (this.applib.loginUser.Type === 'Member') {
               this.router.navigate(['/home']);
             } else {
@@ -40,6 +39,7 @@ export class LoginComponent implements OnInit {
 
          } else {
           alert('Invalid Credential');
+          this.applib.RemoveLoginLocalStorage();
         }
       });
 }

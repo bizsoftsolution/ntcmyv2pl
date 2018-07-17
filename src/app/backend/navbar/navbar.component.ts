@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ApplibService } from '../../services/applib.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,11 +17,5 @@ export class NavbarComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
-Logout() {
-  localStorage.removeItem('LoginId');
-  localStorage.removeItem('Password');
-  localStorage.removeItem('UserType');
-this.router.navigate(['/login']);
-}
+  constructor(private breakpointObserver: BreakpointObserver, public router: Router, public appLib: ApplibService) {}
   }

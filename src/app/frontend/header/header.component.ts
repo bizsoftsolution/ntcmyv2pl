@@ -27,11 +27,5 @@ export class HeaderComponent implements OnInit {
       alert('Closed');
     });
   }
-  Logout() {
-    localStorage.removeItem('LoginId');
-    localStorage.removeItem('Password');
-    localStorage.removeItem('UserType');
-  this.router.navigate(['/login']);
-  }
 
 }

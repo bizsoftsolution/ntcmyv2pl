@@ -11,10 +11,11 @@
             </div>
             <div class="header_right float-right">
                 <span class="login-register">
-                    <a routerLink="/login" *ngIf="!applib.loginUser">Login {{applib.loginUser | json}}</a>
-                    <a href="#" (click)="Logout()" *ngIf="applib.loginUser">LogOut {{applib.loginUser | json}}</a>
-                    <a routerLink="/Register">register</a>
+                    <a routerLink="/login" *ngIf="!applib.loginUser">Login</a>
+                    <a routerLink="/Register" *ngIf="!applib.loginUser">register</a>
+                    <a *ngIf="applib.loginUser"> Welcome {{ applib.loginUser.UserName}}, </a>
                     <a routerLink="/my-cart">Cart</a>
+                    <a routerLink="/home" (click)="applib.logout()" *ngIf="applib.loginUser">LogOut</a>
                 </span>
 
             </div>
