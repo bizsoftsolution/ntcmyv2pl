@@ -18,7 +18,9 @@ export class NavbarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver, public router: Router) {}
 Logout() {
-  localStorage.removeItem('user');
+  localStorage.removeItem('LoginId');
+  localStorage.removeItem('Password');
+  localStorage.removeItem('UserType');
 this.router.navigate(['/login']);
 }
   }

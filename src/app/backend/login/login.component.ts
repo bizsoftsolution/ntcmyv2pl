@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
  compName: string;
- ua: UserAccount;
+
   constructor(public applib: ApplibService, public router: Router, public appComp: AppComponent) { }
 
   ngOnInit() {
@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
       .invoke('UserAccount_Login', 'Ntc', this.username, this.password)
       .then(x => {
         console.log(x);
-        this.ua = x;
-        if (this.ua !== undefined) {
-            localStorage.setItem('LoginId', this.ua.LoginId);
-            localStorage.setItem('Password', this.ua.Password);
-            localStorage.setItem('UserType', this.ua.Type);
-            if (this.ua.Type === 'Member') {
+        this.applib.loginUser = x;
+        if (this.applib.loginUser !== undefined) {
+            localStorage.setItem('LoginId', this.applib.loginUser.LoginId);
+            localStorage.setItem('Password', this.applib.loginUser.Password);
+            localStorage.setItem('UserType', this.applib.loginUser.Type);
+            if (this.applib.loginUser.Type === 'Member') {
               this.router.navigate(['/home']);
             } else {
               this.router.navigate(['/Admin/dashboard']);
