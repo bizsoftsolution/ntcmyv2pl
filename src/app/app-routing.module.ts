@@ -65,6 +65,7 @@ import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteri
 import { RegisterMemberComponent } from './frontend/register-member/register-member.component';
 import { HallofunityGalleryComponent } from './frontend/hallofunity-gallery/hallofunity-gallery.component';
 import { NtcMemberComponent } from './ntc-member/ntc-member.component';
+import { NtcMemberEditComponent } from './backend/ntc-member-edit/ntc-member-edit.component';
 
 const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 { path: 'dashboard', component: DashboardComponent },
@@ -99,6 +100,7 @@ const AdminRoutes: Routes = [ { path: 'menu', component: NavbarComponent },
 {path: 'hallMasterEdit/:id', component: HallMasterEditComponent},
 {path: 'Register', component: RegisterMemberComponent},
 {path: 'ntcMember', component: NtcMemberComponent},
+{path: 'ntcMemberEdit/:id', component: NtcMemberEditComponent},
 { path: '', redirectTo: 'dashboard', pathMatch: 'full' }];
 
 const PublicRoutes: Routes = [ { path: 'aboutus', component: AboutusComponent },
