@@ -95,6 +95,17 @@ import { HallMasterComponent } from './hall-master/hall-master.component';
 import { FilterPropertyPipe } from './filter-property.pipe';
 import { RoomMasterEditComponent } from './backend/room-master-edit/room-master-edit.component';
 import { HallMasterEditComponent } from './hall-master-edit/hall-master-edit.component';
+import { GoldenarowanaComponent } from './frontend/goldenarowana/goldenarowana.component';
+import { ArticGalleryComponent } from './frontend/artic-gallery/artic-gallery.component';
+import { PacificGalleryComponent } from './frontend/pacific-gallery/pacific-gallery.component';
+import { ParkingGalleryComponent } from './frontend/parking-gallery/parking-gallery.component';
+import { PlaygroundGalleryComponent } from './frontend/playground-gallery/playground-gallery.component';
+import { NtcGalleryComponent } from './frontend/ntc-gallery/ntc-gallery.component';
+import { BluearowanaGalleryComponent } from './frontend/bluearowana-gallery/bluearowana-gallery.component';
+import { HarmonyComponent } from './frontend/harmony/harmony.component';
+import { SolidarityGalleryComponent } from './frontend/solidarity-gallery/solidarity-gallery.component';
+import { AtlanticGalleryComponent } from './frontend/atlantic-gallery/atlantic-gallery.component';
+import { CafeteriaGalleryComponent } from './frontend/cafeteria-gallery/cafeteria-gallery.component';
 
 
 export function createconfig(): SignalRConfiguration {
@@ -168,7 +179,18 @@ export function createconfig(): SignalRConfiguration {
     HallMasterComponent,
     FilterPropertyPipe,
     RoomMasterEditComponent,
-    HallMasterEditComponent
+    HallMasterEditComponent,
+    GoldenarowanaComponent,
+    ArticGalleryComponent,
+    PacificGalleryComponent,
+    ParkingGalleryComponent,
+    PlaygroundGalleryComponent,
+    NtcGalleryComponent,
+    BluearowanaGalleryComponent,
+    HarmonyComponent,
+    SolidarityGalleryComponent,
+    AtlanticGalleryComponent,
+    CafeteriaGalleryComponent
   ],
   imports: [
     BrowserModule,
