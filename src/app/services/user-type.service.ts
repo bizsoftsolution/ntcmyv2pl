@@ -47,7 +47,7 @@ export class UserTypeService {
         return;
       }
      const userData: UserType = new UserType();
-       userData.CompanyId = this.AppLib.loginUser.UserType.CompanyId;
+
       userData.Description = user.Description;
       userData.TypeOfUser = user.TypeOfUser;
 
