@@ -19,7 +19,7 @@
             <a routerLink="/Admin/ntcMember"><div class="circle-tile-heading orange"><i class="fa fa-users fa-fw fa-3x"></i></div></a>
             <div class="circle-tile-content orange">
               <div class="circle-tile-description text-faded"> Members</div>
-              <div class="circle-tile-number text-faded ">{{ AppLib.ntcMemberList.length }}</div>
+              <div class="circle-tile-number text-faded ">{{ AppLib.ntcMemberList?.length }}</div>
               <a class="circle-tile-footer" routerLink="/Admin/ntcMember">More Info<i class="fa fa-chevron-circle-right"></i></a>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <a routerLink="/Admin/booking-master"><div class="circle-tile-heading red"><i class="fa fa-shopping-cart fa-fw fa-3x"></i></div></a>
             <div class="circle-tile-content red">
               <div class="circle-tile-description text-faded"> Bookings </div>
-              <div class="circle-tile-number text-faded ">{{ AppLib.bookingMasterList.length }}</div>
+              <div class="circle-tile-number text-faded ">{{ AppLib.bookingMasterList?.length }}</div>
               <a class="circle-tile-footer" routerLink="/Admin/booking-master">More Info<i class="fa fa-chevron-circle-right"></i></a>
             </div>
           </div>
@@ -41,7 +41,7 @@
               <a routerLink="/Admin/property"><div class="circle-tile-heading green"><i class="fa fa-industry fa-fw fa-3x"></i></div></a>
               <div class="circle-tile-content green">
                 <div class="circle-tile-description text-faded"> Property </div>
-                <div class="circle-tile-number text-faded ">{{ AppLib.propertyList.length }}</div>
+                <div class="circle-tile-number text-faded ">{{ AppLib.propertyList?.length }}</div>
                 <a class="circle-tile-footer" routerLink="/Admin/property">More Info<i class="fa fa-chevron-circle-right"></i></a>
               </div>
             </div>
