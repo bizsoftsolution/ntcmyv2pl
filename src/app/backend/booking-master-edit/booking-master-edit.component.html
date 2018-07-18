@@ -109,12 +109,12 @@
                                               <td style="text-align: center;"></td>
                                               <td style="text-align: center;"></td>
                                               <td style="text-align: center;">
-                                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/{{property.Id}}"><i class="material-icons">
+                                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/0"><i class="material-icons">
                                                       create
                                                       </i>
                                                       </a>
                                                     &nbsp;
-                                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="propertyService.deleteProperty(property)" [disabled]="property.Id==0">
+                                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" >
                                                       <mat-icon>delete</mat-icon>
                                                   </button>
                                               </td>
@@ -168,12 +168,12 @@
                                               <td style="text-align: center;"></td>
                                               <td style="text-align: center;"></td>
                                               <td style="text-align: center;">
-                                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/{{property.Id}}"><i class="material-icons">
+                                                  <a  matSuffix matTooltip="Edit" mat-mini-fab color="primary" routerLink="/Admin/propertyEdit/0"><i class="material-icons">
                                                       create
                                                       </i>
                                                       </a>
                                                     &nbsp;
-                                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn" (click)="propertyService.deleteProperty(property)" [disabled]="property.Id==0">
+                                                  <button matSuffix matTooltip="Delete" mat-mini-fab color="warn">
                                                       <mat-icon>delete</mat-icon>
                                                   </button>
                                               </td>
@@ -190,7 +190,7 @@
                   <div class="col-md-4">
                     </div>
                   <div class="col-md-4 text-center">
-                          <button mat-raised-button color="primary" (click)="bookingService.SaveBookingMaster(bookings)">Submit</button>
+                          <button mat-raised-button color="primary" (click)="bookingService.SaveBookingMaster(booking)">Submit</button>
                           <a routerLink="/Admin/booking-master" mat-raised-button color="primary" style=" margin: 0px 5px;">Back</a>
                   </div>
                   <div class="col-md-4">
