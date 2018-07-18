@@ -28,6 +28,7 @@ import { RoomMaster } from '../models/RoomMaster';
 import { HallMaster } from '../models/HallMaster';
 import { SPNubeMember } from '../models/NubeMember';
 import { NtcMember } from '../models/NtcMember';
+import { BookingStatus } from '../models/BookinStatus';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,7 @@ export class ApplibService {
   hallMasterList: HallMaster[];
   nubeMemberList: SPNubeMember[];
   ntcMemberList: NtcMember[];
+  bookingStatusList: BookingStatus[];
 
   public logout() {
     this.RemoveLoginLocalStorage();
@@ -216,6 +218,10 @@ export class ApplibService {
         this.con.invoke('NtcMember_List').then(ntm => {
           console.log(ntm);
           this.ntcMemberList = ntm;
+        });
+        this.con.invoke('').then(bs => {
+          console.log(bs);
+          this.bookingStatusList = bs;
         });
   });
 }

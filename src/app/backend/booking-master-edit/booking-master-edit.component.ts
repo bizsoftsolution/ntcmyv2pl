@@ -19,7 +19,7 @@ export class BookingMasterEditComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,
     public applib: ApplibService,
     public bookingService: BookingMasterService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog, public bookingMaster: BookingMaster) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe(x => {

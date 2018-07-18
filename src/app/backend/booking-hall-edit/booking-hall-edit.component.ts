@@ -4,6 +4,8 @@ import { ApplibService } from '../../services/applib.service';
 import { AuditoriumService } from '../../services/auditorium.service';
 import { HallTypeService } from '../../services/hall-type.service';
 import { HallSlotService } from '../../services/hall-slot.service';
+import { BookingMaster } from '../../models/BookingMaster';
+import { BookingHallDetail } from '../../models/BookingHallDetail';
 
 @Component({
   selector: 'app-booking-hall-edit',
@@ -16,9 +18,14 @@ export class BookingHallEditComponent implements OnInit {
     public Applib: ApplibService,
   public auditoriumService: AuditoriumService,
 public hallTypeService: HallTypeService,
-public hallSlotService: HallSlotService) { }
+public hallSlotService: HallSlotService,
+public bookingMaster: BookingMaster) { }
 
+hallBooking: BookingHallDetail;
   ngOnInit() {
   }
-
+Hall() {
+  this.bookingMaster.HallBooking.push(this.hallBooking);
+  console.log(this.bookingMaster.HallBooking);
+}
 }

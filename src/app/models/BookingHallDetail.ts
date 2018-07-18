@@ -5,4 +5,6 @@ export class BookingHallDetail {
   HallSlotId: number;
   Amount: number;
   BookingDate: Date;
+  BookingStatusId: number;
+  BookingStatusName: string;
 }
