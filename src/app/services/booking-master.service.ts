@@ -22,7 +22,7 @@ export class BookingMasterService {
       });
   }
   isValid(bookingMaster: BookingMaster): boolean {
-    if (bookingMaster.Name === '' || bookingMaster.Name === null) {
+    if (bookingMaster.NtcMember === null) {
       return false;
     } else {
       return true;
@@ -45,15 +45,9 @@ export class BookingMasterService {
         this.applib.bookingMasterList.push(new BookingMaster());
       }
       d.Id = bookingMaster.Id;
-      d.Name = bookingMaster.Name;
-      d.MobileNo = bookingMaster.MobileNo;
-      d.NoOfAdults = bookingMaster.NoOfAdults;
-      d.NoOfChildren = bookingMaster.NoOfChildren;
-      d.ICNo = bookingMaster.ICNo;
-      d.MemberCode = bookingMaster.MemberCode;
+      d.NtcMember = bookingMaster.NtcMember;
       d.Amount = bookingMaster.Amount;
       d.Date = bookingMaster.Date;
-      d.EMailId = bookingMaster.EMailId;
       this.applib.bookingMasterList = this.applib.SortRecords(this.applib.bookingMasterList);
     } else {
       console.log(bookingMaster);
