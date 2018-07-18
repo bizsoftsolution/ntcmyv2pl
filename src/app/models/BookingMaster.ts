@@ -1,4 +1,5 @@
 import { NtcMember } from './NtcMember';
+import { BookingHallDetail } from './BookingHallDetail';
 
 export class BookingMaster {
   Id: number;
@@ -22,14 +23,5 @@ export class BookingMaster {
     BookingStatusId: number
   }[];
 
-  HallBooking: {
-    Id: number,
-    BookingMasterId: number,
-    HallTariffDetailId: number,
-    HallSlotId: number,
-    Amount: number,
-    BookingDate: Date,
-    BookingStatusId: number,
-    BookingStatusName: string
-  }[];
+  HallBooking: BookingHallDetail[];
 }
